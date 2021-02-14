@@ -42,3 +42,30 @@ bool fileAvailable(string file)
 
 	return exists;
 }
+
+
+/*	Function: void initializeArray(covid arr, int length)
+*	Pre: An empty covid array of length "length".
+*	Post: The supplied array will be filled with default entries.
+*	Purpose: Initialize the supplied array.
+*********************************************************/
+void initializeArray(covid arr[], int length)
+{
+	for (int i = 0; i < length; i++)
+	{
+		covid entry =
+		{
+			"",
+			"",
+			"",
+			{ 0, 0, 0},
+			0,
+			0,
+			0,
+			0.0,
+			0.0
+		};
+
+		arr[i] = entry;
+	}
+}

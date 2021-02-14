@@ -32,7 +32,7 @@ const int MAXLENGTH = 250;
 
 bool fileAvailable(string file);
 
-void initializeArray(covid arr, int length);
+void initializeArray(covid arr[], int length);
 
 covid parseLine(string line);
 
