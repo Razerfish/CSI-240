@@ -15,3 +15,30 @@ academic staff; and/or
 (which may then retain a copy of this assignment on its database for
 the purpose of future plagiarism checking)
 */
+
+#include "header.h"
+
+/*	Function: bool fileAvailable(string file)
+*	Pre: A string containing the relative path to file that you want to check the existance of.
+*	Post: Returns a bool representing whether or not the file exists.
+*	Purpose: Check whether or not a file exists before attempting to read it or possibly overwrite it.
+*	This is accomplished by checking if the file can be opened for reading, which in most cases serves as a good
+*	enough proxy for a files existance, although it may run into problems for files that can be read from normally but
+*	require elevated privileges to write to, so don't do that.
+*********************************************************/
+bool fileAvailable(string file)
+{
+	ifstream fileIN;
+	bool exists = true;
+
+	fileIN.open(file.c_str());
+
+	if (fileIN.fail() || fileIN.bad())
+	{
+		exists = false;
+	}
+
+	fileIN.close();
+
+	return exists;
+}
