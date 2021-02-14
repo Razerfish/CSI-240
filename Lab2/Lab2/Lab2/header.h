@@ -27,16 +27,24 @@ the purpose of future plagiarism checking)
 #include "covid.h"
 
 using namespace std;
-
 // Max length of the covid data array.
 const int MAXLENGTH = 250;
+
+double calcGlobalCasePercent(covid arr[], int length);
+double calcGlobalDeathPercent(covid arr[], int length);
+double calcInfectedPercent(covid country);
+double calcDeathPercent(covid country);
+
+// TODO Add displayOutput function
 
 bool fileAvailable(string file);
 
 void initializeArray(covid arr[], int length);
 
 date_s parseDate(string line);
-
 covid parseLine(string line);
-
 void populateArray(covid arr[], int length, string file);
+string promptInputFile();
+string promptOutputFile();
+
+bool saveOutput(covid arr[], int length)
