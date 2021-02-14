@@ -17,3 +17,23 @@ the purpose of future plagiarism checking)
 */
 
 #pragma once
+
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+
+#include "covid.h"
+
+using namespace std;
+
+// Max length of the covid data array.
+const int MAXLENGTH = 250;
+
+bool fileAvailable(string file);
+
+void initializeArray(covid arr, int length);
+
+covid parseLine(string line);
+
+void populateArray(covid arr, int length, string file);
