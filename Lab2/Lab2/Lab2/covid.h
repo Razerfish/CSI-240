@@ -17,3 +17,27 @@ the purpose of future plagiarism checking)
 */
 
 #pragma once
+
+#include <string>
+
+using namespace std;
+struct date_s
+{
+	int year;
+	int month;
+	int day;
+};
+
+
+struct covid
+{
+	string code;
+	string continent;
+	string name;
+	date_s date;
+	int tCases;
+	int tDeaths;
+	int population;
+	double pctCases;
+	double pctDeaths;
+};
