@@ -1,0 +1,14 @@
+Average infections: 68279.889
+Average deaths: 1139.168
+
+Top 10 days by number of infections:
+1. 2021-01-24 132537 infections 1775 deaths
+2. 2021-01-23 172650 infections 3332 deaths
+3. 2021-01-22 189925 infections 3758 deaths
+4. 2021-01-21 193165 infections 4202 deaths
+5. 2021-01-20 182695 infections 4375 deaths
+6. 2021-01-19 177256 infections 2769 deaths
+7. 2021-01-18 141999 infections 1403 deaths
+8. 2021-01-17 177918 infections 1749 deaths
+9. 2021-01-16 202758 infections 3352 deaths
+10. 2021-01-15 241576 infections 3802 deaths
