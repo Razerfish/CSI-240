@@ -162,3 +162,112 @@ void populateArray(covid arr[], int length, string file)
 		arr[i] = parseLine(line);
 	}
 }
+
+
+/*	Function: string promptInputFile()
+*	Pre: None
+*	Post: Either the name of the input file will be returned or a string containing NUL
+*	if the user chose to terminate the program.
+*	Purpose: Get the location of the input file from the user.
+*********************************************************/
+string promptInputFile()
+{
+	string inputFile;
+
+	cout << "Enter the name of the input file: ";
+	cin >> inputFile;
+
+	while (!fileAvailable(inputFile))
+	{
+		int choice;
+
+		cout << "\nCould not access the specified file!\n\n"
+			<< "1. Try again\n"
+			<< "2. Re-enter filename\n"
+			<< "3. Exit\n\n"
+			<< "Please enter your selection: ";
+		cin >> choice;
+
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			choice = 0;
+		}
+
+		switch (choice)
+		{
+		default: cout << "\nInvalid selection\n";
+		case 1: break;
+
+		case 2:
+			cout << "\nEnter the name of the input file: ";
+			cin >> inputFile;
+			break;
+
+		case 3:
+			cout << "\nExiting...\n";
+			return "NUL"; // You can't name a file NUL in windows so we can return this and
+			// know for sure that this isn't the file specified by the user.
+		}
+	}
+
+	return inputFile;
+}
+
+
+/*	Function: string promptOutputFile()
+*	Pre: None
+*	Post: Either a string containing the path to the file to write to,
+*	or NUL if the user chose to exit the program.
+*	Purpose: Prompt the user for the location of the file to write to.
+*********************************************************/
+string promptOutputFile()
+{
+	string outputFile;
+
+	bool overwrite = false;
+
+	cout << "Enter the name of the file to output the processed data to: ";
+	cin >> outputFile;
+
+	while (fileAvailable(outputFile) && !overwrite)
+	{
+		int choice;
+
+		cout << "\nFile already exists!\n"
+			<< "1. Try again\n"
+			<< "2. Re-enter filename\n"
+			<< "3. Overwrite existing file\n"
+			<< "4. Exit\n"
+			<< "Please enter your selection: ";
+		cin >> choice;
+
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			choice = 0;
+		}
+
+		switch (choice)
+		{
+		default: cout << "\nInvalid selection!\n";
+		case 1: break;
+
+		case 2:
+			cout << "Enter the name of the file to output the processed data to: ";
+			cin >> outputFile;
+			break;
+
+		case 3:
+			overwrite = true;
+			break;
+
+		case 4:
+			return "NUL";
+		}
+	}
+
+	return outputFile;
+}
