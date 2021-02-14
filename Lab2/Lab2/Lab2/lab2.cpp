@@ -21,5 +21,11 @@ the purpose of future plagiarism checking)
 using namespace std;
 int main()
 {
+	covid data[MAXLENGTH];
+
+	initializeArray(data, MAXLENGTH);
+
+	populateArray(data, MAXLENGTH, "data.txt");
+
 	return 0;
 }

@@ -21,6 +21,7 @@ the purpose of future plagiarism checking)
 #include <string>
 
 using namespace std;
+// I know that these generate C26495 warnings but the specification says to initialize them with a function.
 struct date_s
 {
 	int year;

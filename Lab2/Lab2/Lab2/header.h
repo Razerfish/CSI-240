@@ -22,6 +22,7 @@ the purpose of future plagiarism checking)
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <sstream>
 
 #include "covid.h"
 
@@ -34,6 +35,8 @@ bool fileAvailable(string file);
 
 void initializeArray(covid arr[], int length);
 
+date_s parseDate(string line);
+
 covid parseLine(string line);
 
-void populateArray(covid arr, int length, string file);
+void populateArray(covid arr[], int length, string file);

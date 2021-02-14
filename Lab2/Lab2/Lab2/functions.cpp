@@ -44,7 +44,7 @@ bool fileAvailable(string file)
 }
 
 
-/*	Function: void initializeArray(covid arr, int length)
+/*	Function: void initializeArray(covid arr[], int length)
 *	Pre: An empty covid array of length "length".
 *	Post: The supplied array will be filled with default entries.
 *	Purpose: Initialize the supplied array.
@@ -67,5 +67,98 @@ void initializeArray(covid arr[], int length)
 		};
 
 		arr[i] = entry;
+	}
+}
+
+
+/*	Function: parseDate(string line)
+*	Pre: A date string formatted as YYYY-MM-DD
+*	Post: Returns a date_s struct containing the parsed data.
+*	Purpose: Parse dates into date_s structs.
+*********************************************************/
+date_s parseDate(string line)
+{
+	istringstream input(line);
+
+	string token;
+
+	date_s output;
+
+	// There should only be 3 entries to parse so we'll only do this 3 times.
+	getline(input, token, '-'); // Get year.
+	output.year = stoi(token);
+
+	getline(input, token, '-'); // Get month.
+	output.month = stoi(token);
+
+	getline(input, token, '-'); // Get day.
+	output.day = stoi(token);
+
+	return output;
+}
+
+
+/*	Function: covid parseLine(string line)
+*	Pre: A line containing comma seperated values to parse.
+*	Post: Returns a covid struct containing that parsed data.
+*	Purpose: Parse the supplied line into a covid struct.
+*********************************************************/
+covid parseLine(string line)
+{
+	istringstream input(line);
+
+	string token;
+
+	covid output;
+
+	// We only need to get the first 7 entries.
+
+	getline(input, token, ','); // Get ISO country code.
+	output.code = token;
+
+	getline(input, token, ','); // Get continent.
+	output.continent = token;
+
+	getline(input, token, ','); // Get country name.
+	output.name = token;
+
+	getline(input, token, ','); // Get date.
+	output.date = parseDate(token);
+
+	getline(input, token, ','); // Get total cases.
+	output.tCases = stoi(token);
+
+	getline(input, token, ','); // Get total deaths.
+	output.tDeaths = stoi(token);
+
+	getline(input, token, ','); // Get population.
+	output.population = stoi(token);
+
+	// Set pctCases and pctDeaths to 0.0 for now.
+	output.pctCases = 0.0;
+	output.pctDeaths = 0.0;
+
+	return output;
+}
+
+
+/*	Function: populateArray(covid arr[], int length, string file)
+*	Pre: An initialized covid array of length "length and a
+*	string pointing to the file to read from.
+*	Post: The array will be populated with the data from the file.
+*	Post: Populate a covid array with data from the specified file.
+*********************************************************/
+void populateArray(covid arr[], int length, string file)
+{
+	ifstream dataIN;
+
+	string line;
+
+	dataIN.open(file.c_str());
+
+	//	Only read enough to fill the array.
+	for (int i = 0; i < length && getline(dataIN, line); i++)
+	{
+		arr[i] = parseLine(line);
 	}
 }
