@@ -1,0 +1,190 @@
+2021-02-07  AFG       Afghanistan, Asia                         0.142       0.006
+2021-02-07  AGO       Angola, Africa                            0.061       0.001
+2021-02-07  ALB       Albania, Europe                           2.965       0.051
+2021-02-07  AND       Andorra, Europe                          13.267       0.137
+2021-02-07  ARE       United Arab Emirates, Asia                3.301       0.009
+2021-02-07  ARG       Argentina, South America                  4.382       0.109
+2021-02-07  ARM       Armenia, Asia                             5.672       0.105
+2021-02-07  ATG       Antigua and Barbuda, North America        0.305       0.007
+2021-02-07  AUS       Australia, Oceania                        0.113       0.004
+2021-02-07  AUT       Austria, Europe                           4.706       0.089
+2021-02-07  AZE       Azerbaijan, Asia                          2.280       0.031
+2021-02-07  BDI       Burundi, Africa                           0.014       0.000
+2021-02-07  BEL       Belgium, Europe                           6.261       0.185
+2021-02-07  BEN       Benin, Africa                             0.035       0.000
+2021-02-07  BFA       Burkina Faso, Africa                      0.054       0.001
+2021-02-07  BGD       Bangladesh, Asia                          0.327       0.005
+2021-02-07  BGR       Bulgaria, Europe                          3.220       0.134
+2021-02-07  BHR       Bahrain, Asia                             6.308       0.022
+2021-02-07  BHS       Bahamas, North America                    2.099       0.045
+2021-02-07  BIH       Bosnia and Herzegovina, Europe            3.762       0.146
+2021-02-07  BLR       Belarus, Europe                           2.738       0.019
+2021-02-07  BLZ       Belize, North America                     3.027       0.077
+2021-02-07  BOL       Bolivia, South America                    1.953       0.092
+2021-02-07  BRA       Brazil, South America                     4.481       0.109
+2021-02-07  BRB       Barbados, North America                   0.595       0.006
+2021-02-07  BRN       Brunei, Asia                              0.041       0.001
+2021-02-07  BTN       Bhutan, Asia                              0.112       0.000
+2021-02-07  BWA       Botswana, Africa                          0.999       0.007
+2021-02-07  CAF       Central African Republic, Africa          0.103       0.001
+2021-02-07  CAN       Canada, North America                     2.143       0.055
+2021-02-07  CHE       Switzerland, Europe                       6.146       0.111
+2021-02-07  CHL       Chile, South America                      3.933       0.099
+2021-02-07  CHN       China, Asia                               0.007       0.000
+2021-02-07  CIV       Cote d'Ivoire, Africa                     0.113       0.001
+2021-02-07  CMR       Cameroon, Africa                          0.118       0.002
+2021-02-07  COD       Democratic Republic of Congo, Africa       0.026       0.001
+2021-02-07  COG       Congo, Africa                             0.146       0.002
+2021-02-07  COL       Colombia, South America                   4.240       0.110
+2021-02-07  COM       Comoros, Africa                           0.355       0.012
+2021-02-07  CPV       Cape Verde, Africa                        2.594       0.024
+2021-02-07  CRI       Costa Rica, North America                 3.856       0.052
+2021-02-07  CUB       Cuba, North America                       0.290       0.002
+2021-02-07  CYP       Cyprus, Europe                            3.626       0.024
+2021-02-07  CZE       Czechia, Europe                           9.665       0.161
+2021-02-07  DEU       Germany, Europe                           2.735       0.074
+2021-02-07  DJI       Djibouti, Africa                          0.602       0.006
+2021-02-07  DMA       Dominica, North America                   0.168       0.000
+2021-02-07  DNK       Denmark, Europe                           3.493       0.038
+2021-02-07  DOM       Dominican Republic, North America         2.059       0.026
+2021-02-07  DZA       Algeria, Africa                           0.249       0.007
+2021-02-07  ECU       Ecuador, South America                    1.464       0.085
+2021-02-07  EGY       Egypt, Africa                             0.166       0.009
+2021-02-07  ERI       Eritrea, Africa                           0.066       0.000
+2021-02-07  ESP       Spain, Europe                             6.292       0.131
+2021-02-07  EST       Estonia, Europe                           3.613       0.035
+2021-02-07  ETH       Ethiopia, Africa                          0.124       0.002
+2021-02-07  FIN       Finland, Europe                           0.859       0.012
+2021-02-07  FJI       Fiji, Oceania                             0.006       0.000
+2021-02-07  FRA       France, Europe                            5.203       0.121
+2021-02-07  FSM       Micronesia (country), Oceania             0.001       0.000
+2021-02-07  GAB       Gabon, Africa                             0.515       0.003
+2021-02-07  GBR       United Kingdom, Europe                    5.829       0.166
+2021-02-07  GEO       Georgia, Asia                             6.568       0.082
+2021-02-07  GHA       Ghana, Africa                             0.228       0.001
+2021-02-07  GIN       Guinea, Africa                            0.112       0.001
+2021-02-07  GMB       Gambia, Africa                            0.175       0.006
+2021-02-07  GNB       Guinea-Bissau, Africa                     0.141       0.002
+2021-02-07  GNQ       Equatorial Guinea, Africa                 0.398       0.006
+2021-02-07  GRC       Greece, Europe                            1.573       0.057
+2021-02-07  GRD       Grenada, North America                    0.132       0.001
+2021-02-07  GTM       Guatemala, North America                  0.911       0.033
+2021-02-07  GUY       Guyana, South America                     1.015       0.023
+2021-02-07  HND       Honduras, North America                   1.561       0.038
+2021-02-07  HRV       Croatia, Europe                           5.734       0.126
+2021-02-07  HTI       Haiti, North America                      0.104       0.002
+2021-02-07  HUN       Hungary, Europe                           3.897       0.136
+2021-02-07  IDN       Indonesia, Asia                           0.423       0.012
+2021-02-07  IND       India, Asia                               0.785       0.011
+2021-02-07  IRL       Ireland, Europe                           4.123       0.075
+2021-02-07  IRN       Iran, Asia                                1.746       0.070
+2021-02-07  IRQ       Iraq, Asia                                1.563       0.033
+2021-02-07  ISL       Iceland, Europe                           1.764       0.008
+2021-02-07  ISR       Israel, Asia                              7.996       0.059
+2021-02-07  ITA       Italy, Europe                             4.361       0.151
+2021-02-07  JAM       Jamaica, North America                    0.577       0.012
+2021-02-07  JOR       Jordan, Asia                              3.285       0.043
+2021-02-07  JPN       Japan, Asia                               0.321       0.005
+2021-02-07  KAZ       Kazakhstan, Asia                          1.302       0.017
+2021-02-07  KEN       Kenya, Africa                             0.189       0.003
+2021-02-07  KGZ       Kyrgyzstan, Asia                          1.304       0.022
+2021-02-07  KHM       Cambodia, Asia                            0.003       0.000
+2021-02-07  KNA       Saint Kitts and Nevis, North America       0.075       0.000
+2021-02-07  KOR       South Korea, Asia                         0.158       0.003
+2021-02-07  KOS       Kosovo, Europe                            3.192       0.079
+2021-02-07  KWT       Kuwait, Asia                              4.004       0.023
+2021-02-07  LAO       Laos, Asia                                0.001       0.000
+2021-02-07  LBN       Lebanon, Asia                             4.687       0.053
+2021-02-07  LBR       Liberia, Africa                           0.039       0.002
+2021-02-07  LBY       Libya, Africa                             1.805       0.028
+2021-02-07  LCA       Saint Lucia, North America                0.987       0.010
+2021-02-07  LIE       Liechtenstein, Europe                     6.616       0.136
+2021-02-07  LKA       Sri Lanka, Asia                           0.324       0.002
+2021-02-07  LSO       Lesotho, Africa                           0.438       0.009
+2021-02-07  LTU       Lithuania, Europe                         6.861       0.108
+2021-02-07  LUX       Luxembourg, Europe                        8.229       0.094
+2021-02-07  LVA       Latvia, Europe                            3.807       0.071
+2021-02-07  MAR       Morocco, Africa                           1.288       0.023
+2021-02-07  MCO       Monaco, Europe                            4.217       0.048
+2021-02-07  MDA       Moldova, Europe                           4.080       0.088
+2021-02-07  MDG       Madagascar, Africa                        0.070       0.001
+2021-02-07  MDV       Maldives, Asia                            3.105       0.010
+2021-02-07  MEX       Mexico, North America                     1.499       0.129
+2021-02-07  MHL       Marshall Islands, Oceania                 0.007       0.000
+2021-02-07  MKD       North Macedonia, Europe                   4.550       0.140
+2021-02-07  MLI       Mali, Africa                              0.040       0.002
+2021-02-07  MLT       Malta, Europe                             4.230       0.064
+2021-02-07  MMR       Myanmar, Asia                             0.260       0.006
+2021-02-07  MNE       Montenegro, Europe                       10.385       0.133
+2021-02-07  MNG       Mongolia, Asia                            0.063       0.000
+2021-02-07  MOZ       Mozambique, Africa                        0.143       0.001
+2021-02-07  MRT       Mauritania, Africa                        0.361       0.009
+2021-02-07  MUS       Mauritius, Africa                         0.046       0.001
+2021-02-07  MWI       Malawi, Africa                            0.142       0.004
+2021-02-07  MYS       Malaysia, Asia                            0.749       0.003
+2021-02-07  NAM       Namibia, Africa                           1.376       0.015
+2021-02-07  NER       Niger, Africa                             0.019       0.001
+2021-02-07  NGA       Nigeria, Africa                           0.068       0.001
+2021-02-07  NIC       Nicaragua, North America                  0.095       0.003
+2021-02-07  NLD       Netherlands, Europe                       5.951       0.085
+2021-02-07  NOR       Norway, Europe                            1.195       0.011
+2021-02-07  NPL       Nepal, Asia                               0.933       0.007
+2021-02-07  NZL       New Zealand, Oceania                      0.048       0.001
+2021-02-07  OMN       Oman, Asia                                2.657       0.030
+2021-02-07  PAK       Pakistan, Asia                            0.251       0.005
+2021-02-07  PAN       Panama, North America                     7.581       0.127
+2021-02-07  PER       Peru, South America                       3.599       0.128
+2021-02-07  PHL       Philippines, Asia                         0.490       0.010
+2021-02-07  PNG       Papua New Guinea, Oceania                 0.010       0.000
+2021-02-07  POL       Poland, Europe                            4.096       0.103
+2021-02-07  PRT       Portugal, Europe                          7.506       0.139
+2021-02-07  PRY       Paraguay, South America                   1.936       0.040
+2021-02-07  PSE       Palestine, Asia                           3.187       0.037
+2021-02-07  QAT       Qatar, Asia                               5.349       0.009
+2021-02-07  ROU       Romania, Europe                           3.874       0.098
+2021-02-07  RUS       Russia, Europe                            2.689       0.052
+2021-02-07  RWA       Rwanda, Africa                            0.127       0.002
+2021-02-07  SAU       Saudi Arabia, Asia                        1.064       0.018
+2021-02-07  SDN       Sudan, Africa                             0.068       0.004
+2021-02-07  SEN       Senegal, Africa                           0.172       0.004
+2021-02-07  SGP       Singapore, Asia                           1.020       0.000
+2021-02-07  SLB       Solomon Islands, Oceania                  0.002       0.000
+2021-02-07  SLE       Sierra Leone, Africa                      0.047       0.001
+2021-02-07  SLV       El Salvador, North America                0.867       0.026
+2021-02-07  SMR       San Marino, Europe                        9.214       0.203
+2021-02-07  SOM       Somalia, Africa                           0.031       0.001
+2021-02-07  SRB       Serbia, Europe                            5.994       0.061
+2021-02-07  SSD       South Sudan, Africa                       0.039       0.001
+2021-02-07  STP       Sao Tome and Principe, Africa             0.616       0.008
+2021-02-07  SUR       Suriname, South America                   1.478       0.027
+2021-02-07  SVK       Slovakia, Europe                          4.823       0.095
+2021-02-07  SVN       Slovenia, Europe                          8.355       0.174
+2021-02-07  SWE       Sweden, Europe                            5.823       0.120
+2021-02-07  SWZ       Eswatini, Africa                          1.397       0.052
+2021-02-07  SYC       Seychelles, Africa                        1.539       0.007
+2021-02-07  SYR       Syria, Asia                               0.083       0.005
+2021-02-07  TCD       Chad, Africa                              0.021       0.001
+2021-02-07  TGO       Togo, Africa                              0.066       0.001
+2021-02-07  THA       Thailand, Asia                            0.034       0.000
+2021-02-07  TJK       Tajikistan, Asia                          0.140       0.001
+2021-02-07  TLS       Timor, Asia                               0.006       0.000
+2021-02-07  TTO       Trinidad and Tobago, North America        0.544       0.010
+2021-02-07  TUN       Tunisia, Africa                           1.837       0.061
+2021-02-07  TUR       Turkey, Asia                              3.002       0.032
+2021-02-07  TWN       Taiwan, Asia                              0.004       0.000
+2021-02-07  TZA       Tanzania, Africa                          0.001       0.000
+2021-02-07  UGA       Uganda, Africa                            0.087       0.001
+2021-02-07  UKR       Ukraine, Europe                           2.947       0.057
+2021-02-07  URY       Uruguay, South America                    1.304       0.014
+2021-02-07  USA       United States, North America              8.159       0.140
+2021-02-07  UZB       Uzbekistan, Asia                          0.236       0.002
+2021-02-07  VAT       Vatican, Europe                           3.337       0.000
+2021-02-07  VCT       Saint Vincent and the Grenadines, North America       1.144       0.004
+2021-02-07  VEN       Venezuela, South America                  0.458       0.004
+2021-02-07  VNM       Vietnam, Asia                             0.002       0.000
+2021-02-07  VUT       Vanuatu, Oceania                          0.000       0.000
+2021-02-07  WSM       Samoa, Oceania                            0.001       0.000
+2021-02-07  YEM       Yemen, Asia                               0.007       0.002
+2021-02-07  ZAF       South Africa, Africa                      2.489       0.078
+2021-02-07  ZMB       Zambia, Africa                            0.341       0.005
+2021-02-07  ZWE       Zimbabwe, Africa                          0.232       0.009
