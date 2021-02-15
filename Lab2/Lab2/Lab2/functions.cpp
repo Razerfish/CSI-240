@@ -60,6 +60,31 @@ double getGlobalDeathRate(covid arr[], int length)
 }
 
 
+/*	Function: double getLocalCaseRate(covid country)
+*	Pre: A covid struct containing the data for a country.
+*	Post: Returns the percentage of that country's population
+*	that is infected.
+*	Purpose: Calculate and return the percentage of the population
+*	that is infected.
+*********************************************************/
+double getLocalCaseRate(covid country)
+{
+	return (double(country.cases) / double(country.population)) * 100;
+}
+
+
+/*	Function: double getLocalDeathRate(covid country)
+*	Pre: A covid struct containing the data for a country.
+*	Post: Returns the percentage of that country's population
+*	that has died of covid.
+*	Purpose: Calculate and return the percentage of the population
+*	that has died of covid.
+*********************************************************/
+double getLocalDeathRate(covid country)
+{
+	return (double(country.deaths) / double(country.population)) * 100;
+}
+
 
 /*	Function: bool fileAvailable(string file)
 *	Pre: A string containing the relative path to file that you want to check the existance of.

@@ -31,6 +31,9 @@ int main()
 	cout << getGlobalCaseRate(data, MAXLENGTH) << endl;
 	cout << getGlobalDeathRate(data, MAXLENGTH) << endl;
 
+	cout << getLocalCaseRate(data[10]) << endl;
+	cout << getLocalDeathRate(data[10]) << endl;
+
 	delete[] data;
 
 	return 0;
