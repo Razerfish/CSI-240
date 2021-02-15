@@ -35,7 +35,7 @@ double getGlobalDeathRate(covid arr[], int length);
 void getLocalCaseRate(covid &country);
 void getLocalDeathRate(covid &country);
 
-// TODO Add displayOutput function
+void displayTotal(double gCaseRate, double gDeathrate);
 
 bool fileAvailable(string file);
 

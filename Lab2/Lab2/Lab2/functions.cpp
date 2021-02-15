@@ -86,6 +86,21 @@ void getLocalDeathRate(covid &country)
 }
 
 
+/*	Function: void displayTotal(double gCaseRate, double gDeathRate)
+*	Pre: Supply the global infection rate and the global death rate.
+*	Post: The supplied values will be formatted and displayed on screen.
+*	Purpose: Format and display the global infections rate and the
+*	global death rate.
+*********************************************************/
+void displayTotal(double gCaseRate, double gDeathrate)
+{
+	cout << fixed << setprecision(1);
+
+	cout << "\nGlobal infection rate: " << gCaseRate << "%\n";
+	cout << "Global death rate: " << gDeathrate << "%\n\n";
+}
+
+
 /*	Function: bool fileAvailable(string file)
 *	Pre: A string containing the relative path to file that you want to check the existance of.
 *	Post: Returns a bool representing whether or not the file exists.
