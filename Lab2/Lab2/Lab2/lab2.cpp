@@ -21,15 +21,28 @@ the purpose of future plagiarism checking)
 using namespace std;
 int main()
 {
-	//covid data[MAXLENGTH];
+	double
+		globalCaseRate,
+		globalDeathRate;
+
+	bool saveSuccess;
+
+	string inputFile = promptInputFile();
+	if (inputFile == "NUL") { return 0; }
+
+	string outputFile = promptOutputFile();
+	if (outputFile == "NUL") { return 0; }
+
 	covid* data = new covid[MAXLENGTH];
 
 	initializeArray(data, MAXLENGTH);
 
-	populateArray(data, MAXLENGTH, "data.txt");
+	populateArray(data, MAXLENGTH, inputFile);
 
-	cout << getGlobalCaseRate(data, MAXLENGTH) << endl;
-	cout << getGlobalDeathRate(data, MAXLENGTH) << endl;
+	globalCaseRate = getGlobalCaseRate(data, MAXLENGTH);
+	globalDeathRate = getGlobalDeathRate(data, MAXLENGTH);
+
+	displayTotal(globalCaseRate, globalDeathRate);
 
 	for (int i = 0; i < MAXLENGTH; i++)
 	{
@@ -37,11 +50,16 @@ int main()
 		getLocalDeathRate(data[i]);
 	}
 
-	cout << data[10].pctCases << endl << data[10].pctDeaths << endl;
-
-	saveOutput(data, MAXLENGTH, "output.txt");
+	saveSuccess = saveOutput(data, MAXLENGTH, outputFile);
 
 	delete[] data;
 
-	return 0;
+	if (saveSuccess)
+	{
+		return 0;
+	}
+	else
+	{
+		return 1;
+	}
 }

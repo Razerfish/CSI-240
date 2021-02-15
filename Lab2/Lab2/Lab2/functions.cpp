@@ -356,8 +356,10 @@ bool saveOutput(covid arr[], int length, string file)
 		// Write ISO code with width 10 aligned left.
 		dataOUT << setw(10) << left << arr[i].code;
 
-		// Write continent with width 35 aligned left.
-		dataOUT << setw(35) << left << arr[i].continent;
+		// Write location with width 35 aligned left.
+		// I'm assuming that by location you mean country name and continent,
+		// the specification wasn't clear, althougl I could have just missed it.
+		dataOUT << setw(35) << left << arr[i].name + ", " + arr[i].continent;
 
 		// Write infected percentage with width 12 aligned right.
 		dataOUT << setw(12) << right << arr[i].pctCases;
