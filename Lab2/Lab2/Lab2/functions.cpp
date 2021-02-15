@@ -18,12 +18,12 @@ the purpose of future plagiarism checking)
 
 #include "header.h"
 
-/*	Function: double calcGlobalCasePercent(covid arr[], int length);
+/*	Function: double getGlobalCaseRate(covid arr[], int length);
 *	Pre: A populated covid array of length "length".
 *	Post: Returns the percentage of the global population that has been infected.
 *	Purpose: Calculate the the percentage of the global population that has been infected.
 *********************************************************/
-double calcGlobalCasePercent(covid arr[], int length)
+double getGlobalCaseRate(covid arr[], int length)
 {
 	long long
 		totalPop = 0,
@@ -39,12 +39,12 @@ double calcGlobalCasePercent(covid arr[], int length)
 }
 
 
-/*	Function: double calcGlobalDeathPercent(covid arr[], int length);
+/*	Function: double getGlobalDeathRate(covid arr[], int length);
 *	Pre: A populated covid array of length "length".
 *	Post: Returns the percentage of the global population that has died of covid.
 *	Purpose: Calculate the the percentage of the global population that has died of covid.
 *********************************************************/
-double calcGlobalDeathPercent(covid arr[], int length)
+double getGlobalDeathRate(covid arr[], int length)
 {
 	long long
 		totalPop = 0,

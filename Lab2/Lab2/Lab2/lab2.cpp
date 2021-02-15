@@ -28,8 +28,8 @@ int main()
 
 	populateArray(data, MAXLENGTH, "data.txt");
 
-	cout << calcGlobalCasePercent(data, MAXLENGTH) << endl;
-	cout << calcGlobalDeathPercent(data, MAXLENGTH) << endl;
+	cout << getGlobalCaseRate(data, MAXLENGTH) << endl;
+	cout << getGlobalDeathRate(data, MAXLENGTH) << endl;
 
 	delete[] data;
 

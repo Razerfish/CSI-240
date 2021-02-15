@@ -30,10 +30,10 @@ using namespace std;
 // Max length of the covid data array.
 const int MAXLENGTH = 250;
 
-double calcGlobalCasePercent(covid arr[], int length);
-double calcGlobalDeathPercent(covid arr[], int length);
-double calcInfectedPercent(covid country);
-double calcDeathPercent(covid country);
+double getGlobalCaseRate(covid arr[], int length);
+double getGlobalDeathRate(covid arr[], int length);
+double getLocalCaseRate(covid country);
+double getLocalDeathRate(covid country);
 
 // TODO Add displayOutput function
 
