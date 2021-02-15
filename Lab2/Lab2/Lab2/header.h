@@ -47,4 +47,4 @@ void populateArray(covid arr[], int length, string file);
 string promptInputFile();
 string promptOutputFile();
 
-bool saveOutput(covid arr[], int length)
+bool saveOutput(covid arr[], int length);

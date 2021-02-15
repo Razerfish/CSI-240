@@ -18,6 +18,49 @@ the purpose of future plagiarism checking)
 
 #include "header.h"
 
+/*	Function: double calcGlobalCasePercent(covid arr[], int length);
+*	Pre: A populated covid array of length "length".
+*	Post: Returns the percentage of the global population that has been infected.
+*	Purpose: Calculate the the percentage of the global population that has been infected.
+*********************************************************/
+double calcGlobalCasePercent(covid arr[], int length)
+{
+	long long
+		totalPop = 0,
+		totalCases = 0;
+
+	for (int i = 0; i < length; i++)
+	{
+		totalPop += arr[i].population;
+		totalCases += arr[i].tCases;
+	}
+
+	return (double(totalCases) / double(totalPop)) * 100;
+}
+
+
+/*	Function: double calcGlobalDeathPercent(covid arr[], int length);
+*	Pre: A populated covid array of length "length".
+*	Post: Returns the percentage of the global population that has died of covid.
+*	Purpose: Calculate the the percentage of the global population that has died of covid.
+*********************************************************/
+double calcGlobalDeathPercent(covid arr[], int length)
+{
+	long long
+		totalPop = 0,
+		totalDeaths = 0;
+
+	for (int i = 0; i < length; i++)
+	{
+		totalPop += arr[i].population;
+		totalDeaths += arr[i].tDeaths;
+	}
+
+	return (double(totalDeaths) / double(totalPop)) * 100;
+}
+
+
+
 /*	Function: bool fileAvailable(string file)
 *	Pre: A string containing the relative path to file that you want to check the existance of.
 *	Post: Returns a bool representing whether or not the file exists.

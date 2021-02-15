@@ -21,11 +21,17 @@ the purpose of future plagiarism checking)
 using namespace std;
 int main()
 {
-	covid data[MAXLENGTH];
+	//covid data[MAXLENGTH];
+	covid* data = new covid[MAXLENGTH];
 
 	initializeArray(data, MAXLENGTH);
 
 	populateArray(data, MAXLENGTH, "data.txt");
+
+	cout << calcGlobalCasePercent(data, MAXLENGTH) << endl;
+	cout << calcGlobalDeathPercent(data, MAXLENGTH) << endl;
+
+	delete[] data;
 
 	return 0;
 }
