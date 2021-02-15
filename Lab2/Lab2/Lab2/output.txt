@@ -1,0 +1,190 @@
+2021-02-07  AFG       Asia                                      0.142       0.006
+2021-02-07  AGO       Africa                                    0.061       0.001
+2021-02-07  ALB       Europe                                    2.965       0.051
+2021-02-07  AND       Europe                                   13.267       0.137
+2021-02-07  ARE       Asia                                      3.301       0.009
+2021-02-07  ARG       South America                             4.382       0.109
+2021-02-07  ARM       Asia                                      5.672       0.105
+2021-02-07  ATG       North America                             0.305       0.007
+2021-02-07  AUS       Oceania                                   0.113       0.004
+2021-02-07  AUT       Europe                                    4.706       0.089
+2021-02-07  AZE       Asia                                      2.280       0.031
+2021-02-07  BDI       Africa                                    0.014       0.000
+2021-02-07  BEL       Europe                                    6.261       0.185
+2021-02-07  BEN       Africa                                    0.035       0.000
+2021-02-07  BFA       Africa                                    0.054       0.001
+2021-02-07  BGD       Asia                                      0.327       0.005
+2021-02-07  BGR       Europe                                    3.220       0.134
+2021-02-07  BHR       Asia                                      6.308       0.022
+2021-02-07  BHS       North America                             2.099       0.045
+2021-02-07  BIH       Europe                                    3.762       0.146
+2021-02-07  BLR       Europe                                    2.738       0.019
+2021-02-07  BLZ       North America                             3.027       0.077
+2021-02-07  BOL       South America                             1.953       0.092
+2021-02-07  BRA       South America                             4.481       0.109
+2021-02-07  BRB       North America                             0.595       0.006
+2021-02-07  BRN       Asia                                      0.041       0.001
+2021-02-07  BTN       Asia                                      0.112       0.000
+2021-02-07  BWA       Africa                                    0.999       0.007
+2021-02-07  CAF       Africa                                    0.103       0.001
+2021-02-07  CAN       North America                             2.143       0.055
+2021-02-07  CHE       Europe                                    6.146       0.111
+2021-02-07  CHL       South America                             3.933       0.099
+2021-02-07  CHN       Asia                                      0.007       0.000
+2021-02-07  CIV       Africa                                    0.113       0.001
+2021-02-07  CMR       Africa                                    0.118       0.002
+2021-02-07  COD       Africa                                    0.026       0.001
+2021-02-07  COG       Africa                                    0.146       0.002
+2021-02-07  COL       South America                             4.240       0.110
+2021-02-07  COM       Africa                                    0.355       0.012
+2021-02-07  CPV       Africa                                    2.594       0.024
+2021-02-07  CRI       North America                             3.856       0.052
+2021-02-07  CUB       North America                             0.290       0.002
+2021-02-07  CYP       Europe                                    3.626       0.024
+2021-02-07  CZE       Europe                                    9.665       0.161
+2021-02-07  DEU       Europe                                    2.735       0.074
+2021-02-07  DJI       Africa                                    0.602       0.006
+2021-02-07  DMA       North America                             0.168       0.000
+2021-02-07  DNK       Europe                                    3.493       0.038
+2021-02-07  DOM       North America                             2.059       0.026
+2021-02-07  DZA       Africa                                    0.249       0.007
+2021-02-07  ECU       South America                             1.464       0.085
+2021-02-07  EGY       Africa                                    0.166       0.009
+2021-02-07  ERI       Africa                                    0.066       0.000
+2021-02-07  ESP       Europe                                    6.292       0.131
+2021-02-07  EST       Europe                                    3.613       0.035
+2021-02-07  ETH       Africa                                    0.124       0.002
+2021-02-07  FIN       Europe                                    0.859       0.012
+2021-02-07  FJI       Oceania                                   0.006       0.000
+2021-02-07  FRA       Europe                                    5.203       0.121
+2021-02-07  FSM       Oceania                                   0.001       0.000
+2021-02-07  GAB       Africa                                    0.515       0.003
+2021-02-07  GBR       Europe                                    5.829       0.166
+2021-02-07  GEO       Asia                                      6.568       0.082
+2021-02-07  GHA       Africa                                    0.228       0.001
+2021-02-07  GIN       Africa                                    0.112       0.001
+2021-02-07  GMB       Africa                                    0.175       0.006
+2021-02-07  GNB       Africa                                    0.141       0.002
+2021-02-07  GNQ       Africa                                    0.398       0.006
+2021-02-07  GRC       Europe                                    1.573       0.057
+2021-02-07  GRD       North America                             0.132       0.001
+2021-02-07  GTM       North America                             0.911       0.033
+2021-02-07  GUY       South America                             1.015       0.023
+2021-02-07  HND       North America                             1.561       0.038
+2021-02-07  HRV       Europe                                    5.734       0.126
+2021-02-07  HTI       North America                             0.104       0.002
+2021-02-07  HUN       Europe                                    3.897       0.136
+2021-02-07  IDN       Asia                                      0.423       0.012
+2021-02-07  IND       Asia                                      0.785       0.011
+2021-02-07  IRL       Europe                                    4.123       0.075
+2021-02-07  IRN       Asia                                      1.746       0.070
+2021-02-07  IRQ       Asia                                      1.563       0.033
+2021-02-07  ISL       Europe                                    1.764       0.008
+2021-02-07  ISR       Asia                                      7.996       0.059
+2021-02-07  ITA       Europe                                    4.361       0.151
+2021-02-07  JAM       North America                             0.577       0.012
+2021-02-07  JOR       Asia                                      3.285       0.043
+2021-02-07  JPN       Asia                                      0.321       0.005
+2021-02-07  KAZ       Asia                                      1.302       0.017
+2021-02-07  KEN       Africa                                    0.189       0.003
+2021-02-07  KGZ       Asia                                      1.304       0.022
+2021-02-07  KHM       Asia                                      0.003       0.000
+2021-02-07  KNA       North America                             0.075       0.000
+2021-02-07  KOR       Asia                                      0.158       0.003
+2021-02-07  KOS       Europe                                    3.192       0.079
+2021-02-07  KWT       Asia                                      4.004       0.023
+2021-02-07  LAO       Asia                                      0.001       0.000
+2021-02-07  LBN       Asia                                      4.687       0.053
+2021-02-07  LBR       Africa                                    0.039       0.002
+2021-02-07  LBY       Africa                                    1.805       0.028
+2021-02-07  LCA       North America                             0.987       0.010
+2021-02-07  LIE       Europe                                    6.616       0.136
+2021-02-07  LKA       Asia                                      0.324       0.002
+2021-02-07  LSO       Africa                                    0.438       0.009
+2021-02-07  LTU       Europe                                    6.861       0.108
+2021-02-07  LUX       Europe                                    8.229       0.094
+2021-02-07  LVA       Europe                                    3.807       0.071
+2021-02-07  MAR       Africa                                    1.288       0.023
+2021-02-07  MCO       Europe                                    4.217       0.048
+2021-02-07  MDA       Europe                                    4.080       0.088
+2021-02-07  MDG       Africa                                    0.070       0.001
+2021-02-07  MDV       Asia                                      3.105       0.010
+2021-02-07  MEX       North America                             1.499       0.129
+2021-02-07  MHL       Oceania                                   0.007       0.000
+2021-02-07  MKD       Europe                                    4.550       0.140
+2021-02-07  MLI       Africa                                    0.040       0.002
+2021-02-07  MLT       Europe                                    4.230       0.064
+2021-02-07  MMR       Asia                                      0.260       0.006
+2021-02-07  MNE       Europe                                   10.385       0.133
+2021-02-07  MNG       Asia                                      0.063       0.000
+2021-02-07  MOZ       Africa                                    0.143       0.001
+2021-02-07  MRT       Africa                                    0.361       0.009
+2021-02-07  MUS       Africa                                    0.046       0.001
+2021-02-07  MWI       Africa                                    0.142       0.004
+2021-02-07  MYS       Asia                                      0.749       0.003
+2021-02-07  NAM       Africa                                    1.376       0.015
+2021-02-07  NER       Africa                                    0.019       0.001
+2021-02-07  NGA       Africa                                    0.068       0.001
+2021-02-07  NIC       North America                             0.095       0.003
+2021-02-07  NLD       Europe                                    5.951       0.085
+2021-02-07  NOR       Europe                                    1.195       0.011
+2021-02-07  NPL       Asia                                      0.933       0.007
+2021-02-07  NZL       Oceania                                   0.048       0.001
+2021-02-07  OMN       Asia                                      2.657       0.030
+2021-02-07  PAK       Asia                                      0.251       0.005
+2021-02-07  PAN       North America                             7.581       0.127
+2021-02-07  PER       South America                             3.599       0.128
+2021-02-07  PHL       Asia                                      0.490       0.010
+2021-02-07  PNG       Oceania                                   0.010       0.000
+2021-02-07  POL       Europe                                    4.096       0.103
+2021-02-07  PRT       Europe                                    7.506       0.139
+2021-02-07  PRY       South America                             1.936       0.040
+2021-02-07  PSE       Asia                                      3.187       0.037
+2021-02-07  QAT       Asia                                      5.349       0.009
+2021-02-07  ROU       Europe                                    3.874       0.098
+2021-02-07  RUS       Europe                                    2.689       0.052
+2021-02-07  RWA       Africa                                    0.127       0.002
+2021-02-07  SAU       Asia                                      1.064       0.018
+2021-02-07  SDN       Africa                                    0.068       0.004
+2021-02-07  SEN       Africa                                    0.172       0.004
+2021-02-07  SGP       Asia                                      1.020       0.000
+2021-02-07  SLB       Oceania                                   0.002       0.000
+2021-02-07  SLE       Africa                                    0.047       0.001
+2021-02-07  SLV       North America                             0.867       0.026
+2021-02-07  SMR       Europe                                    9.214       0.203
+2021-02-07  SOM       Africa                                    0.031       0.001
+2021-02-07  SRB       Europe                                    5.994       0.061
+2021-02-07  SSD       Africa                                    0.039       0.001
+2021-02-07  STP       Africa                                    0.616       0.008
+2021-02-07  SUR       South America                             1.478       0.027
+2021-02-07  SVK       Europe                                    4.823       0.095
+2021-02-07  SVN       Europe                                    8.355       0.174
+2021-02-07  SWE       Europe                                    5.823       0.120
+2021-02-07  SWZ       Africa                                    1.397       0.052
+2021-02-07  SYC       Africa                                    1.539       0.007
+2021-02-07  SYR       Asia                                      0.083       0.005
+2021-02-07  TCD       Africa                                    0.021       0.001
+2021-02-07  TGO       Africa                                    0.066       0.001
+2021-02-07  THA       Asia                                      0.034       0.000
+2021-02-07  TJK       Asia                                      0.140       0.001
+2021-02-07  TLS       Asia                                      0.006       0.000
+2021-02-07  TTO       North America                             0.544       0.010
+2021-02-07  TUN       Africa                                    1.837       0.061
+2021-02-07  TUR       Asia                                      3.002       0.032
+2021-02-07  TWN       Asia                                      0.004       0.000
+2021-02-07  TZA       Africa                                    0.001       0.000
+2021-02-07  UGA       Africa                                    0.087       0.001
+2021-02-07  UKR       Europe                                    2.947       0.057
+2021-02-07  URY       South America                             1.304       0.014
+2021-02-07  USA       North America                             8.159       0.140
+2021-02-07  UZB       Asia                                      0.236       0.002
+2021-02-07  VAT       Europe                                    3.337       0.000
+2021-02-07  VCT       North America                             1.144       0.004
+2021-02-07  VEN       South America                             0.458       0.004
+2021-02-07  VNM       Asia                                      0.002       0.000
+2021-02-07  VUT       Oceania                                   0.000       0.000
+2021-02-07  WSM       Oceania                                   0.001       0.000
+2021-02-07  YEM       Asia                                      0.007       0.002
+2021-02-07  ZAF       Africa                                    2.489       0.078
+2021-02-07  ZMB       Africa                                    0.341       0.005
+2021-02-07  ZWE       Africa                                    0.232       0.009

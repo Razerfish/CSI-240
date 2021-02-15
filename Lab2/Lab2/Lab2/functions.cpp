@@ -60,29 +60,29 @@ double getGlobalDeathRate(covid arr[], int length)
 }
 
 
-/*	Function: double getLocalCaseRate(covid country)
+/*	Function: void getLocalCaseRate(covid &country)
 *	Pre: A covid struct containing the data for a country.
-*	Post: Returns the percentage of that country's population
-*	that is infected.
-*	Purpose: Calculate and return the percentage of the population
+*	Post: The infection rate will be written to the given country's
+*	pctCases field.
+*	Purpose: Calculate the percentage of the population
 *	that is infected.
 *********************************************************/
-double getLocalCaseRate(covid country)
+void getLocalCaseRate(covid &country)
 {
-	return (double(country.cases) / double(country.population)) * 100;
+	country.pctCases = (double(country.cases) / double(country.population)) * 100;
 }
 
 
-/*	Function: double getLocalDeathRate(covid country)
+/*	Function: void getLocalDeathRate(covid &country)
 *	Pre: A covid struct containing the data for a country.
-*	Post: Returns the percentage of that country's population
-*	that has died of covid.
-*	Purpose: Calculate and return the percentage of the population
+*	Post: The death rate will be written to the given country's
+*	pctDeaths field.
+*	Purpose: Calculate the percentage of the population
 *	that has died of covid.
 *********************************************************/
-double getLocalDeathRate(covid country)
+void getLocalDeathRate(covid &country)
 {
-	return (double(country.deaths) / double(country.population)) * 100;
+	country.pctDeaths = (double(country.deaths) / double(country.population)) * 100;
 }
 
 
@@ -139,33 +139,6 @@ void initializeArray(covid arr[], int length)
 }
 
 
-/*	Function: parseDate(string line)
-*	Pre: A date string formatted as YYYY-MM-DD
-*	Post: Returns a date_s struct containing the parsed data.
-*	Purpose: Parse dates into date_s structs.
-*********************************************************/
-date_s parseDate(string line)
-{
-	istringstream input(line);
-
-	string token;
-
-	date_s output;
-
-	// There should only be 3 entries to parse so we'll only do this 3 times.
-	getline(input, token, '-'); // Get year.
-	output.year = stoi(token);
-
-	getline(input, token, '-'); // Get month.
-	output.month = stoi(token);
-
-	getline(input, token, '-'); // Get day.
-	output.day = stoi(token);
-
-	return output;
-}
-
-
 /*	Function: covid parseLine(string line)
 *	Pre: A line containing comma seperated values to parse.
 *	Post: Returns a covid struct containing that parsed data.
@@ -191,7 +164,7 @@ covid parseLine(string line)
 	output.name = token;
 
 	getline(input, token, ','); // Get date.
-	output.date = parseDate(token);
+	output.date = token;
 
 	getline(input, token, ','); // Get total cases.
 	output.cases = stoi(token);
@@ -338,4 +311,47 @@ string promptOutputFile()
 	}
 
 	return outputFile;
+}
+
+
+/*	Function: bool saveOutput(covid arr[], int length)
+*	Pre: An array of covid structs of length "length".
+*	Post: Formatted data will be written to file.
+*	Purpose: Format and write data to output file.
+*********************************************************/
+bool saveOutput(covid arr[], int length, string file)
+{
+	ofstream dataOUT;
+
+	dataOUT.open(file.c_str(), ios::out | ios::trunc);
+
+	// Check output stream.
+	if (dataOUT.bad() || dataOUT.fail()) { return false; }
+
+	for (int i = 0; i < length; i++)
+	{
+		// Break if we start getting empty entries.
+		if (arr[i].code == "") { break; }
+
+		dataOUT << fixed << setprecision(3);
+
+		// Write date with width 12 aligned left.
+		dataOUT << setw(12) << left << arr[i].date;
+
+		// Write ISO code with width 10 aligned left.
+		dataOUT << setw(10) << left << arr[i].code;
+
+		// Write continent with width 35 aligned left.
+		dataOUT << setw(35) << left << arr[i].continent;
+
+		// Write infected percentage with width 12 aligned right.
+		dataOUT << setw(12) << right << arr[i].pctCases;
+
+		// Write death percentage with width 12 aligned right.
+		dataOUT << setw(12) << right << arr[i].pctDeaths << endl;
+	}
+
+	dataOUT.close();
+
+	return true;
 }

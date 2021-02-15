@@ -32,8 +32,8 @@ const int MAXLENGTH = 250;
 
 double getGlobalCaseRate(covid arr[], int length);
 double getGlobalDeathRate(covid arr[], int length);
-double getLocalCaseRate(covid country);
-double getLocalDeathRate(covid country);
+void getLocalCaseRate(covid &country);
+void getLocalDeathRate(covid &country);
 
 // TODO Add displayOutput function
 
@@ -41,10 +41,9 @@ bool fileAvailable(string file);
 
 void initializeArray(covid arr[], int length);
 
-date_s parseDate(string line);
 covid parseLine(string line);
 void populateArray(covid arr[], int length, string file);
 string promptInputFile();
 string promptOutputFile();
 
-bool saveOutput(covid arr[], int length);
+bool saveOutput(covid arr[], int length, string file);

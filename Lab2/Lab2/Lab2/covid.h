@@ -21,21 +21,12 @@ the purpose of future plagiarism checking)
 #include <string>
 
 using namespace std;
-// I know that these generate C26495 warnings but the specification says to initialize them with a function.
-struct date_s
-{
-	int year;
-	int month;
-	int day;
-};
-
-
 struct covid
 {
 	string code;
 	string continent;
 	string name;
-	date_s date;
+	string date;
 	int cases;
 	int deaths;
 	int population;

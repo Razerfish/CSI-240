@@ -31,8 +31,15 @@ int main()
 	cout << getGlobalCaseRate(data, MAXLENGTH) << endl;
 	cout << getGlobalDeathRate(data, MAXLENGTH) << endl;
 
-	cout << getLocalCaseRate(data[10]) << endl;
-	cout << getLocalDeathRate(data[10]) << endl;
+	for (int i = 0; i < MAXLENGTH; i++)
+	{
+		getLocalCaseRate(data[i]);
+		getLocalDeathRate(data[i]);
+	}
+
+	cout << data[10].pctCases << endl << data[10].pctDeaths << endl;
+
+	saveOutput(data, MAXLENGTH, "output.txt");
 
 	delete[] data;
 
