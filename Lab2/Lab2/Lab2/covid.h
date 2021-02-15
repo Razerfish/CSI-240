@@ -36,8 +36,8 @@ struct covid
 	string continent;
 	string name;
 	date_s date;
-	int tCases;
-	int tDeaths;
+	int cases;
+	int deaths;
 	int population;
 	double pctCases;
 	double pctDeaths;

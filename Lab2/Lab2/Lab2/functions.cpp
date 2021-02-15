@@ -32,7 +32,7 @@ double calcGlobalCasePercent(covid arr[], int length)
 	for (int i = 0; i < length; i++)
 	{
 		totalPop += arr[i].population;
-		totalCases += arr[i].tCases;
+		totalCases += arr[i].cases;
 	}
 
 	return (double(totalCases) / double(totalPop)) * 100;
@@ -53,7 +53,7 @@ double calcGlobalDeathPercent(covid arr[], int length)
 	for (int i = 0; i < length; i++)
 	{
 		totalPop += arr[i].population;
-		totalDeaths += arr[i].tDeaths;
+		totalDeaths += arr[i].deaths;
 	}
 
 	return (double(totalDeaths) / double(totalPop)) * 100;
@@ -169,10 +169,10 @@ covid parseLine(string line)
 	output.date = parseDate(token);
 
 	getline(input, token, ','); // Get total cases.
-	output.tCases = stoi(token);
+	output.cases = stoi(token);
 
 	getline(input, token, ','); // Get total deaths.
-	output.tDeaths = stoi(token);
+	output.deaths = stoi(token);
 
 	getline(input, token, ','); // Get population.
 	output.population = stoi(token);
