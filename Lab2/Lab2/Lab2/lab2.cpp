@@ -28,10 +28,10 @@ int main()
 	bool saveSuccess;
 
 	string inputFile = promptInputFile();
-	if (inputFile == "NUL") { return 0; }
+	if (inputFile == "NUL") { return 0; } // Bad style.
 
 	string outputFile = promptOutputFile();
-	if (outputFile == "NUL") { return 0; }
+	if (outputFile == "NUL") { return 0; } // Bad style.
 
 	covid* data = new covid[MAXLENGTH];
 

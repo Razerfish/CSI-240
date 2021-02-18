@@ -56,7 +56,7 @@ double getGlobalDeathRate(covid arr[], int length)
 		totalDeaths += arr[i].deaths;
 	}
 
-	return (double(totalDeaths) / double(totalPop)) * 100;
+	return (double(totalDeaths) / double(totalPop)) * 100; // Wrong, should be deaths / cases.
 }
 
 
@@ -82,7 +82,7 @@ void getLocalCaseRate(covid &country)
 *********************************************************/
 void getLocalDeathRate(covid &country)
 {
-	country.pctDeaths = (double(country.deaths) / double(country.population)) * 100;
+	country.pctDeaths = (double(country.deaths) / double(country.population)) * 100; // Wrong, should be deaths / cases.
 }
 
 
