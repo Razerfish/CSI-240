@@ -17,4 +17,56 @@
 #ifndef _VENDINGMACHINE_H
 #define _VENDINGMACHINE_H
 
+#include <iostream>
+#include <iomanip> // Maybe?
+#include <sstream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+const int MAX_LENGTH = 30;
+
+const double MIN_BALANCE = 5.00;
+
+struct Item
+{
+	string item = "";
+	int quantity = 0;
+	double price = 0.0;
+};
+
+
+class VendingMachine
+{
+private:
+	Item items[MAX_LENGTH];
+	double balance;
+	string name;
+	string password;
+
+public:
+	// Constructor
+	VendingMachine();
+
+	// Destructor
+	~VendingMachine();
+
+	// Accessors
+	double getBalance();
+	Item getItem(int index);
+	string getName();
+	string getPassword();
+
+	// Mutators
+	void setBalance(double newBalance);
+	void setItem(int index, Item newItem);
+	void setName(string newName);
+	void setPassword(string newPassword);
+
+	// Other
+	void showUserMenu();
+	void showStockerMenu();
+};
+
 #endif
