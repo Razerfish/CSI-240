@@ -14,4 +14,7 @@
 // (which may then retain a copy of this assignment on its database for
 // the purpose of future plagiarism checking)
 
-#pragma once
+#ifndef _HEADER_H
+#define _HEADER_H
+
+#endif

@@ -14,4 +14,7 @@
 // (which may then retain a copy of this assignment on its database for
 // the purpose of future plagiarism checking)
 
-#pragma once
+#ifndef _VENDINGMACHINE_H
+#define _VENDINGMACHINE_H
+
+#endif
