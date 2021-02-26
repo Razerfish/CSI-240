@@ -129,3 +129,72 @@ VendingMachine::~VendingMachine()
 		cerr << "\nFailed to write machine state to file.\n";
 	}
 }
+
+
+/*********************************************************
+*						Accessors						 *
+*********************************************************/
+
+/*	Function: double getBalance();
+*	Pre: None.
+*	Post: Returns the current balance.
+*	Purpose: Get the current balance of the machine.
+*********************************************************/
+double VendingMachine::getBalance()
+{
+	return balance;
+}
+
+
+/*	Function: Item VendingMachine::getItem(int index);
+*	Pre: Supply the index of the item to retrieve, this value will
+*	be clamped between 0 and 29.
+*	Post: The item at the given index will be returned.
+*	Purpose: Retrieve the given item.
+*********************************************************/
+Item VendingMachine::getItem(int index)
+{
+	if (index < 0)
+	{
+		index = 0;
+	}
+	else if (index > 29)
+	{
+		index = 29;
+	}
+
+	return items[index];
+}
+
+
+/*	Function: int VendingMachine::getItemCount();
+*	Pre: None.
+*	Post: Returns the amount of items loaded.
+*	Purpose: Get the amount of items loaded into the vending machine.
+*********************************************************/
+int VendingMachine::getItemCount()
+{
+	return itemCount;
+}
+
+
+/*	Function: string VendingMachine::getName();
+*	Pre: None.
+*	Post: Returns the name of the machine.
+*	Purpose: Get the name of the machine.
+*********************************************************/
+string VendingMachine::getName()
+{
+	return name;
+}
+
+
+/*	Function: string VendingMachine::getPassword();
+*	Pre: None.
+*	Post: Returns the machines current password.
+*	Purpose: Get the current password of the machine.
+*********************************************************/
+string VendingMachine::getPassword()
+{
+	return password;
+}
