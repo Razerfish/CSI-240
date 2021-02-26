@@ -74,7 +74,7 @@ VendingMachine::VendingMachine()
 	else
 	{
 		itemCount = 0;
-		balance = 0.0;
+		balance = 5.00;
 		password = "password";
 	}
 
@@ -84,5 +84,4 @@ VendingMachine::VendingMachine()
 
 VendingMachine::~VendingMachine()
 {
-
 }
