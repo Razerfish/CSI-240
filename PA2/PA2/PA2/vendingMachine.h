@@ -56,12 +56,14 @@ public:
 	// Accessors
 	double getBalance();
 	Item getItem(int index);
+	int getItemCount();
 	string getName();
 	string getPassword();
 
 	// Mutators
 	void setBalance(double newBalance);
 	void setItem(int index, Item newItem);
+	void setItemCount(int newCount);
 	void setName(string newName);
 	void setPassword(string newPassword);
 

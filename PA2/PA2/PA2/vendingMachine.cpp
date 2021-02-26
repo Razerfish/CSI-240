@@ -84,4 +84,5 @@ VendingMachine::VendingMachine()
 
 VendingMachine::~VendingMachine()
 {
+
 }
