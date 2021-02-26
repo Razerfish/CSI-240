@@ -1,9 +1,9 @@
 4 533.43 heck
-bees
+Bees
 12 49.99
-golden snickers
+Golden Snickers
 1 1000.00
-the philosophers stone
+The Philosophers Stone
 0 0.99
-water
+Water
 20 1.00
