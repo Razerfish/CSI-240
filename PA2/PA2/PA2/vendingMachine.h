@@ -31,7 +31,7 @@ const double MIN_BALANCE = 5.00;
 
 struct Item
 {
-	string item = "";
+	string name = "";
 	int quantity = 0;
 	double price = 0.0;
 };
@@ -41,6 +41,7 @@ class VendingMachine
 {
 private:
 	Item items[MAX_LENGTH];
+	int itemCount;
 	double balance;
 	string name;
 	string password;

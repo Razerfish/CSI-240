@@ -13,3 +13,13 @@
 // - Communicate a copy of this assignment to a plagiarism checking service
 // (which may then retain a copy of this assignment on its database for
 // the purpose of future plagiarism checking)
+
+#include "vendingMachine.h"
+
+using namespace std;
+int main()
+{
+	VendingMachine test;
+
+	return 0;
+}
