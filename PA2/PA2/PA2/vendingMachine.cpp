@@ -198,3 +198,72 @@ string VendingMachine::getPassword()
 {
 	return password;
 }
+
+
+/*********************************************************
+*						Mutators						 *
+*********************************************************/
+
+/*	Function: void VendingMaching::setBalance(double newBalance);
+*	Pre: Supply the new value to store as the balance.
+*	Post: The balance of the machine will be set to the supplied value.
+*	Purpose: Change the value of the balance to the supplied value.
+*********************************************************/
+void VendingMachine::setBalance(double newBalance)
+{
+	balance = newBalance;
+}
+
+
+/*	Function: void VendingMachine::setItem(int index, Item newItem);
+*	Pre: The index of the item to change and the value to change it to.
+*	The index will be clamped between 0 and 29.
+*	Post: The item at the supplied index will be changed to the supplied item.
+*	Purpose: Change the item at the given index.
+*********************************************************/
+void VendingMachine::setItem(int index, Item newItem)
+{
+	if (index < 0)
+	{
+		index = 0;
+	}
+	else if (index > 29)
+	{
+		index = 29;
+	}
+
+	items[index] = newItem;
+}
+
+
+/*	Function: void VendingMachine::setItemCount(int newCount);
+*	Pre: The new amount of items that the machine stocks.
+*	Post: The item count will be set to the supplied value.
+*	Purpose: Change the itemCount to a supplied value.
+*********************************************************/
+void VendingMachine::setItemCount(int newCount)
+{
+	itemCount = newCount;
+}
+
+
+/*	Function: void VendingMachine::setName(string newName);
+*	Pre: The new name of the machine.
+*	Post: The name of the machine will be set to the supplied value.
+*	Purpose: Change the name of the machine.
+*********************************************************/
+void VendingMachine::setName(string newName)
+{
+	name = newName;
+}
+
+
+/*	Function: void VendingMachine::setPassword(string newPassword);
+*	Pre: The new password for the machine.
+*	Post: The passowrd of the machine will be set to the supplied value.
+*	Purpose: Change the password for the machine.
+*********************************************************/
+void VendingMachine::setPassword(string newPassword)
+{
+	password = newPassword;
+}
