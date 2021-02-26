@@ -32,23 +32,23 @@ VendingMachine::VendingMachine()
 
 	din.open("data.txt");
 
+	// Check that file exists and is not empty.
 	if (din.good() && getline(din, line))
 	{
-		istringstream ss(line);
+		istringstream input(line);
 		string token;
 
-		// Get the first line of config data.
-		
+		// Read the first line of config data.
 		// Item count.
-		getline(ss, token, ' ');
+		getline(input, token, ' ');
 		itemCount = stoi(token);
 
 		// Balance
-		getline(ss, token, ' ');
+		getline(input, token, ' ');
 		balance = stod(token);
 
 		// Password
-		getline(ss, token, ' ');
+		getline(input, token, ' ');
 		password = token;
 
 
@@ -60,16 +60,17 @@ VendingMachine::VendingMachine()
 
 			// Get quantity and price.
 			getline(din, line);
-			ss.str(line);
-			ss.clear();
+			input.str(line);
+			input.clear();
 
-			getline(ss, token, ' ');
+			getline(input, token, ' ');
 			items[i].quantity = stoi(token);
 
-			getline(ss, token, ' ');
+			getline(input, token, ' ');
 			items[i].price = stod(token);
 		}
 	}
+	// Otherwise use default values.
 	else
 	{
 		itemCount = 0;
