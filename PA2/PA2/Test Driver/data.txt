@@ -2,8 +2,8 @@
 Bees
 12 49.99
 Golden Snickers
-1 1000.00
+1 1000
 The Philosophers Stone
 0 0.99
 Water
-20 1.00
+20 1
