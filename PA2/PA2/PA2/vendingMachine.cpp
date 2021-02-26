@@ -42,6 +42,19 @@ VendingMachine::VendingMachine()
 		// Item count.
 		getline(input, token, ' ');
 		itemCount = stoi(token);
+		// Check that itemCount is less than or equal to MAX_LENGTH
+		// and alert the user and default to MAX_LENGTH if it isnt.
+		if (itemCount > MAX_LENGTH)
+		{
+			// Sorry if the formatting here is weird, I'm working on this on my laptop
+			// and the screen doesn't fit much.
+			cerr
+				<< "\nUnable to load all items."
+				<< endl << itemCount << " items supplied but MAX_LENGTH is " << MAX_LENGTH
+				<< "\n Defaulting to MAX_LENGTH and ignoring extra items.\n";
+
+			itemCount = MAX_LENGTH;
+		}
 
 		// Balance
 		getline(input, token, ' ');
