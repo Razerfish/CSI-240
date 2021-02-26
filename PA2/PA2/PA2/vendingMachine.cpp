@@ -82,6 +82,37 @@ VendingMachine::VendingMachine()
 }
 
 
+/*	Function: VendingMachine::~VendingMachine();
+*	Pre: None
+*	Post: The current state of the VendingMachine will be written to data.txt.
+*	Purpose: Store the state of the object on destruction.
+*********************************************************/
 VendingMachine::~VendingMachine()
 {
+	ofstream dout;
+
+	// Open and file and clear it's contents.
+	dout.open("data.txt", ios::out | ios::trunc);
+
+	// Check that the output stream is good.
+	if (dout.good())
+	{
+		// If so, write the machine state to file.
+		// Write itemCount, balance and password.
+		dout << itemCount << " " << balance << " " << password << endl;
+
+		// Write item entries.
+		for (int i = 0; i < itemCount; i++)
+		{
+			dout
+				<< items[i].name << endl
+				<< items[i].quantity << " "
+				<< items[i].price << endl;
+		}
+	}
+	else
+	{
+		// Otherwise alert the user.
+		cerr << "\nFailed to write machine state to file.\n";
+	}
 }
