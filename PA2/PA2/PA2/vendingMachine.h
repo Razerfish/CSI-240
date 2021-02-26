@@ -27,7 +27,7 @@ using namespace std;
 
 const int MAX_LENGTH = 30;
 
-const double MIN_BALANCE = 5.00;
+const double STARTING_BALANCE = 5.00;
 
 struct Item
 {
