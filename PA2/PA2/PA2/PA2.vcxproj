@@ -147,6 +147,9 @@
     <ClCompile Include="pa2.cpp" />
     <ClCompile Include="vendingMachine.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
