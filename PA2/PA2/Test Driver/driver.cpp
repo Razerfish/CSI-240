@@ -44,5 +44,7 @@ int main()
 	test.setName("Barry");
 	test.setPassword("beans");
 
+	test.showStockerMenu();
+
 	return 0;
 }

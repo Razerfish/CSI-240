@@ -267,3 +267,38 @@ void VendingMachine::setPassword(string newPassword)
 {
 	password = newPassword;
 }
+
+
+/*********************************************************
+*						Other							 *
+*********************************************************/
+
+
+/*	Function: void VendingMachine::showStockerMenu();
+*	Pre: User should input the secret phrase before the stocker
+*	menu is shown.
+*	Post: The stocker menu will be displayed in the console.
+*	Purpose: Display the stocker menu.
+*********************************************************/
+void VendingMachine::showStockerMenu()
+{
+	cout
+		<< "\n\n\tCode verified. Welcome to the stocker menu\n\n"
+		<< "\t1. Change password\n"
+		<< "\t2. Collect money\n"
+		<< "\t3. Restock items\n"
+		<< "\t4. Shutdown machine\n"
+		<< "\t5. Exit stocker menu\n"
+		<< "\n\tInput your selection: ";
+}
+
+
+/*	Function: void VendingMachine::showUserMenu();
+*	Pre: None.
+*	Post: The user menu will be displayed in the console.
+*	Purpose: Display the user menu.
+*********************************************************/
+void VendingMachine::showUserMenu()
+{
+
+}
