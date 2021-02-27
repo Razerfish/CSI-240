@@ -84,8 +84,23 @@ string promptPassword()
 
 	while ((c = _getch()) != '\r')
 	{
-		password.push_back(c);
-		_putch('*');
+		// Handle backspace
+		if (c == '\b')
+		{
+			// Only take action if the string is not empty.
+			if (password.length() > 0)
+			{
+				password.pop_back();
+				_putch('\b');
+				_putch(' ');
+				_putch('\b');
+			}
+		}
+		else
+		{
+			password.push_back(c);
+			_putch('*');
+		}
 	}
 
 	return password;
