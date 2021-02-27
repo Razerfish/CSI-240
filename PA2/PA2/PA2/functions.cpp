@@ -44,6 +44,32 @@ bool changeItemName(int index, string newName, VendingMachine& machine)
 }
 
 
+/*	Function: bool changeItemPrice(int index, double newPrice, VendingMachine& machine);
+*	Pre: The index of a listed whose price to change.
+*	Post: If the item is listed the price will be changed and the function will return true,
+*	otherwise the price will not be changed and the function will return false.
+*	Purpose: Change the price of a listed item.
+*********************************************************/
+bool changeItemPrice(int index, double newPrice, VendingMachine& machine)
+{
+	Item newItem;
+
+	// Prevent the user from changing the price of unlisted items.
+	if (index > machine.getItemCount() - 1 || index < 0)
+	{
+		return false;
+	}
+
+	newItem = machine.getItem(index);
+
+	newItem.price = newPrice;
+
+	machine.setItem(index, newItem);
+
+	return true;
+}
+
+
 /*	Function: string promptPassword();
 *	Pre: None
 *	Post: The password that the user entered will be returned.

@@ -54,7 +54,13 @@ int main()
 
 	//cout << promptPassword() << endl << endl;
 
+	changeItemName(2, "Bad juice", test);
 	changeItemName(5, "Bad juice", test);
+	changeItemName(-1, "Bad juice", test);
+
+	changeItemPrice(2, 10.00, test);
+	changeItemPrice(5, 10.00, test);
+	changeItemPrice(-1, 10.00, test);
 
 	return 0;
 }
