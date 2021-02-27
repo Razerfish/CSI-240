@@ -111,6 +111,10 @@ VendingMachine::~VendingMachine()
 	if (dout.good())
 	{
 		// If so, write the machine state to file.
+
+		// Set precision to 2.
+		dout << fixed << setprecision(2);
+
 		// Write itemCount, balance and password.
 		dout << itemCount << " " << balance << " " << password << endl;
 

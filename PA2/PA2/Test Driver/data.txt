@@ -1,9 +1,11 @@
-4 533.43 heck
+5 42.00 beans
 Bees
 12 49.99
 Golden Snickers
-1 1000
+1 1000.00
 The Philosophers Stone
 0 0.99
 Water
-20 1
+20 1.00
+egg
+2 3.00
