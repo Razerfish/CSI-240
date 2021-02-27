@@ -50,5 +50,9 @@ int main()
 
 	test.showUserMenu();
 
+	cout << endl << endl;
+
+	cout << promptPassword() << endl;
+
 	return 0;
 }

@@ -13,3 +13,26 @@
 // - Communicate a copy of this assignment to a plagiarism checking service
 // (which may then retain a copy of this assignment on its database for
 // the purpose of future plagiarism checking)
+
+#include "header.h"
+
+/*	Function: string promptPassword();
+*	Pre: None
+*	Post: The password that the user entered will be returned.
+*	Purpose: Mask the users input while they are entering their password.
+*********************************************************/
+string promptPassword()
+{
+	// Code for this function adapted from here: http://www.cplusplus.com/reference/string/string/operator+=/
+
+	char c;
+	string password = "";
+
+	while ((c = _getch()) != '\r')
+	{
+		password.push_back(c);
+		_putch('*');
+	}
+
+	return password;
+}

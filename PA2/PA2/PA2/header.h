@@ -19,11 +19,14 @@
 
 #include <iostream>
 #include <conio.h>
+#include <string>
+
+#include "vendingMachine.h"
 
 using namespace std;
 
 string promptPassword();
 
-void sellItem(int index, VendingMachine& machine);
+void sellItem(int index, VendingMachine &machine);
 
 #endif
