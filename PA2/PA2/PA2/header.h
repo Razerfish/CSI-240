@@ -17,4 +17,13 @@
 #ifndef _HEADER_H
 #define _HEADER_H
 
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void promptPassword();
+
+void sellItem(int index, VendingMachine& machine);
+
 #endif
