@@ -286,9 +286,12 @@ void VendingMachine::showStockerMenu()
 		<< "\n\n\tCode verified. Welcome to the stocker menu\n\n"
 		<< "\t1. Change password\n"
 		<< "\t2. Collect money\n"
-		<< "\t3. Restock items\n"
-		<< "\t4. Shutdown machine\n"
-		<< "\t5. Exit stocker menu\n"
+		<< "\t3. Change item price\n"
+		<< "\t4. Change item name\n"
+		<< "\t5. Restock item\n"
+		<< "\t6. Restock ALL items\n"
+		<< "\t7. Shutdown machine\n"
+		<< "\t8. Exit stocker menu\n"
 		<< "\n\tInput your selection: ";
 }
 
