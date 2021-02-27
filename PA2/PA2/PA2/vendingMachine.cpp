@@ -148,7 +148,7 @@ double VendingMachine::getBalance()
 
 /*	Function: Item VendingMachine::getItem(int index);
 *	Pre: Supply the index of the item to retrieve, this value will
-*	be clamped between 0 and 29.
+*	be clamped between 0 and MAX_LENGTH - 1.
 *	Post: The item at the given index will be returned.
 *	Purpose: Retrieve the given item.
 *********************************************************/
@@ -158,9 +158,9 @@ Item VendingMachine::getItem(int index)
 	{
 		index = 0;
 	}
-	else if (index > 29)
+	else if (index > MAX_LENGTH - 1)
 	{
-		index = 29;
+		index = MAX_LENGTH - 1;
 	}
 
 	return items[index];
@@ -217,7 +217,7 @@ void VendingMachine::setBalance(double newBalance)
 
 /*	Function: void VendingMachine::setItem(int index, Item newItem);
 *	Pre: The index of the item to change and the value to change it to.
-*	The index will be clamped between 0 and 29.
+*	The index will be clamped between 0 and MAX_LENGTH - 1.
 *	Post: The item at the supplied index will be changed to the supplied item.
 *	Purpose: Change the item at the given index.
 *********************************************************/
@@ -227,9 +227,9 @@ void VendingMachine::setItem(int index, Item newItem)
 	{
 		index = 0;
 	}
-	else if (index > 29)
+	else if (index > MAX_LENGTH - 1)
 	{
-		index = 29;
+		index = MAX_LENGTH - 1;
 	}
 
 	items[index] = newItem;

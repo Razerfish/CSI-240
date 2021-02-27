@@ -16,6 +16,34 @@
 
 #include "header.h"
 
+/*	Function: bool changeItemName(int index, string newName, VendingMachine& machine);
+*	Pre: The index of the item whose name to change, the new name and a reference to
+*	the VendingMachine object.
+*	Post: The item at the provided index will have it's name change to the provided value.
+*	If the provided index is valid but not listed this function will return false and the
+*	value will not be changed.
+*	Purpose: Change the name of any listed item stocked by a vending machine.
+*********************************************************/
+bool changeItemName(int index, string newName, VendingMachine& machine)
+{
+	Item newItem;
+
+	// Prevent the user from changing the names of unlisted items.
+	if (index > machine.getItemCount() - 1)
+	{
+		return false;
+	}
+
+	newItem = machine.getItem(index);
+
+	newItem.name = newName;
+
+	machine.setItem(index, newItem);
+
+	return true;
+}
+
+
 /*	Function: string promptPassword();
 *	Pre: None
 *	Post: The password that the user entered will be returned.

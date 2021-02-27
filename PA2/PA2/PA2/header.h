@@ -25,8 +25,8 @@
 
 using namespace std;
 
-void changeItemName(int index, string newName, VendingMachine& machine);
-void changeItemPrice(int index, double newPrice, VendingMachine& machine);
+bool changeItemName(int index, string newName, VendingMachine& machine);
+bool changeItemPrice(int index, double newPrice, VendingMachine& machine);
 void changePassword(VendingMachine& machine);
 double collectMoney(VendingMachine& machine);
 
@@ -34,7 +34,7 @@ string promptPassword();
 
 void sellItem(int index, VendingMachine& machine);
 
-void restockItem(int index, VendingMachine& machine);
+bool restockItem(int index, VendingMachine& machine);
 void restockAll(VendingMachine& machine);
 
 #endif

@@ -52,7 +52,9 @@ int main()
 
 	cout << endl << endl;
 
-	cout << promptPassword() << endl;
+	//cout << promptPassword() << endl << endl;
+
+	changeItemName(5, "Bad juice", test);
 
 	return 0;
 }
