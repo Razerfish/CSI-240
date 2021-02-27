@@ -22,7 +22,7 @@
 
 using namespace std;
 
-void promptPassword();
+string promptPassword();
 
 void sellItem(int index, VendingMachine& machine);
 
