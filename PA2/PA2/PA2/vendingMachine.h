@@ -68,8 +68,8 @@ public:
 	void setPassword(string newPassword);
 
 	// Other
-	void showUserMenu();
 	void showStockerMenu();
+	void showUserMenu();
 };
 
 #endif
