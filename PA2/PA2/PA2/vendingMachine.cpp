@@ -303,5 +303,14 @@ void VendingMachine::showStockerMenu()
 *********************************************************/
 void VendingMachine::showUserMenu()
 {
+	// Set precision.
+	cout << fixed << setprecision(2);
 
+	// Loop through and display items.
+	for (int i = 0; i < itemCount; i++)
+	{
+		cout << "\t" << i + 1 << ". " << items[i].name << " $" << items[i].price << endl;
+	}
+
+	cout << "\nPlease input your selection: ";
 }

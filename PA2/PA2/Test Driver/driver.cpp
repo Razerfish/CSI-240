@@ -46,5 +46,9 @@ int main()
 
 	test.showStockerMenu();
 
+	cout << endl << endl;
+
+	test.showUserMenu();
+
 	return 0;
 }
