@@ -29,7 +29,7 @@ bool changeItemName(int index, string newName, VendingMachine& machine)
 	Item newItem;
 
 	// Prevent the user from changing the names of unlisted items.
-	if (index > machine.getItemCount() - 1)
+	if (index > machine.getItemCount() - 1 || index < 0)
 	{
 		return false;
 	}
