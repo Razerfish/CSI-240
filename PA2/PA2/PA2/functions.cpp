@@ -16,59 +16,6 @@
 
 #include "header.h"
 
-/*	Function: bool changeItemName(int index, string newName, VendingMachine& machine);
-*	Pre: The index of the item whose name to change, the new name and a reference to
-*	the VendingMachine object.
-*	Post: The item at the provided index will have it's name change to the provided value.
-*	If the provided index is valid but not listed this function will return false and the
-*	value will not be changed.
-*	Purpose: Change the name of any listed item stocked by a vending machine.
-*********************************************************/
-bool changeItemName(int index, string newName, VendingMachine& machine)
-{
-	Item newItem;
-
-	// Prevent the user from changing the names of unlisted items.
-	if (index > machine.getItemCount() - 1 || index < 0)
-	{
-		return false;
-	}
-
-	newItem = machine.getItem(index);
-
-	newItem.name = newName;
-
-	machine.setItem(index, newItem);
-
-	return true;
-}
-
-
-/*	Function: bool changeItemPrice(int index, double newPrice, VendingMachine& machine);
-*	Pre: The index of a listed whose price to change.
-*	Post: If the item is listed the price will be changed and the function will return true,
-*	otherwise the price will not be changed and the function will return false.
-*	Purpose: Change the price of a listed item.
-*********************************************************/
-bool changeItemPrice(int index, double newPrice, VendingMachine& machine)
-{
-	Item newItem;
-
-	// Prevent the user from changing the price of unlisted items.
-	if (index > machine.getItemCount() - 1 || index < 0)
-	{
-		return false;
-	}
-
-	newItem = machine.getItem(index);
-
-	newItem.price = newPrice;
-
-	machine.setItem(index, newItem);
-
-	return true;
-}
-
 
 /*	Function: void changePassword(VendingMachine& machine);
 *	Pre: Authenticate the current password and pass a reference to the machine.
@@ -131,6 +78,18 @@ double collectMoney(VendingMachine& machine)
 	{
 		return 0.00;
 	}
+}
+
+
+/*	Function: void checkBalance(VendingMachine& machine);
+*	Pre: A reference to a VendingMachine object.
+*	Post: The current balance will be displayed.
+*	Purpose: The machine balance will be displayed.
+*********************************************************/
+void checkBalance(VendingMachine& machine)
+{
+	cout << fixed << setprecision(2);
+	cout << "\nThe current balance is: $" << machine.getBalance() << endl;
 }
 
 
