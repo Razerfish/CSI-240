@@ -170,3 +170,48 @@ string promptPassword()
 
 	return password;
 }
+
+
+/*	Function: void sellItem(int index, double payment, VendingMachine& machine);
+*	Pre: The index of the item to sell and a reference to the VendingMachine object.
+*	NOTE, the index of an item is NOT the same as the number that the user selects an item with.
+*	To get the index from the input subtract 1.
+*	Post: Money will be collected, the item stock will be reduced and change will be dispensed from
+*	the machine balance. If the transaction is unable to be completed the money will be returned and
+*	an error message will be displayed.
+*	Purpose: Handle the sale of an item.
+*********************************************************/
+void sellItem(int index, double payment, VendingMachine& machine)
+{
+	Item target = machine.getItem(index);
+	double change = payment - target.price;
+
+	// Check that the user has enough money for the item.
+	if (change < 0)
+	{
+		cout << "\n\nPayment insufficient.\nYour money has been returned.\n";
+		return;
+	}
+
+	// Check that the item is in stock.
+	if (target.quantity <= 0)
+	{
+		cout << "\n\nItem out of stock.\nYour money has been returned.\n";
+		return;
+	}
+
+	// Check that we have enough money to give change.
+	if (machine.getBalance() + payment < change)
+	{
+		cout << "\n\nUnable to give change\nYour money has been returned.\n";
+		return;
+	}
+
+	// Sell item.
+	machine.setBalance(machine.getBalance() + payment - change);
+
+	target.quantity--;
+	machine.setItem(index, target);
+
+	cout << "\n\nThank you for your purchase!\nYour change is $" << change << endl;
+}

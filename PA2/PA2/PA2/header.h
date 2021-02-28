@@ -32,7 +32,7 @@ double collectMoney(VendingMachine& machine);
 
 string promptPassword();
 
-void sellItem(int index, VendingMachine& machine);
+void sellItem(int index, double payment, VendingMachine& machine);
 
 bool restockItem(int index, VendingMachine& machine);
 void restockAll(VendingMachine& machine);

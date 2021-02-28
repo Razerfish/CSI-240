@@ -52,6 +52,7 @@ int main()
 
 	cout << endl << endl;
 
+	/*
 	changeItemName(2, "Bad juice", test);
 	changeItemName(5, "Bad juice", test);
 	changeItemName(-1, "Bad juice", test);
@@ -59,10 +60,17 @@ int main()
 	changeItemPrice(2, 10.00, test);
 	changeItemPrice(5, 10.00, test);
 	changeItemPrice(-1, 10.00, test);
-
-	cout << "$" << fixed << setprecision(2) << collectMoney(test) << endl;
+	*/
 
 	//changePassword(test);
+
+	sellItem(1, 1000.00, test);
+	sellItem(1, 1.00, test);
+	sellItem(2, 10.00, test);
+	sellItem(3, 5.00, test);
+	sellItem(3, 1.00, test);
+
+	cout << "$" << fixed << setprecision(2) << collectMoney(test) << endl;
 
 	return 0;
 }
