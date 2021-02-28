@@ -110,6 +110,30 @@ void changePassword(VendingMachine& machine)
 }
 
 
+/*	Function: double collectMoney(VendingMachine& machine);
+*	Pre: A reference to a VendingMachine object.
+*	Post: Returns the amount of money that can be withdrawn without bringing
+*	the machines balance below MIN_BALANCE and sets the machines balance to MIN_BALANCE.
+*	If the machines balance is already less than MIN_BALANCE $0.00 will be returned
+*	and the balance will not be changed.
+*	Purpose: Collect the available money from the machine.
+*********************************************************/
+double collectMoney(VendingMachine& machine)
+{
+	double available = machine.getBalance() - MIN_BALANCE;
+
+	if (available > 0)
+	{
+		machine.setBalance(MIN_BALANCE);
+		return available;
+	}
+	else
+	{
+		return 0.00;
+	}
+}
+
+
 /*	Function: string promptPassword();
 *	Pre: None
 *	Post: The password that the user entered will be returned.

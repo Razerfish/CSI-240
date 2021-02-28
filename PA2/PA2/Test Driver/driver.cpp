@@ -38,7 +38,7 @@ int main()
 		cout << x.name << " " << x.quantity << " " << x.price << endl;
 	}
 
-	test.setBalance(42.00);
+	test.setBalance(4.99);
 	test.setItem(4, { "egg", 2, 3.00 });
 	test.setItemCount(5);
 	test.setName("Barry");
@@ -60,7 +60,9 @@ int main()
 	changeItemPrice(5, 10.00, test);
 	changeItemPrice(-1, 10.00, test);
 
-	changePassword(test);
+	cout << "$" << fixed << setprecision(2) << collectMoney(test) << endl;
+
+	//changePassword(test);
 
 	return 0;
 }
