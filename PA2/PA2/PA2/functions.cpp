@@ -138,6 +138,44 @@ void createItem(VendingMachine& machine)
 }
 
 
+/*	Function: void editItem(int index, VendingMachine& machine);
+*	Pre: The index of the item to edit and a reference to a
+*	VendingMachine object.
+*	Post: The item at the selected index will be edited.
+*	Purpose: Edit a given item.
+*********************************************************/
+void editItem(int index, VendingMachine& machine)
+{
+	// Validate index.
+	if (index >= machine.getItemCount() || index < 0 || index > MAX_LENGTH)
+	{
+		cout << "\nInvalid index.\n";
+		return;
+	}
+
+	Item newItem = machine.getItem(index);
+	string line;
+
+	// Change item name.
+	cout << "\nEnter the new name for the item (or leave blank to not change): ";
+	getline(cin, line);
+	if (line != "")
+	{
+		newItem.name = line;
+	}
+
+	// Change item price.
+	cout << "\nEnter the new price for the item (or leave blank to not change): ";
+	getline(cin, line);
+	if (line != "")
+	{
+		newItem.price = stod(line);
+	}
+
+	machine.setItem(index, newItem);
+}
+
+
 /*	Function: string promptPassword();
 *	Pre: None
 *	Post: The password that the user entered will be returned.

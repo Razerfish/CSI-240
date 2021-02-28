@@ -66,15 +66,22 @@ int main()
 
 	//changePassword(test);
 
+	/*
 	sellItem(1, 1000.00, test);
 	sellItem(1, 1.00, test);
 	sellItem(2, 10.00, test);
 	sellItem(3, 5.00, test);
 	sellItem(3, 1.00, test);
+	*/
 
 	cout << "$" << fixed << setprecision(2) << collectMoney(test) << endl;
 
-	createItem(test);
+	//createItem(test);
+
+	editItem(1, test);
+	editItem(-1, test);
+	editItem(10, test);
+	editItem(32, test);
 
 	return 0;
 }
