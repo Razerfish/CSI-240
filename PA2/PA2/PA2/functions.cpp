@@ -84,7 +84,7 @@ void changePassword(VendingMachine& machine)
 	cout << "\n\nEnter the new password: ";
 	pass1 = promptPassword();
 
-	cout << "\nRe-enter the new password: ";
+	cout << "Re-enter the new password: ";
 	pass2 = promptPassword();
 
 	// If passwords don't match or are empty repeat until valid.
@@ -96,7 +96,7 @@ void changePassword(VendingMachine& machine)
 		}
 		else
 		{
-			cout << "\nPasswords do not match!\n";
+			cout << "Passwords do not match!\n";
 		}
 
 		cout << "\nEnter the new password: ";
@@ -166,6 +166,7 @@ string promptPassword()
 			_putch('*');
 		}
 	}
+	cout << endl;
 
 	return password;
 }
