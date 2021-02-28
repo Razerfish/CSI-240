@@ -70,6 +70,46 @@ bool changeItemPrice(int index, double newPrice, VendingMachine& machine)
 }
 
 
+/*	Function: void changePassword(VendingMachine& machine);
+*	Pre: Authenticate the current password and pass a reference to the machine.
+*	Post: The user will be propted for a new password and that password will be set
+*	as the new machine password.
+*	Purpose: Change the machines password.
+*********************************************************/
+void changePassword(VendingMachine& machine)
+{
+	string pass1, pass2;
+	bool match = false;
+
+	cout << "\n\nEnter the new password: ";
+	pass1 = promptPassword();
+
+	cout << "\nRe-enter the new password: ";
+	pass2 = promptPassword();
+
+	// If passwords don't match or are empty repeat until valid.
+	while (pass1 != pass2 || (pass1 == "" && pass2 == ""))
+	{
+		if (pass1 == "" && pass2 == "")
+		{
+			cout << "\nPasswords cannot be blank!\n";
+		}
+		else
+		{
+			cout << "\nPasswords do not match!\n";
+		}
+
+		cout << "\nEnter the new password: ";
+		pass1 = promptPassword();
+
+		cout << "\nRe-enter the new password: ";
+		pass2 = promptPassword();
+	}
+
+	machine.setPassword(pass1);
+}
+
+
 /*	Function: string promptPassword();
 *	Pre: None
 *	Post: The password that the user entered will be returned.
