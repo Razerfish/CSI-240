@@ -257,3 +257,34 @@ void sellItem(int index, double payment, VendingMachine& machine)
 
 	cout << "\n\nThank you for your purchase!\nYour change is $" << change << endl;
 }
+
+
+/*	Function: void removeItem(int index, VendingMachine& machine);
+*	Pre: The index of the item to be removed and a reference to a
+*	VendingMachine object.
+*	Post: The selected item will be removed, all remaining items will be shifted down
+*	and the item count will be decremented by 1.
+*	Purpose: Remove any given item.
+*********************************************************/
+void removeItem(int index, VendingMachine& machine)
+{
+	// Validate index.
+	if (index >= machine.getItemCount() || index < 0 || index > MAX_LENGTH)
+	{
+		cout << "\nInvalid selection.\n";
+		return;
+	}
+
+	// Shift items down and overwrite the item to be removed.
+	Item tmp;
+	for (int i = index + 1; i < machine.getItemCount() + 1; i++)
+	{
+		tmp = machine.getItem(i);
+		machine.setItem(i - 1, tmp);
+	}
+
+	machine.setItemCount(machine.getItemCount() - 1);
+
+	cout << "\nItem deleted.\n";
+}
+

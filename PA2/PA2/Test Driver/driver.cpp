@@ -78,10 +78,17 @@ int main()
 
 	//createItem(test);
 
+	/*
 	editItem(1, test);
 	editItem(-1, test);
 	editItem(10, test);
 	editItem(32, test);
+	*/
+
+	removeItem(1, test);
+	removeItem(-1, test);
+	removeItem(10, test);
+	removeItem(31, test);
 
 	return 0;
 }
