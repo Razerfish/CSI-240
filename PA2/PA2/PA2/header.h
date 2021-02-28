@@ -29,11 +29,13 @@ bool changeItemName(int index, string newName, VendingMachine& machine);
 bool changeItemPrice(int index, double newPrice, VendingMachine& machine);
 void changePassword(VendingMachine& machine);
 double collectMoney(VendingMachine& machine);
+void createItem(VendingMachine& machine);
 
 string promptPassword();
 
 void sellItem(int index, double payment, VendingMachine& machine);
 
+void removeItem(int index, VendingMachine& machine);
 bool restockItem(int index, VendingMachine& machine);
 void restockAll(VendingMachine& machine);
 
