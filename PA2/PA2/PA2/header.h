@@ -30,6 +30,8 @@ void checkBalance(VendingMachine& machine);
 double collectMoney(VendingMachine& machine);
 void createItem(VendingMachine& machine);
 
+void editItem(int index, VendingMachine& machine);
+
 string promptPassword();
 
 void sellItem(int index, double payment, VendingMachine& machine);
