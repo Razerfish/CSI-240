@@ -38,11 +38,13 @@ int main()
 		cout << x.name << " " << x.quantity << " " << x.price << endl;
 	}
 
+	/*
 	test.setBalance(4.99);
 	test.setItem(4, { "egg", 2, 3.00 });
 	test.setItemCount(5);
 	test.setName("Barry");
 	test.setPassword("beans");
+	*/
 
 	test.showStockerMenu();
 
@@ -71,6 +73,8 @@ int main()
 	sellItem(3, 1.00, test);
 
 	cout << "$" << fixed << setprecision(2) << collectMoney(test) << endl;
+
+	createItem(test);
 
 	return 0;
 }

@@ -93,6 +93,51 @@ void checkBalance(VendingMachine& machine)
 }
 
 
+/*	Function: void createItem(VendingMachine& machine);
+*	Pre: A reference to a VendingMachine object.
+*	Post: A new item will be created using the users input.
+*	Purpose: Add an item to a machine.
+*********************************************************/
+void createItem(VendingMachine& machine)
+{
+	// Check that there is room for another item.
+	if (machine.getItemCount() >= MAX_LENGTH)
+	{
+		cout << "\nOut of space. Unable to add a new item.\n";
+		return;
+	}
+
+	Item newItem;
+
+	string line;
+
+	cout << "\nEnter the name of the item: ";
+	getline(cin, line);
+	// Ensure that input is not blank.
+	while (line == "")
+	{
+		cout << "Name cannot be blank.\nEnter the name of the item: ";
+		getline(cin, line);
+	}
+	newItem.name = line;
+
+	cout << "\nEnter the price of the item: ";
+	getline(cin, line);
+	// Ensure that input is not blank.
+	while (line == "")
+	{
+		cout << "Price cannot be blank.\nEnter the price of the item: ";
+		getline(cin, line);
+	}
+	newItem.price = stod(line);
+
+	newItem.quantity = MAX_STOCK;
+
+	machine.setItem(machine.getItemCount(), newItem);
+	machine.setItemCount(machine.getItemCount() + 1);
+}
+
+
 /*	Function: string promptPassword();
 *	Pre: None
 *	Post: The password that the user entered will be returned.

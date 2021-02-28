@@ -51,7 +51,7 @@ VendingMachine::VendingMachine()
 			cerr
 				<< "\nUnable to load all items."
 				<< endl << itemCount << " items supplied but MAX_LENGTH is " << MAX_LENGTH
-				<< "\n Defaulting to MAX_LENGTH and ignoring extra items.\n";
+				<< "\nDefaulting to MAX_LENGTH and ignoring extra items.\n";
 
 			itemCount = MAX_LENGTH;
 		}
