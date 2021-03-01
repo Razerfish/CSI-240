@@ -32,6 +32,8 @@ void createItem(VendingMachine& machine);
 
 void editItem(int index, VendingMachine& machine);
 
+bool isNum(string input);
+
 string promptPassword();
 
 void sellItem(int index, double payment, VendingMachine& machine);

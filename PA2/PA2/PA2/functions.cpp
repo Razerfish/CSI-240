@@ -124,9 +124,16 @@ void createItem(VendingMachine& machine)
 	cout << "\nEnter the price of the item: ";
 	getline(cin, line);
 	// Ensure that input is not blank.
-	while (line == "")
+	while (line == "" || !isNum(line))
 	{
-		cout << "Price cannot be blank.\nEnter the price of the item: ";
+		if (line.length() == 0)
+		{
+			cout << "Price cannot be blank.\nEnter the price of the item: ";
+		}
+		else
+		{
+			cout << "Price must be a number.\nEnter the price of the item: ";
+		}
 		getline(cin, line);
 	}
 	newItem.price = stod(line);
@@ -167,12 +174,42 @@ void editItem(int index, VendingMachine& machine)
 	// Change item price.
 	cout << "\nEnter the new price for the item (or leave blank to not change): ";
 	getline(cin, line);
+	while (!isNum(line))
+	{
+		cout
+			<< "Price must be either a number or blank\n"
+			<< "Enter the new price for the item (or leave blank to not change): ";
+		getline(cin, line);
+	}
 	if (line != "")
 	{
 		newItem.price = stod(line);
 	}
 
 	machine.setItem(index, newItem);
+}
+
+
+/*	Function: bool isNum(string input);
+*	Pre: A string to check.
+*	Post: Returns true if the string can be run through stod,
+*	returns false if it cannot.
+*	Purpose: Check whether a string can be converted into a double
+*	by stod.
+*********************************************************/
+bool isNum(string input)
+{
+	bool valid = true;
+	for (int i = 0; i < input.length(); i++)
+	{
+		if (!(isdigit(input[i]) || input[i] == '.'))
+		{
+			valid = false;
+			break;
+		}
+	}
+
+	return valid;
 }
 
 
