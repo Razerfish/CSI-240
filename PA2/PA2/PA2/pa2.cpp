@@ -24,7 +24,6 @@ int main()
 {
 	VendingMachine machine;
 
-	string line;
 	string password;
 
 	int selection;
@@ -63,16 +62,7 @@ int main()
 
 		machine.showUserMenu();
 
-		getline(cin, line);
-
-		// Ensure that input can be run through stoi.
-		while (!isIntString(line) || line == "")
-		{
-			cout << "Invalid selection.\nPlease enter your selection: ";
-			getline(cin, line);
-		}
-
-		selection = stoi(line);
+		selection = getSelection();
 
 		// Ensure that selection is valid.
 		if (selection != 9001 && (selection == 0 || selection > machine.getItemCount()))
@@ -108,14 +98,7 @@ int main()
 		{
 			// Get payment.
 			cout << "Enter payment: ";
-			getline(cin, line);
-			while (!isDoubleString(line) || line == "")
-			{
-				cout << "Invalid payment\nEnter payment: ";
-				getline(cin, line);
-			}
-
-			payment = stod(line);
+			payment = getPayment();
 
 			sellItem(selection - 1, payment, machine);
 

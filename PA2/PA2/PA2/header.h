@@ -32,6 +32,9 @@ void createItem(VendingMachine& machine);
 
 void editItem(int index, VendingMachine& machine);
 
+int getSelection();
+double getPayment();
+
 bool isDoubleString(string input);
 bool isIntString(string input);
 

@@ -189,6 +189,52 @@ void editItem(int index, VendingMachine& machine)
 }
 
 
+/*	Function: int getSelection();
+*	Pre: None.
+*	Post: Returns an int of the users selection.
+*	Purpose: Loop until the user enters a valid selection.
+*********************************************************/
+int getSelection()
+{
+	string line;
+	int selection;
+
+	getline(cin, line);
+	while (!isIntString(line) || line == "")
+	{
+		cout << "Invalid input. Try again: ";
+		getline(cin, line);
+	}
+
+	selection = stoi(line);
+
+	return selection;
+}
+
+
+/*	Function: double getPayment();
+*	Pre: None.
+*	Post: Returns a double of the users input.
+*	Purpose: Loop until the user inputs a valid double.
+*********************************************************/
+double getPayment()
+{
+	string line;
+	double value;
+
+	getline(cin, line);
+	while (!isDoubleString(line) || line == "")
+	{
+		cout << "Invalid input. Try again: ";
+		getline(cin, line);
+	}
+
+	value = stod(line);
+
+	return value;
+}
+
+
 /*	Function: bool isDoubleString(string input);
 *	Pre: A string to check.
 *	Post: Returns true if the string can be run through stod,
