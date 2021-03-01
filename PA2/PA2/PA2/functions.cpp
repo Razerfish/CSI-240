@@ -88,7 +88,6 @@ double collectMoney(VendingMachine& machine)
 *********************************************************/
 void checkBalance(VendingMachine& machine)
 {
-	cout << fixed << setprecision(2);
 	cout << "\nThe current balance is: $" << machine.getBalance() << endl;
 }
 

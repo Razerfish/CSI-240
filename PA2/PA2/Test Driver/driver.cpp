@@ -25,6 +25,8 @@ int main()
 {
 	VendingMachine test;
 
+	cout << fixed << setprecision(2);
+
 	cout
 		<< test.getBalance() << endl
 		<< test.getItemCount() << endl
@@ -74,7 +76,7 @@ int main()
 	sellItem(3, 1.00, test);
 	*/
 
-	cout << "$" << fixed << setprecision(2) << collectMoney(test) << endl;
+	cout << "$" << collectMoney(test) << endl;
 
 	//createItem(test);
 

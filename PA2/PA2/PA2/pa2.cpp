@@ -14,12 +14,15 @@
 // (which may then retain a copy of this assignment on its database for
 // the purpose of future plagiarism checking)
 
+#include <iostream>
+
 #include "vendingMachine.h"
+#include "header.h"
 
 using namespace std;
 int main()
 {
-	VendingMachine test;
+	VendingMachine machine;
 
-	return 0;
+	cout << fixed << setprecision(2);
 }
