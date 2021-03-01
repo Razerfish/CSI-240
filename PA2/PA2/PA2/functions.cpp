@@ -189,7 +189,7 @@ void editItem(int index, VendingMachine& machine)
 }
 
 
-/*	Function: bool isNum(string input);
+/*	Function: bool isDoubleString(string input);
 *	Pre: A string to check.
 *	Post: Returns true if the string can be run through stod,
 *	returns false if it cannot.
@@ -202,6 +202,29 @@ bool isDoubleString(string input)
 	for (int i = 0; i < input.length(); i++)
 	{
 		if (!(isdigit(input[i]) || input[i] == '.'))
+		{
+			valid = false;
+			break;
+		}
+	}
+
+	return valid;
+}
+
+
+/*	Function: bool isIntString(string input);
+*	Pre: A string to check.
+*	Post: Returns true if the string can be converted to an int,
+*	otherwise returns false.
+*	Purpose: Check if a string can be safely run through stoi.
+*********************************************************/
+bool isIntString(string input)
+{
+	bool valid;
+
+	for (int i = 0; i < input.length(); i++)
+	{
+		if (!isdigit(input[i]))
 		{
 			valid = false;
 			break;

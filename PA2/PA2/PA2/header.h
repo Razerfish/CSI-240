@@ -33,6 +33,7 @@ void createItem(VendingMachine& machine);
 void editItem(int index, VendingMachine& machine);
 
 bool isDoubleString(string input);
+bool isIntString(string input);
 
 string promptPassword();
 
