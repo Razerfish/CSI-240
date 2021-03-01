@@ -39,5 +39,6 @@ int main()
 		firstTimeSetup(machine);
 	}
 
+	// Run the vend loop and return the result as our exit code.
 	return vendLoop(machine);
 }
