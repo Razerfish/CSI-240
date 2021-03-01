@@ -32,6 +32,8 @@ void createItem(VendingMachine& machine);
 
 void editItem(int index, VendingMachine& machine);
 
+void firstTimeSetup(VendingMachine& machine);
+
 int getSelection();
 double getPayment();
 
@@ -46,5 +48,7 @@ bool stockerMenu(VendingMachine& machine);
 void removeItem(int index, VendingMachine& machine);
 void restockItem(int index, VendingMachine& machine);
 void restockAll(VendingMachine& machine);
+
+int vendLoop(VendingMachine& machine);
 
 #endif

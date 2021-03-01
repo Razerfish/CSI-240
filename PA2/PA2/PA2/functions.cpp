@@ -189,6 +189,33 @@ void editItem(int index, VendingMachine& machine)
 }
 
 
+/*	Function: void firstTimeSetup(VendingMachine& machine);
+*	Pre: A vending machine object that was unable to locate
+*	a data.txt file.
+*	Post: The user will be prompted for 4 items which will
+*	be used to populate the vending machine.
+*	Purpose: Run the first time setup.
+*********************************************************/
+void firstTimeSetup(VendingMachine& machine)
+{
+	cout << "data.txt not found! Initiating first time setup...\n";
+	cout << "Creating entries for initial menu of " << MIN_ITEMS << " items\n";
+
+	// Create items.
+	for (int i = 0; i < MIN_ITEMS; i++)
+	{
+		cout << "\nItem " << i + 1 << endl;
+		createItem(machine);
+	}
+
+	cout << "\nFirst time setup complete!\n";
+
+	// Pause and clear screen.
+	system("PAUSE");
+	system("cls");
+}
+
+
 /*	Function: int getSelection();
 *	Pre: None.
 *	Post: Returns an int of the users selection.
@@ -570,4 +597,73 @@ void restockAll(VendingMachine& machine)
 	}
 
 	cout << "\nAll items restocked\n";
+}
+
+
+/*	Function: int vendLoop(VendingMachine& machine);
+*	Pre: A reference to the VendingMachine object to use
+*	in the loop.
+*	Post: Will return with a code once the loop has ended.
+*	Purpose: Handle the vending part of the vending machine.
+*********************************************************/
+int vendLoop(VendingMachine& machine)
+{
+	string password;
+
+	int selection;
+
+	double payment;
+
+	while (true)
+	{
+		cout
+			<< "Hello! Welcome to the " << machine.getName() << " vending machine!\n"
+			<< "Here is our menu:\n";
+
+		machine.showUserMenu();
+
+		selection = getSelection();
+
+		// Ensure that selection is valid.
+		if (selection != 9001 && (selection == 0 || selection > machine.getItemCount()))
+		{
+			cout << "Invalid selection\n";
+			system("PAUSE");
+			system("cls");
+			continue;
+		}
+		// Check for stocker access code.
+		else if (selection == 9001)
+		{
+			cout << "Enter password: ";
+			password = promptPassword();
+
+			if (password == machine.getPassword())
+			{
+				system("cls");
+				if (!stockerMenu(machine))
+				{
+					return 0;
+				}
+			}
+			else
+			{
+				cout << "Incorrect password\n";
+				system("PAUSE");
+				system("cls");
+			}
+		}
+		// Sell item.
+		else
+		{
+			// Get payment.
+			cout << "Enter payment: ";
+			payment = getPayment();
+
+			sellItem(selection - 1, payment, machine);
+
+			system("PAUSE");
+			system("cls");
+		}
+	}
 }
