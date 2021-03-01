@@ -123,7 +123,7 @@ void createItem(VendingMachine& machine)
 	cout << "\nEnter the price of the item: ";
 	getline(cin, line);
 	// Ensure that input is not blank.
-	while (line == "" || !isNum(line))
+	while (line == "" || !isDoubleString(line))
 	{
 		if (line.length() == 0)
 		{
@@ -173,7 +173,7 @@ void editItem(int index, VendingMachine& machine)
 	// Change item price.
 	cout << "\nEnter the new price for the item (or leave blank to not change): ";
 	getline(cin, line);
-	while (!isNum(line))
+	while (!isDoubleString(line))
 	{
 		cout
 			<< "Price must be either a number or blank\n"
@@ -196,7 +196,7 @@ void editItem(int index, VendingMachine& machine)
 *	Purpose: Check whether a string can be converted into a double
 *	by stod.
 *********************************************************/
-bool isNum(string input)
+bool isDoubleString(string input)
 {
 	bool valid = true;
 	for (int i = 0; i < input.length(); i++)
