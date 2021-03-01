@@ -22,12 +22,6 @@
 using namespace std;
 int main()
 {
-	// I know that there is direct output in main,
-	// I somehow missed that when reading through
-	// the grading PDF until just now and I don't
-	// have the time or mental energy to fix it tonight.
-	// I'll see if I can get to it tomorrow morning.
-
 	VendingMachine machine;
 
 	string password;
