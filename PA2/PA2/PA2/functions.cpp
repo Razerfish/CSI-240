@@ -461,6 +461,13 @@ void removeItem(int index, VendingMachine& machine)
 		return;
 	}
 
+	// Check that we won't go below MIN_ITEMS.
+	if (machine.getItemCount() - 1 < MIN_ITEMS)
+	{
+		cout << "Unable to remove item without going below minimum item count\n";
+		return;
+	}
+
 	// Shift items down and overwrite the item to be removed.
 	Item tmp;
 	for (int i = index + 1; i < machine.getItemCount() + 1; i++)
