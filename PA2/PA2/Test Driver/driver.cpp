@@ -85,10 +85,21 @@ int main()
 	editItem(32, test);
 	*/
 
+	/*
 	removeItem(1, test);
 	removeItem(-1, test);
 	removeItem(10, test);
 	removeItem(31, test);
+	*/
+
+	/*
+	restockItem(1, test);
+	restockItem(-1, test);
+	restockItem(10, test);
+	restockItem(31, test);
+	*/
+
+	restockAll(test);
 
 	return 0;
 }

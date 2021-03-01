@@ -288,3 +288,47 @@ void removeItem(int index, VendingMachine& machine)
 	cout << "\nItem deleted.\n";
 }
 
+
+/*	Function: void restockItem(int index, VendingMachine& machine);
+*	Pre: The index of the item to restock and a reference to a
+*	VendingMachine object.
+*	Post: The selected item will be restocked.
+*	Purpose: Restock any selected item.
+*********************************************************/
+void restockItem(int index, VendingMachine& machine)
+{
+	// Ensure that index is valid.
+	if (index >= machine.getItemCount() || index < 0 || index > MAX_LENGTH)
+	{
+		cout << "\nInvalid selection.\n";
+		return;
+	}
+
+	Item restock = machine.getItem(index);
+
+	restock.quantity = MAX_STOCK;
+
+	machine.setItem(index, restock);
+
+	cout << "\nItem restocked\n";
+}
+
+
+/*	Function: void restockAll(VendingMachine& machine);
+*	Pre: A reference to a VendingMaching object.
+*	Post: All listed items will be restocked.
+*	Purpose: Restock all items.
+*********************************************************/
+void restockAll(VendingMachine& machine)
+{
+	Item restock;
+
+	for (int i = 0; i < machine.getItemCount(); i++)
+	{
+		restock = machine.getItem(i);
+		restock.quantity = MAX_STOCK;
+		machine.setItem(i, restock);
+	}
+
+	cout << "\nAll items restocked\n";
+}

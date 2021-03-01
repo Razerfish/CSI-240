@@ -37,7 +37,7 @@ string promptPassword();
 void sellItem(int index, double payment, VendingMachine& machine);
 
 void removeItem(int index, VendingMachine& machine);
-bool restockItem(int index, VendingMachine& machine);
+void restockItem(int index, VendingMachine& machine);
 void restockAll(VendingMachine& machine);
 
 #endif
