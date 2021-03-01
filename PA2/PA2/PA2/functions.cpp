@@ -220,7 +220,7 @@ bool isDoubleString(string input)
 *********************************************************/
 bool isIntString(string input)
 {
-	bool valid;
+	bool valid = true;
 
 	for (int i = 0; i < input.length(); i++)
 	{
@@ -302,7 +302,7 @@ void sellItem(int index, double payment, VendingMachine& machine)
 	}
 
 	// Check that we have enough money to give change.
-	if (machine.getBalance() + payment < change)
+	if (machine.getBalance() < change)
 	{
 		cout << "\n\nUnable to give change\nYour money has been returned.\n";
 		return;
@@ -315,6 +315,133 @@ void sellItem(int index, double payment, VendingMachine& machine)
 	machine.setItem(index, target);
 
 	cout << "\n\nThank you for your purchase!\nYour change is $" << change << endl;
+}
+
+
+/*	Function: bool stockerMenu(VendingMachine& machine);
+*	Pre: A reference to a VendingMachine obeject.
+*	Post: Changes may be made through the stocker menu.
+*	Returns true unless the program should be terminated.
+*	Purpose: Display and handle the stocker menu.
+*********************************************************/
+bool stockerMenu(VendingMachine& machine)
+{
+	string line;
+
+	int selection;
+	int index;
+
+	bool loop = true;
+
+	while (loop)
+	{
+		machine.showStockerMenu();
+		getline(cin, line);
+
+		// Validate input.
+		if (!isIntString(line) || line == "")
+		{
+			cout << "Invalid selection\n";
+			system("PAUSE");
+			system("cls");
+			continue;
+		}
+
+		selection = stoi(line);
+
+		// Check password.
+		// I wasn't clear if you wanted the password entered just once
+		// to access the stocker menu or every time that an option is selected
+		// so I wrote this but commented it out so that testing is easier.
+		/*
+		cout << "Enter password: ";
+		if (promptPassword() != machine.getPassword())
+		{
+			cout << "Incorrect password\n";
+			system("PAUSE");
+			system("cls");
+			continue;
+		}
+		*/
+
+		switch (selection)
+		{
+		case 1:
+			changePassword(machine);
+			cout << "Password changed. Please log in again to continue using the stocker menu\n";
+			system("PAUSE");
+			system("cls");
+
+			return true;
+		case 2:
+			checkBalance(machine);
+			break;
+		case 3:
+			cout << "\nCollected $" << collectMoney(machine) << endl;
+			break;
+		case 4:
+			cout << "Enter the item to edit: ";
+			getline(cin, line);
+			while (!isIntString(line) || line == "")
+			{
+				cout << "Invalid input\nEnter the item to edit: ";
+				getline(cin, line);
+			}
+
+			index = stoi(line);
+
+			editItem(index - 1, machine);
+			break;
+		case 5:
+			createItem(machine);
+			break;
+		case 6:
+			cout << "Enter the item to delete: ";
+			getline(cin, line);
+			while (!isIntString(line) || line == "")
+			{
+				cout << "Invalid input\nEnter the item to delete: ";
+				getline(cin, line);
+			}
+
+			index = stoi(line);
+
+			removeItem(index - 1, machine);
+			break;
+		case 7:
+			cout << "Enter the item to restock: ";
+			getline(cin, line);
+			while (!isIntString(line) || line == "")
+			{
+				cout << "Invalid input\nEnter the item to restock: ";
+				getline(cin, line);
+			}
+
+			index = stoi(line);
+
+			restockItem(index - 1, machine);
+			break;
+		case 8:
+			restockAll(machine);
+			break;
+		case 9:
+			return false;
+		case 0:
+			loop = false;
+			break;
+		default:
+			cout << "Invalid selection\n";
+			system("PAUSE");
+			system("cls");
+		}
+
+		cout << endl;
+		system("PAUSE");
+		system("cls");
+	}
+
+	system("cls");
+	return true;
 }
 
 

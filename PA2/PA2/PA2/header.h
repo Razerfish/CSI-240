@@ -38,6 +38,7 @@ bool isIntString(string input);
 string promptPassword();
 
 void sellItem(int index, double payment, VendingMachine& machine);
+bool stockerMenu(VendingMachine& machine);
 
 void removeItem(int index, VendingMachine& machine);
 void restockItem(int index, VendingMachine& machine);

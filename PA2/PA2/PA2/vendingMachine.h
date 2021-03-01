@@ -29,6 +29,8 @@ const int MAX_LENGTH = 30;
 
 const int MAX_STOCK = 20;
 
+const int MIN_ITEMS = 4;
+
 const double MIN_BALANCE = 5.00;
 
 struct Item

@@ -287,7 +287,6 @@ void VendingMachine::setPassword(string newPassword)
 void VendingMachine::showStockerMenu()
 {
 	cout
-		<< "\n\n\tCode verified. Welcome to the stocker menu\n\n"
 		<< "\t1. Change password\n"
 		<< "\t2. Check balance\n"
 		<< "\t3. Collect money\n"
@@ -295,7 +294,7 @@ void VendingMachine::showStockerMenu()
 		<< "\t5. Add item\n"
 		<< "\t6. Remove item\n"
 		<< "\t7. Restock item\n"
-		<< "\t8. Restock all items"
+		<< "\t8. Restock all items\n"
 		<< "\t9. Shutdown machine\n"
 		<< "\t0. Exit stocker menu\n"
 		<< "\n\tInput your selection: ";
@@ -315,5 +314,5 @@ void VendingMachine::showUserMenu()
 		cout << "\t" << i + 1 << ". " << items[i].name << " $" << items[i].price << endl;
 	}
 
-	cout << "\nPlease input your selection: ";
+	cout << "\nPlease enter your selection: ";
 }

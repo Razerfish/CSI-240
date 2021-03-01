@@ -24,5 +24,103 @@ int main()
 {
 	VendingMachine machine;
 
+	string line;
+	string password;
+
+	int selection;
+
+	double payment;
+
+	bool valid;
+
 	cout << fixed << setprecision(2);
+
+	// Check if this is the first run.
+	if (machine.getItemCount() == 0)
+	{
+		cout << "data.txt not found! Initiating first time setup...\n";
+		cout << "Creating entries for default menu of " << MIN_ITEMS << " items\n";
+
+		// Create items.
+		for (int i = 0; i < MIN_ITEMS; i++)
+		{
+			cout << "\nItem " << i + 1 << endl;
+			createItem(machine);
+		}
+
+		cout << "\nFirst time setup complete!\n";
+
+		// Pause and then clear screen.
+		system("PAUSE");
+		system("cls");
+	}
+
+	while (true)
+	{
+		cout
+			<< "Hello! Welcome to the " << machine.getName() << " vending machine!\n"
+			<< "Here is our menu:\n";
+
+		machine.showUserMenu();
+
+		getline(cin, line);
+
+		// Ensure that input can be run through stoi.
+		while (!isIntString(line) || line == "")
+		{
+			cout << "Invalid selection.\nPlease enter your selection: ";
+			getline(cin, line);
+		}
+
+		selection = stoi(line);
+
+		// Ensure that selection is valid.
+		if (selection != 9001 && (selection == 0 || selection > machine.getItemCount()))
+		{
+			cout << "Invalid selection\n";
+			system("PAUSE");
+			system("cls");
+			continue;
+		}
+		// Check for stocker access code.
+		else if (selection == 9001)
+		{
+			cout << "Enter password: ";
+			password = promptPassword();
+
+			if (password == machine.getPassword())
+			{
+				system("cls");
+				if (!stockerMenu(machine))
+				{
+					return 0;
+				}
+			}
+			else
+			{
+				cout << "Incorrect password\n";
+				system("PAUSE");
+				system("cls");
+			}
+		}
+		// Sell item.
+		else
+		{
+			// Get payment.
+			cout << "Enter payment: ";
+			getline(cin, line);
+			while (!isDoubleString(line) || line == "")
+			{
+				cout << "Invalid payment\nEnter payment: ";
+				getline(cin, line);
+			}
+
+			payment = stod(line);
+
+			sellItem(selection - 1, payment, machine);
+
+			system("PAUSE");
+			system("cls");
+		}
+	}
 }
