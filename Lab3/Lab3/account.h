@@ -71,7 +71,7 @@ public:
 	friend ifstream& operator >>(ifstream& input, Account& obj);
 
 	friend bool operator ==(const string& lhs, const Account& rhs);
-	freind bool operator !=(const string& lhs, const Account& rhs);
+	friend bool operator !=(const string& lhs, const Account& rhs);
 };
 
 #endif
