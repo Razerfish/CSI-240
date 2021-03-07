@@ -68,3 +68,63 @@ Account::~Account()
 {
 
 }
+
+
+/*********************************************************
+*						Accessors						 *
+*********************************************************/
+
+
+/*	Function: double Account::getChecking();
+*	Pre: None.
+*	Post: The checking balance will be returned.
+*	Purpose: Return the checking balance of the account.
+*********************************************************/
+double Account::getChecking()
+{
+	return _checking;
+}
+
+
+/*	Function: string Account::getName();
+*	Pre: None.
+*	Post: The name of the acount holder will be returned.
+*	Purpose: Return the name of the account holder.
+*********************************************************/
+string Account::getName()
+{
+	return _name;
+}
+
+
+/*	Function: double Account::getSaving();
+*	Pre: None.
+*	Post: The saving balance will be returned.
+*	Purpose: Return the saving balance of the account.
+*********************************************************/
+double Account::getSaving()
+{
+	return _saving;
+}
+
+
+/*	Function: string Account::getSSN();
+*	Pre: None.
+*	Post: Returns the SSN of the account holder.
+*	Purpose: Return the SSN of the account holder.
+*********************************************************/
+string Account::getSSN()
+{
+	return _ssn;
+}
+
+
+/*	Function: double Account::getTotal();
+*	Pre: None.
+*	Post: Returns the total balance of the account.
+*	Purpose: Return the total balance of the account.
+*********************************************************/
+double Account::getTotal()
+{
+	return _checking + _saving;
+}
