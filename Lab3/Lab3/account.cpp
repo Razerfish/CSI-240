@@ -53,3 +53,18 @@ Account::Account(string ssn, string name, double checkingAmt, double savingAmt)
 	_saving = savingAmt;
 	_total = checkingAmt + savingAmt;
 }
+
+
+/*********************************************************
+*						Destructor						 *
+*********************************************************/
+
+/*	Function: Account::~Account();
+*	Pre: None.
+*	Post: Object is deleted.
+*	Purpose: Destructor.
+*********************************************************/
+Account::~Account()
+{
+
+}
