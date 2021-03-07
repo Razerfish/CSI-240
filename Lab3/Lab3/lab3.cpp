@@ -83,11 +83,11 @@ int main()
 	acc1.setSaving(2486.38);
 
 	// Accessors
-	cout << "acc1.getName(): " << acc1.getName() << endl;
-	cout << "acc1.getSSN(): " << acc1.getSSN() << endl;
-	cout << "acc1.getChecking(): " << acc1.getChecking() << endl;
-	cout << "acc1.getSaving(): " << acc1.getSaving() << endl;
-	cout << "acc1.getTotal(): " << acc1.getTotal() << endl;
+	cout << "acc1.getName() -> " << acc1.getName() << endl;
+	cout << "acc1.getSSN() -> " << acc1.getSSN() << endl;
+	cout << "acc1.getChecking() -> " << acc1.getChecking() << endl;
+	cout << "acc1.getSaving() -> " << acc1.getSaving() << endl;
+	cout << "acc1.getTotal() -> " << acc1.getTotal() << endl;
 
 	return 0;
 }
