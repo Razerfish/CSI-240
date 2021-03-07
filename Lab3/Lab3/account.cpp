@@ -271,6 +271,9 @@ bool Account::operator <(const Account& rhs)
 *********************************************************/
 ostream& operator <<(ostream& output, const Account& obj)
 {
+	// Set precision
+	output << fixed << setprecision(2);
+
 	output
 		<< setw(30) << left << "SSN"
 		<< obj._ssn << endl;
@@ -295,6 +298,9 @@ ostream& operator <<(ostream& output, const Account& obj)
 *********************************************************/
 ofstream& operator <<(ofstream& output, const Account& obj)
 {
+	// Set precision
+	output << fixed << setprecision(2);
+
 	output
 		<< setw(30) << left << "SSN"
 		<< obj._ssn << endl;

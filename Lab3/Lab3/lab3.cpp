@@ -70,7 +70,7 @@ int main()
 	ofstream fout;
 	fout.open("output.txt", ios::out | ios::trunc);
 
-	fout << acc2;
+	fout << acc1;
 
 	fout.close();
 
