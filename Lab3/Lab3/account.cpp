@@ -30,10 +30,10 @@ using namespace std;
 *********************************************************/
 Account::Account()
 {
-	ssn = "";
-	name = "";
+	_ssn = "";
+	_name = "";
 
-	checkingAmt = 0.0;
-	savingAmt = 0.0;
-	total = 0.0;
+	_checking = 0.0;
+	_saving = 0.0;
+	_total = 0.0;
 }

@@ -23,12 +23,12 @@ using namespace std;
 class Account
 {
 private:
-	string ssn;
-	string name;
+	string _ssn;
+	string _name;
 
-	double checkingAmt;
-	double savingAmt;
-	double total;
+	double _checking;
+	double _saving;
+	double _total;
 
 public:
 	// Default constructor.
