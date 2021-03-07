@@ -25,6 +25,7 @@ class Account
 private:
 	string ssn;
 	string name;
+
 	double checkingAmt;
 	double savingAmt;
 	double total;

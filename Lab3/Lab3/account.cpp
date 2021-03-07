@@ -13,3 +13,27 @@
 // - Communicate a copy of this assignment to a plagiarism checking service
 // (which may then retain a copy of this assignment on its database for
 // the purpose of future plagiarism checking)
+
+#include "account.h"
+
+using namespace std;
+
+/*********************************************************
+*						Constructors					 *
+*********************************************************/
+
+/*	Function: Account::Account();
+*	Pre: None.
+*	Post: All doubles will be initialized to 0.0 and all strings
+*	will be initialized to "".
+*	Purpose: Initialize the Account object with default empty values.
+*********************************************************/
+Account::Account()
+{
+	ssn = "";
+	name = "";
+
+	checkingAmt = 0.0;
+	savingAmt = 0.0;
+	total = 0.0;
+}
