@@ -128,3 +128,55 @@ double Account::getTotal()
 {
 	return _checking + _saving;
 }
+
+
+/*********************************************************
+*						Mutators						 *
+*********************************************************/
+
+/*	Function: void Account::setChecking(double checkingAmt);
+*	Pre: The new value to set the checking balance to.
+*	Post: The checking balance will be set to the provided
+*	value and the total balance will be updated to reflect that.
+*	Purpose: Update the checking balance.
+*********************************************************/
+void Account::setChecking(double checkingAmt)
+{
+	_checking = checkingAmt;
+	_total = checkingAmt + _saving;
+}
+
+
+/*	Function: void Account::setName(string name);
+*	Pre: The new value to set the name of the account holder to.
+*	Post: The account holder's name will be set to the provided value.
+*	Purpose: Update the name of the account holder.
+*********************************************************/
+void Account::setName(string name)
+{
+	_name = name;
+}
+
+
+/*	Function: void Account::setSaving(double savingAmt);
+*	Pre: The new value to set the saving balance to.
+*	Post: The saving balance will be set to the provided
+*	value and the total balance will be updated to reflect that.
+*	Purpose: Update the saving balance.
+*********************************************************/
+void Account::setSaving(double savingAmt)
+{
+	_saving = savingAmt;
+	_total = savingAmt + _checking;
+}
+
+
+/*	Function: void Account::setSSN(string ssn);
+*	Pre: The new value to set the ssn of the account holder to.
+*	Post: The account holder's ssn will be set to the provided value.
+*	Purpose: Update the ssn of the account holder.
+*********************************************************/
+void Account::setSSN(string ssn)
+{
+	_ssn = ssn;
+}

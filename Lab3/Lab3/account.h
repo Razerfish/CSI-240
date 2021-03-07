@@ -48,9 +48,9 @@ public:
 	double getTotal();
 
 	// Mutators.
-	void setChecking(double checking);
+	void setChecking(double checkingAmt);
 	void setName(string name);
-	void setSaving(double saving);
+	void setSaving(double savingAmt);
 	void setSSN(string ssn);
 
 	// Operators
