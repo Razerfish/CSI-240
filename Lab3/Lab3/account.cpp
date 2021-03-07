@@ -221,7 +221,7 @@ bool Account::operator !=(const Account& rhs)
 }
 
 
-/*	Function: bool Account::operator =!(const string& rhs);
+/*	Function: bool Account::operator !=(const string& rhs);
 *	Pre: None.
 *	Post: Returns whether or not the contents of the string don't 
 *	match the account holders ssn.
@@ -256,4 +256,185 @@ bool Account::operator >(const Account& rhs)
 bool Account::operator <(const Account& rhs)
 {
 	return _total < rhs._total;
+}
+
+
+/*********************************************************
+*						Friend Functions				 *
+*********************************************************/
+
+/*	Function: ostream& operator <<(ostream& output, const Account& obj);
+*	Pre: None.
+*	Post: SSN, name, checking balance and saving balance will be outputted
+*	to the stream.
+*	Purpose: Output the current account state to the stream.
+*********************************************************/
+ostream& operator <<(ostream& output, const Account& obj)
+{
+	output
+		<< setw(30) << left << "SSN"
+		<< obj._ssn << endl;
+
+	output
+		<< setw(30) << left << "Name"
+		<< obj._name << endl;
+
+	output
+		<< setw(30) << left << "Saving Checking"
+		<< obj._saving << " " << obj._checking << endl;
+
+	return output;
+}
+
+
+/*	Function: ofstream& operator <<(ofstream& output, const Account& obj);
+*	Pre: None.
+*	Post: SSN, name, checking balance and saving balance will be outputted
+*	to the file.
+*	Purpose: Output the current account state to a file stream.
+*********************************************************/
+ofstream& operator <<(ofstream& output, const Account& obj)
+{
+	output
+		<< setw(30) << left << "SSN"
+		<< obj._ssn << endl;
+
+	output
+		<< setw(30) << left << "Name"
+		<< obj._name << endl;
+
+	output
+		<< setw(30) << left << "Saving Checking"
+		<< obj._saving << " " << obj._checking << endl;
+
+	return output;
+}
+
+
+/*	Function: istream& operator >>(istream& input, Account& obj);
+*	Pre: None.
+*	Post: The values of the account object will be set using the
+*	contents of the stream.
+*	Purpose: Populate an account object from a stream.
+*********************************************************/
+istream& operator >>(istream& input, Account& obj)
+{
+	string
+		tmp,
+		firstName,
+		lastName;
+
+	// Always discard the value label.
+	input >> tmp;
+
+	// Get SSN.
+	input >> obj._ssn;
+
+	// Advance to next line.
+	input.ignore(INT_MAX, '\n');
+
+	input >> tmp;
+	input >> firstName;
+	input >> lastName;
+	obj._name = firstName + " " + lastName;
+
+	input.ignore(INT_MAX, '\n');
+
+	input >> tmp;
+	input >> tmp;
+	input >> obj._saving;
+	input >> obj._checking;
+	obj._total = obj._saving + obj._checking;
+
+	input.ignore(INT_MAX, '\n');
+
+	return input;
+}
+
+
+/*	Function: ifstream& operator >>(ifstream& input, Account& obj);
+*	Pre: None.
+*	Post: The values of the account object will be set using the
+*	contents of the file stream.
+*	Purpose: Populate an account object from a file stream.
+*********************************************************/
+ifstream& operator >>(ifstream& input, Account& obj)
+{
+	string
+		tmp,
+		firstName,
+		lastName;
+
+	// Always discard the value label.
+	input >> tmp;
+
+	// Get SSN.
+	input >> obj._ssn;
+
+	// Advance to next line.
+	input.ignore(INT_MAX, '\n');
+
+	input >> tmp;
+	input >> firstName;
+	input >> lastName;
+	obj._name = firstName + " " + lastName;
+
+	input.ignore(INT_MAX, '\n');
+
+	input >> tmp;
+	input >> tmp;
+	input >> obj._saving;
+	input >> obj._checking;
+	obj._total = obj._saving + obj._checking;
+
+	input.ignore(INT_MAX, '\n');
+
+	return input;
+}
+
+
+/*	Function: bool operator ==(const string& lhs, const Account& rhs);
+*	Pre: None.
+*	Post: Return whether or not the string is equal to the account
+*	objects SSN.
+*	Purpose: Check if the objects SSN matches a string and return true
+*	if it does.
+*********************************************************/
+bool operator ==(const string& lhs, const Account& rhs)
+{
+	return lhs == rhs._ssn;
+}
+
+
+/*	Function: bool operator !=(const string& lhs, const Account& rhs);
+*	Pre: None.
+*	Post: Return whether or not the string is equal to the account
+*	objects SSN.
+*	Purpose: Check if the objects SSN matches a string and return false
+*	if it does.
+*********************************************************/
+bool operator !=(const string& lhs, const Account& rhs)
+{
+	return lhs != rhs._ssn;
+}
+
+
+/*	Function: string boolToString(bool input);
+*	Pre: A bool to convert to a string.
+*	Post: If the provided bool is false the word "false"
+*	will be returned, if the proved bool is true the word
+*	"true" will be returned.
+*	Purpose: Make stub output more human readible without
+*	including a ton of if statements.
+*********************************************************/
+string boolToString(bool input)
+{
+	if (input)
+	{
+		return "true";
+	}
+	else
+	{
+		return "false";
+	}
 }

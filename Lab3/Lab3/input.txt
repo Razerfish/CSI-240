@@ -1,3 +1,3 @@
-SSN                           999-99-9999                   
-Name                          Zagreus Hades                 
-Saving Checking               0.00 1427.00                  
+SSN                           999-99-9999
+Name                          Zagreus Hades
+Saving Checking               0.00 1427.00

@@ -23,6 +23,9 @@
 #include <iomanip>
 
 using namespace std;
+
+const string TEST_STRING = "SSN                           9876-54-321                 \nName                          Jane Doe                    \nSaving Checking               1000.50 500.00              \n";
+
 class Account
 {
 private:
@@ -76,5 +79,8 @@ public:
 	friend bool operator ==(const string& lhs, const Account& rhs);
 	friend bool operator !=(const string& lhs, const Account& rhs);
 };
+
+
+string boolToString(bool input);
 
 #endif
