@@ -37,3 +37,19 @@ Account::Account()
 	_saving = 0.0;
 	_total = 0.0;
 }
+
+
+/*	Function: Account::Account(string ssn, string name, double checkingAmt, double savingAmt);
+*	Pre: The values to initialize the Account object with.
+*	Post: The Account object will be initialized with the provided values.
+*	Purpose: Non-default constructor.
+*********************************************************/
+Account::Account(string ssn, string name, double checkingAmt, double savingAmt)
+{
+	_ssn = ssn;
+	_name = name;
+
+	_checking = checkingAmt;
+	_saving = savingAmt;
+	_total = checkingAmt + savingAmt;
+}
