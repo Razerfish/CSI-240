@@ -180,3 +180,80 @@ void Account::setSSN(string ssn)
 {
 	_ssn = ssn;
 }
+
+
+/*********************************************************
+*						Operators						 *
+*********************************************************/
+
+
+/*	Function: bool Account::operator ==(const Account& rhs);
+*	Pre: None.
+*	Post: Returns whether or not the SSN's both accounts match.
+*	Purpose: Check if the SSN's of two accounts match.
+*********************************************************/
+bool Account::operator ==(const Account& rhs)
+{
+	return _ssn == rhs._ssn;
+}
+
+
+/*	Function: bool Account::operator ==(const string& rhs);
+*	Pre: None.
+*	Post: Returns whether or not the contents of the string match
+*	the account holders ssn.
+*	Purpose: Check if a string matches the account holders ssn.
+*********************************************************/
+bool Account::operator ==(const string& rhs)
+{
+	return _ssn == rhs;
+}
+
+
+/*	Function: bool Account::operator !=(const Account& rhs);
+*	Pre: None.
+*	Post: Returns whether or not the SSN's both accounts don't match.
+*	Purpose: Check if the SSN's of two accounts don't match.
+*********************************************************/
+bool Account::operator !=(const Account& rhs)
+{
+	return _ssn != rhs._ssn;
+}
+
+
+/*	Function: bool Account::operator =!(const string& rhs);
+*	Pre: None.
+*	Post: Returns whether or not the contents of the string don't 
+*	match the account holders ssn.
+*	Purpose: Check if a string doesn't match the account holders ssn.
+*********************************************************/
+bool Account::operator !=(const string& rhs)
+{
+	return _ssn != rhs;
+}
+
+
+/*	Function: bool Account::operator >(const Account& rhs);
+*	Pre: None.
+*	Post: Returns whether or not the total balance of this account
+*	is larger than the total balance of another account.
+*	Purpose: Compare the total balances of two account and return whether
+*	or not we are larger.
+*********************************************************/
+bool Account::operator >(const Account& rhs)
+{
+	return _total > rhs._total;
+}
+
+
+/*	Function: bool Account::operator <(const Account& rhs);
+*	Pre: None.
+*	Post: Returns whether or not the total balance is smaller
+*	than the total balance of another account.
+*	Purpose: Compare the total balances of two accounts and return whether
+*	or not we are smaller.
+*********************************************************/
+bool Account::operator <(const Account& rhs)
+{
+	return _total < rhs._total;
+}
