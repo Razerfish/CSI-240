@@ -36,6 +36,17 @@ private:
 	double _saving;
 	double _total;
 
+	/*
+	Naming scheme incorrect.
+	Should be:
+	string mSSN;
+	string mName;
+
+	double mChecking;
+	double mSaving;
+	double mTotal;
+	*/
+
 public:
 	// Default constructor.
 	Account();
