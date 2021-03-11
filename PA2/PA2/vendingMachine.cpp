@@ -132,6 +132,8 @@ VendingMachine::~VendingMachine()
 		// Otherwise alert the user.
 		cerr << "\nFailed to write machine state to file.\n";
 	}
+
+	// Forgot to close output file.
 }
 
 

@@ -33,6 +33,8 @@ const int MIN_ITEMS = 4;
 
 const double MIN_BALANCE = 5.00;
 
+// Too many constants apparently?
+
 struct Item
 {
 	string name = "";
@@ -49,6 +51,16 @@ private:
 	double balance;
 	string name;
 	string password;
+
+	/*
+	Incorrect naming scheme.
+	Should be:
+	Item mItems[MAX_LENGTH];
+	int mItemCount;
+	double mBalance;
+	string mName;
+	string mPassword;
+	*/
 
 public:
 	// Constructor
