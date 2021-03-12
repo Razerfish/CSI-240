@@ -15,3 +15,18 @@ academic staff; and/or
 (which may then retain a copy of this assignment on its database for
 the purpose of future plagiarism checking)
 */
+
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <string>
+
+#include "student.h"
+#include "header.h"
+
+using namespace std;
+
+int main()
+{
+	return 0;
+}
