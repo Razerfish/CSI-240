@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab4", "Lab4\Lab4.vcxproj", "{9D04E8F6-3900-4AC5-8660-9F6A10A28CAE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test Driver", "Test Driver\Test Driver.vcxproj", "{923D72C2-7441-43A8-9B32-0903CB96010A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{9D04E8F6-3900-4AC5-8660-9F6A10A28CAE}.Release|x64.Build.0 = Release|x64
 		{9D04E8F6-3900-4AC5-8660-9F6A10A28CAE}.Release|x86.ActiveCfg = Release|Win32
 		{9D04E8F6-3900-4AC5-8660-9F6A10A28CAE}.Release|x86.Build.0 = Release|Win32
+		{923D72C2-7441-43A8-9B32-0903CB96010A}.Debug|x64.ActiveCfg = Debug|x64
+		{923D72C2-7441-43A8-9B32-0903CB96010A}.Debug|x64.Build.0 = Debug|x64
+		{923D72C2-7441-43A8-9B32-0903CB96010A}.Debug|x86.ActiveCfg = Debug|Win32
+		{923D72C2-7441-43A8-9B32-0903CB96010A}.Debug|x86.Build.0 = Debug|Win32
+		{923D72C2-7441-43A8-9B32-0903CB96010A}.Release|x64.ActiveCfg = Release|x64
+		{923D72C2-7441-43A8-9B32-0903CB96010A}.Release|x64.Build.0 = Release|x64
+		{923D72C2-7441-43A8-9B32-0903CB96010A}.Release|x86.ActiveCfg = Release|Win32
+		{923D72C2-7441-43A8-9B32-0903CB96010A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
