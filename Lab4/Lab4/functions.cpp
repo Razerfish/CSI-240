@@ -19,6 +19,30 @@ the purpose of future plagiarism checking)
 #include "header.h"
 
 
+/*	Functoin: void display(int size, Student* ptr);
+*	Pre: The length of the array and a dynamic array of student entries.
+*	Post: The data from the array will be displayed in the console.
+*	Purpose: Display the data in the array.
+*********************************************************/
+void display(int size, Student* ptr)
+{
+
+}
+
+
+/*	Function: void populate(int size, string filename, Student* ptr);
+*	Pre: Provide the amount of entries to load, the file to load from and
+*	the dynamic array to load them into.
+*	Post: The provided array will be populated with the specified amount of
+*	entries from the specified file.
+*	Purpose: Populate an array with data from a file.
+*********************************************************/
+void populate(int size, string filename, Student* ptr)
+{
+
+}
+
+
 /*	Function: int promptSize();
 *	Pre: None.
 *	Post: Returns a number between 1 and 1000 indicating how many entries to read
@@ -61,4 +85,16 @@ int promptSize()
 	}
 
 	return size;
+}
+
+
+/*	Function: void sort(int size, Student *ptr);
+*	Pre: The length of an array and the array to sort.
+*	Post: The array will be sorted in ascending order based
+*	on student ID numbers.
+*	Purpose: Sort an array of students.
+*********************************************************/
+void sort(int size, Student* ptr)
+{
+
 }
