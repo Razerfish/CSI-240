@@ -17,8 +17,6 @@ the purpose of future plagiarism checking)
 */
 
 #include <iostream>
-#include <iomanip>
-#include <fstream>
 #include <string>
 
 #include "student.h"

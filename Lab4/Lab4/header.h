@@ -20,11 +20,20 @@ the purpose of future plagiarism checking)
 #define _HEADER_H
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <stdexcept>
 
+#include "student.h"
+
 using namespace std;
 
+void display(int size, Student* ptr);
+
+void populate(int size, string filename, Student* ptr);
+
 int promptSize();
+
+void sort(int size, Student* ptr);
 
 #endif
