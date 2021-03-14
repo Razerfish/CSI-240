@@ -12,7 +12,14 @@ const string DATA_FILE = "../Lab4/data.txt";
 
 int main()
 {
-	cout << promptSize() << endl;
+	int size = promptSize();
+	cout << size << endl;
+
+	Student* school = new Student[size];
+
+	populate(size, DATA_FILE, school);
+
+	delete[] school;
 
 	return 0;
 }

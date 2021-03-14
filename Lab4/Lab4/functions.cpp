@@ -39,7 +39,16 @@ void display(int size, Student* ptr)
 *********************************************************/
 void populate(int size, string filename, Student* ptr)
 {
+	ifstream din;
 
+	din.open(filename.c_str());
+
+	for (int i = 0; i < size; i++)
+	{
+		din >> ptr[i];
+	}
+
+	din.close();
 }
 
 
