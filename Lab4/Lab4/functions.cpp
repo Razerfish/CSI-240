@@ -108,5 +108,38 @@ int promptSize()
 *********************************************************/
 void sort(int size, Student* ptr)
 {
+	// Bubble sort code adapted from here: https://www.geeksforgeeks.org/bubble-sort/
+	int i, j;
+	bool swapped;
 
+	for (i = 0; i < size - 1; i++)
+	{
+		swapped = false;
+		for (j = 0; j < size - i - 1; j++)
+		{
+			if (ptr[j] > ptr[j + 1])
+			{
+				swap(ptr[j], ptr[j + 1]);
+				swapped = true;
+			}
+		}
+
+		if (!swapped)
+		{
+			break;
+		}
+	}
+}
+
+
+/*	Function: void swap(Student* xp, Student* yp);
+*	Pre: Two values to swap.
+*	Post: The values will be swapped.
+*	Purpose: Swap values for the purpose of sorting.
+*********************************************************/
+void swap(Student* xp, Student* yp)
+{
+	Student *tmp = xp;
+	xp = yp;
+	yp = tmp;
 }

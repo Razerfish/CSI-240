@@ -21,6 +21,12 @@ int main()
 
 	display(size, school);
 
+	sort(size, school);
+
+	cout << "\n\n---------------------------------------\n\n";
+
+	display(size, school);
+
 	delete[] school;
 
 	return 0;
