@@ -19,6 +19,8 @@ int main()
 
 	populate(size, DATA_FILE, school);
 
+	display(size, school);
+
 	delete[] school;
 
 	return 0;
