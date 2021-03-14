@@ -28,10 +28,7 @@ void display(int size, Student* ptr)
 {
 	for (int i = 0; i < size; i++)
 	{
-		cout
-			<< endl << ptr[i].getID()
-			<< endl << ptr[i].getName()
-			<< endl << ptr[i].getGPA() << endl;
+		cout << ptr[i] << endl;
 	}
 }
 
