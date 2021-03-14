@@ -12,5 +12,7 @@ const string DATA_FILE = "../Lab4/data.txt";
 
 int main()
 {
+	cout << getTargetEntries() << endl;
+
 	return 0;
 }

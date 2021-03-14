@@ -19,6 +19,12 @@ the purpose of future plagiarism checking)
 #ifndef _HEADER_H
 #define _HEADER_H
 
+#include <iostream>
+#include <string>
+#include <stdexcept>
+
 using namespace std;
+
+int getTargetEntries();
 
 #endif

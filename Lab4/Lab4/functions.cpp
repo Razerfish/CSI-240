@@ -17,3 +17,48 @@ the purpose of future plagiarism checking)
 */
 
 #include "header.h"
+
+
+/*	Function: int getTargetEntries();
+*	Pre: None.
+*	Post: Returns a number between 1 and 1000 indicating how many entries to read
+*	into memory.
+*	Purpose: Get the amount of entries to load.
+*********************************************************/
+int getTargetEntries()
+{
+	int entries;
+	string line;
+
+	cout << "Input the amount of entries to load (1-1000): ";
+
+	getline(cin, line);
+
+	// Attempt to convert the input to an int. Set entries to -1 if the conversion fails.
+	try
+	{
+		entries = stoi(line);
+	}
+	catch (invalid_argument)
+	{
+		entries = -1;
+	}
+
+	while (entries < 1 || entries > 1000)
+	{
+		cout << "Invalid input. Enter a number between 1 and 1000: ";
+		getline(cin, line);
+
+		// Same method of attempting conversion as above.
+		try
+		{
+			entries = stoi(line);
+		}
+		catch (invalid_argument)
+		{
+			entries = -1;
+		}
+	}
+
+	return entries;
+}
