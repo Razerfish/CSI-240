@@ -26,5 +26,21 @@ using namespace std;
 
 int main()
 {
+	int size = promptSize();
+
+	Student* school = new Student[size];
+
+	populate(size, "data.txt", school);
+
+	display(size, school);
+
+	cout << "------------------------------\n\n";
+
+	sort(size, school);
+
+	display(size, school);
+
+	delete[] school;
+
 	return 0;
 }
