@@ -36,6 +36,4 @@ int promptSize();
 
 void sort(int size, Student* ptr);
 
-void swap(Student* xp, Student* yp);
-
 #endif

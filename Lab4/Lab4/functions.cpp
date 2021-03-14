@@ -119,7 +119,9 @@ void sort(int size, Student* ptr)
 		{
 			if (ptr[j] > ptr[j + 1])
 			{
-				swap(ptr[j], ptr[j + 1]);
+				Student tmp = ptr[j];
+				ptr[j] = ptr[j + 1];
+				ptr[j + 1] = tmp;
 				swapped = true;
 			}
 		}
@@ -129,17 +131,4 @@ void sort(int size, Student* ptr)
 			break;
 		}
 	}
-}
-
-
-/*	Function: void swap(Student* xp, Student* yp);
-*	Pre: Two values to swap.
-*	Post: The values will be swapped.
-*	Purpose: Swap values for the purpose of sorting.
-*********************************************************/
-void swap(Student* xp, Student* yp)
-{
-	Student *tmp = xp;
-	xp = yp;
-	yp = tmp;
 }
