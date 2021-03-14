@@ -25,6 +25,6 @@ the purpose of future plagiarism checking)
 
 using namespace std;
 
-int getTargetEntries();
+int promptSize();
 
 #endif
