@@ -117,6 +117,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,7 +141,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Lab4\functions.cpp" />
+    <ClCompile Include="..\Lab4\student.cpp" />
     <ClCompile Include="driver.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Lab4\header.h" />
+    <ClInclude Include="..\Lab4\student.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Lab4\data.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
