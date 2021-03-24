@@ -21,7 +21,6 @@ the purpose of future plagiarism checking)
 
 #include <iostream>
 #include <string>
-#include <stdexcept>
 
 using namespace std;
 
