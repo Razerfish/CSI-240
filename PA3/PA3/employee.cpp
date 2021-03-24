@@ -29,11 +29,6 @@ istream& operator >>(istream& input, Employee& obj)
 	input >> obj.ID;
 	input >> obj.password;
 
-	// Discard rest of line
-
-	input.ignore(INT_MAX, '\n');
-	input.clear();
-
 	return input;
 }
 
