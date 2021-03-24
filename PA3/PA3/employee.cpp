@@ -17,3 +17,35 @@ the purpose of future plagiarism checking)
 */
 
 #include "employee.h"
+
+/*	Function: istream& operator >>(istream& input, Employee& obj
+*	Pre: None.
+*	Post: The Employee object will be populated using the contents of
+*	the input stream.
+*	Purpose: Populate an Employee object from an input stream.
+*********************************************************/
+istream& operator >>(istream& input, Employee& obj)
+{
+	input >> obj.mID;
+	input >> obj.mPassword;
+
+	// Discard rest of line
+
+	input.ignore(INT_MAX, '\n');
+	input.clear();
+
+	return input;
+}
+
+
+/*	Function: ostream& operator <<(ostream& output, const Employee& obj);
+*	Pre: None.
+*	Post: The ID and password of the Employee object will be output into
+*	the output stream.
+*	Purpose: Output the contents of an Employee object.
+*********************************************************/
+ostream& operator <<(ostream& output, const Employee& obj)
+{
+	output << obj.mID << ' ' << obj.mPassword << endl;
+	return output;
+}

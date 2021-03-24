@@ -19,5 +19,19 @@ the purpose of future plagiarism checking)
 #ifndef _EMPLOYEE_H
 #define _EMPLOYEE_H
 
+#include <iostream>
+#include <string>
+#include <stdexcept>
+
+using namespace std;
+
+struct Employee
+{
+	string mID;
+	string mPassword;
+
+	friend istream& operator >>(istream& input, Employee& obj);
+	friend ostream& operator <<(ostream& output, const Employee& obj);
+};
 
 #endif
