@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{137948da-dc8b-4f53-b7d2-b50a50a6e7fe}</ProjectGuid>
-    <RootNamespace>PA3</RootNamespace>
+    <ProjectGuid>{44931274-46fb-4019-8524-5b8c7762b17f}</ProjectGuid>
+    <RootNamespace>TellerStubDriver</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)PA3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,12 +140,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="employee.h" />
-    <ClInclude Include="teller.h" />
+    <ClCompile Include="..\PA3\employee.cpp" />
+    <ClCompile Include="..\PA3\teller.cpp" />
+    <ClCompile Include="teller-stub.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="employee.cpp" />
-    <ClCompile Include="teller.cpp" />
+    <ClInclude Include="..\PA3\employee.h" />
+    <ClInclude Include="..\PA3\teller.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
