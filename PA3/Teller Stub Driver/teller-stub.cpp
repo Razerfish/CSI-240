@@ -25,7 +25,118 @@ using namespace std;
 
 int main()
 {
+	// Probably went a bit overboard with this...
+
+	const int TEST_COUNT = 12;
+
+	string testIDs[TEST_COUNT] =
+	{
+		"e-elric",
+		"a-elric",
+		"w-rockbell",
+		"r-hawkeye",
+		"r-mustang",
+		"a-armstrong",
+		"o-armstrong",
+		"v-hohenheim",
+		"i-curtis",
+		"r-thomas",
+		"k-bradley",
+		"e-elric"
+	};
+
+	string testPasswords[TEST_COUNT] =
+	{
+		"october3",
+		"cats",
+		"gearhead",
+		"mustang",
+		"hawkeye",
+		"generations",
+		"briggs",
+		"trisha",
+		"sig",
+		"reole",
+		"father",
+		"gearhead"
+	};
+
+	bool testExpected[TEST_COUNT] =
+	{
+		true,
+		true,
+		true,
+		true,
+		true,
+		true,
+		true,
+		true,
+		true,
+		true,
+		false,
+		false
+	};
+
 	Teller test;
 
-	return 0;
+	cout << "Attempting to load data from fake.txt...";
+	if (test.loadData("fake.txt"))
+	{
+		cout << " Success! (That's not supposed to happen)";
+	}
+	else
+	{
+		cout << " Failed (That's expected)";
+	}
+
+	cout << "\n\nAttempting to load data from input.txt...";
+	if (test.loadData("input.txt"))
+	{
+		cout << " Success!";
+	}
+	else
+	{
+		cout << " Failed";
+	}
+
+	cout << "\n\nTesting tellers...\n\n";
+
+	bool result;
+	for (int i = 0; i < TEST_COUNT; i++)
+	{
+		cout << "Testing ID: " << testIDs[i] << " Password: " << testPasswords[i] << "...\n";
+
+		result = test.verifyTeller(testIDs[i], testPasswords[i]);
+
+		cout << "Expected ";
+
+		if (testExpected[i])
+		{
+			cout << "true";
+		}
+		else
+		{
+			cout << "false";
+		}
+
+		cout << ", got ";
+
+		if (result)
+		{
+			cout << "true";
+		}
+		else
+		{
+			cout << "false";
+		}
+
+		if (result == testExpected[i])
+		{
+			cout << " PASSED\n\n";
+		}
+		else
+		{
+			cout << " FAILED\n\n";
+		}
+	}
 }
