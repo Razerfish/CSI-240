@@ -19,5 +19,31 @@ the purpose of future plagiarism checking)
 #ifndef _TELLER_H
 #define _TELLER_H
 
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <fstream>
+#include <stdexcept>
+
+#include "employee.h"
+
+class Teller
+{
+private:
+	int mCount;
+	Employee* mTellers;
+
+public:
+	// Default constructor
+	Teller();
+
+	// Default destructor
+	~Teller();
+
+	// Other
+	bool loadData(string filename);
+	void storeData(string filename);
+	bool verifyTeller(const string& id, const string& password);
+};
 
 #endif
