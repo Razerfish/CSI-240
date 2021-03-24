@@ -15,3 +15,30 @@ academic staff; and/or
 (which may then retain a copy of this assignment on its database for
 the purpose of future plagiarism checking)
 */
+
+#include <iostream>
+#include <string>
+#include <sstream>
+
+#include "employee.h"
+
+using namespace std;
+
+int main()
+{
+	Employee test;
+
+	string data = "j-doe happy";
+	istringstream input(data);
+
+	cout << "Test input: " << data << endl;
+
+	input >> test;
+
+	cout
+		<< "Output:\n"
+		<< "ID: " << test.ID << endl
+		<< "Password: " << test.password << endl;
+
+	return 0;
+}

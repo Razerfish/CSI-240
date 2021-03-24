@@ -26,8 +26,8 @@ using namespace std;
 
 struct Employee
 {
-	string mID;
-	string mPassword;
+	string ID;
+	string password;
 
 	friend istream& operator >>(istream& input, Employee& obj);
 	friend ostream& operator <<(ostream& output, const Employee& obj);

@@ -26,8 +26,8 @@ the purpose of future plagiarism checking)
 *********************************************************/
 istream& operator >>(istream& input, Employee& obj)
 {
-	input >> obj.mID;
-	input >> obj.mPassword;
+	input >> obj.ID;
+	input >> obj.password;
 
 	// Discard rest of line
 
@@ -46,6 +46,6 @@ istream& operator >>(istream& input, Employee& obj)
 *********************************************************/
 ostream& operator <<(ostream& output, const Employee& obj)
 {
-	output << obj.mID << ' ' << obj.mPassword << endl;
+	output << obj.ID << ' ' << obj.password << endl;
 	return output;
 }
