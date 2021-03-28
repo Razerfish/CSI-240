@@ -30,8 +30,12 @@ using namespace std;
 *********************************************************/
 Account::Account()
 {
+	mAccountNumber = "";
+
 	mSSN = "";
 	mName = "";
+	mAddress = "";
+	mPhoneNumber = "";
 
 	mChecking = 0.0;
 	mSaving = 0.0;
@@ -39,19 +43,23 @@ Account::Account()
 }
 
 
-/*	Function: Account::Account(string ssn, string name, double checkingAmt, double savingAmt);
+/*	Function: Account::Account(string accountNumber, string ssn, string name, string address, string phoneNumber double checking, double saving);
 *	Pre: The values to initialize the Account object with.
 *	Post: The Account object will be initialized with the provided values.
 *	Purpose: Non-default constructor.
 *********************************************************/
-Account::Account(string ssn, string name, double checkingAmt, double savingAmt)
+Account::Account(string accountNumber, string ssn, string name, string address, string phoneNumber, double checking, double saving)
 {
+	mAccountNumber = accountNumber;
+
 	mSSN = ssn;
 	mName = name;
+	mAddress = address;
+	mPhoneNumber = phoneNumber;
 
-	mChecking = checkingAmt;
-	mSaving = savingAmt;
-	mTotal = checkingAmt + savingAmt;
+	mChecking = checking;
+	mSaving = saving;
+	mTotal = checking + saving;
 }
 
 
@@ -74,6 +82,27 @@ Account::~Account()
 *						Accessors						 *
 *********************************************************/
 
+/*	Function: string Account::getAccountNumber();
+*	Pre: None
+*	Post: The account number will be returned.
+*	Purpose: Return the account number of the account.
+*********************************************************/
+string Account::getAccountNumber()
+{
+	return mAccountNumber;
+}
+
+
+/*	Function: string Account::getAddress();
+*	Pre: None
+*	Post: The address will be returned.
+*	Purpose: Return the address of the account holder.
+*********************************************************/
+string Account::getAddress()
+{
+	return mAddress;
+}
+
 
 /*	Function: double Account::getChecking();
 *	Pre: None.
@@ -94,6 +123,17 @@ double Account::getChecking()
 string Account::getName()
 {
 	return mName;
+}
+
+
+/*	Function: string Account::getPhoneNumber();
+*	Pre: None
+*	Post: The phone number of the account holder will be returned.
+*	Purpose: Get the phone number of the account holder.
+*********************************************************/
+string Account::getPhoneNumber()
+{
+	return mPhoneNumber;
 }
 
 
@@ -134,16 +174,38 @@ double Account::getTotal()
 *						Mutators						 *
 *********************************************************/
 
+/*	Function: void Account::setAccountNumber();
+*	Pre: The new value to set the account number to.
+*	Post: The account number will be set to the new value.
+*	Purpose: Modify an accounts account number.
+*********************************************************/
+void Account::setAccountNumber(string accountNumber)
+{
+	mAccountNumber = accountNumber;
+}
+
+
+/*	Function: void Account::setAddress(string address);
+*	Pre: The new value to set the address to.
+*	Post: The address of the account holder will be set to the new value.
+*	Purpose: Modify the address of the account holder.
+*********************************************************/
+void Account::setAddress(string address)
+{
+	mAddress = address;
+}
+
+
 /*	Function: void Account::setChecking(double checkingAmt);
 *	Pre: The new value to set the checking balance to.
 *	Post: The checking balance will be set to the provided
 *	value and the total balance will be updated to reflect that.
 *	Purpose: Update the checking balance.
 *********************************************************/
-void Account::setChecking(double checkingAmt)
+void Account::setChecking(double checking)
 {
-	mChecking = checkingAmt;
-	mTotal = checkingAmt + mSaving;
+	mChecking = checking;
+	mTotal = checking + mSaving;
 }
 
 
@@ -158,16 +220,27 @@ void Account::setName(string name)
 }
 
 
+/*	Function: void Account::setPhoneNumber();
+*	Pre: The new value to set the phone number of the account holder to.
+*	Post: The account holders phone number will be updated to the new value.
+*	Purpose: Modify the account holders phone number.
+*********************************************************/
+void Account::setPhoneNumber(string phoneNumber)
+{
+	mPhoneNumber = phoneNumber;
+}
+
+
 /*	Function: void Account::setSaving(double savingAmt);
 *	Pre: The new value to set the saving balance to.
 *	Post: The saving balance will be set to the provided
 *	value and the total balance will be updated to reflect that.
 *	Purpose: Update the saving balance.
 *********************************************************/
-void Account::setSaving(double savingAmt)
+void Account::setSaving(double saving)
 {
-	mSaving = savingAmt;
-	mTotal = savingAmt + mChecking;
+	mSaving = saving;
+	mTotal = saving + mChecking;
 }
 
 
@@ -189,47 +262,47 @@ void Account::setSSN(string ssn)
 
 /*	Function: bool Account::operator ==(const Account& rhs);
 *	Pre: None.
-*	Post: Returns whether or not the SSN's both accounts match.
-*	Purpose: Check if the SSN's of two accounts match.
+*	Post: Returns whether or not the account number for both accounts match.
+*	Purpose: Check if the account numbers of two accounts match.
 *********************************************************/
 bool Account::operator ==(const Account& rhs)
 {
-	return mSSN == rhs.mSSN;
+	return mAccountNumber == rhs.mAccountNumber;
 }
 
 
 /*	Function: bool Account::operator ==(const string& rhs);
 *	Pre: None.
 *	Post: Returns whether or not the contents of the string match
-*	the account holders ssn.
-*	Purpose: Check if a string matches the account holders ssn.
+*	the account number.
+*	Purpose: Check if a string matches the account number.
 *********************************************************/
 bool Account::operator ==(const string& rhs)
 {
-	return mSSN == rhs;
+	return mAccountNumber == rhs;
 }
 
 
 /*	Function: bool Account::operator !=(const Account& rhs);
 *	Pre: None.
-*	Post: Returns whether or not the SSN's both accounts don't match.
-*	Purpose: Check if the SSN's of two accounts don't match.
+*	Post: Returns whether or not the account number for both accounts don't match.
+*	Purpose: Check if the account numbers of two accounts don't match.
 *********************************************************/
 bool Account::operator !=(const Account& rhs)
 {
-	return mSSN != rhs.mSSN;
+	return mAccountNumber != rhs.mAccountNumber;
 }
 
 
 /*	Function: bool Account::operator !=(const string& rhs);
 *	Pre: None.
 *	Post: Returns whether or not the contents of the string don't 
-*	match the account holders ssn.
-*	Purpose: Check if a string doesn't match the account holders ssn.
+*	match the account number.
+*	Purpose: Check if a string doesn't match the account number.
 *********************************************************/
 bool Account::operator !=(const string& rhs)
 {
-	return mSSN != rhs;
+	return mAccountNumber != rhs;
 }
 
 
@@ -265,8 +338,8 @@ bool Account::operator <(const Account& rhs)
 
 /*	Function: ostream& operator <<(ostream& output, const Account& obj);
 *	Pre: None.
-*	Post: SSN, name, checking balance and saving balance will be outputted
-*	to the stream.
+*	Post: Account number, SSN, name, address, phone number,
+*	checking balance and saving balance will be outputted to the stream.
 *	Purpose: Output the current account state to the stream.
 *********************************************************/
 ostream& operator <<(ostream& output, const Account& obj)
@@ -275,16 +348,31 @@ ostream& operator <<(ostream& output, const Account& obj)
 	output << fixed << setprecision(2);
 
 	output
-		<< setw(30) << left << "SSN"
+		<< setw(LABEL_WIDTH) << left << "Account Number:"
+		<< obj.mAccountNumber << endl;
+
+	output
+		<< setw(LABEL_WIDTH) << left << "SSN:"
 		<< obj.mSSN << endl;
 
 	output
-		<< setw(30) << left << "Name"
+		<< setw(LABEL_WIDTH) << left << "Name:"
 		<< obj.mName << endl;
 
 	output
-		<< setw(30) << left << "Saving Checking"
-		<< obj.mSaving << " " << obj.mChecking << endl;
+		<< setw(LABEL_WIDTH) << left << "Address:"
+		<< obj.mAddress << endl;
+
+	output
+		<< setw(LABEL_WIDTH) << left << "Phone Number:"
+		<< obj.mPhoneNumber << endl;
+
+	output
+		<< setw(LABEL_WIDTH) << left << "Saving Amount:"
+		<< '$' << obj.mSaving << endl;
+
+	output << setw(LABEL_WIDTH) << left << "Checking Amount:"
+		<< '$' << obj.mChecking << endl;
 
 	return output;
 }
@@ -292,26 +380,56 @@ ostream& operator <<(ostream& output, const Account& obj)
 
 /*	Function: ofstream& operator <<(ofstream& output, const Account& obj);
 *	Pre: None.
-*	Post: SSN, name, checking balance and saving balance will be outputted
-*	to the file.
+*	Post: Account number, SSN, name, addres and phone number will be outputted
+*	to the specified file. Savings amount will be saved to {account number}.sav
+*	and checking amount will be saved to {account number}.chk
 *	Purpose: Output the current account state to a file stream.
 *********************************************************/
 ofstream& operator <<(ofstream& output, const Account& obj)
 {
-	// Set precision
-	output << fixed << setprecision(2);
+	ofstream sout; // Savings file
+	ofstream chout; // Checking file
+
+	// Save non-balance data.
+	output
+		<< setw(LABEL_WIDTH) << left << "Account Number"
+		<< obj.mAccountNumber << endl;
 
 	output
-		<< setw(30) << left << "SSN"
+		<< setw(LABEL_WIDTH) << left << "SSN"
 		<< obj.mSSN << endl;
 
 	output
-		<< setw(30) << left << "Name"
+		<< setw(LABEL_WIDTH) << left << "Name"
 		<< obj.mName << endl;
 
 	output
-		<< setw(30) << left << "Saving Checking"
-		<< obj.mSaving << " " << obj.mChecking << endl;
+		<< setw(LABEL_WIDTH) << left << "Address"
+		<< obj.mAddress << endl;
+
+	output
+		<< setw(LABEL_WIDTH) << left << "Phone Number"
+		<< obj.mPhoneNumber << endl;
+
+	// Write savings balance
+	sout.open((obj.mAccountNumber + ".sav").c_str(), ios::out | ios::trunc);
+
+	if (sout.good())
+	{
+		sout << fixed << setprecision(2);
+		sout << obj.mSaving << endl;
+	}
+	sout.close();
+
+	// Write checking balance
+	chout.open((obj.mAccountNumber + ".chk").c_str(), ios::out | ios::trunc);
+
+	if (chout.good())
+	{
+		chout << fixed << setprecision(2);
+		chout << obj.mChecking << endl;
+	}
+	chout.close();
 
 	return output;
 }
@@ -325,32 +443,41 @@ ofstream& operator <<(ofstream& output, const Account& obj)
 *********************************************************/
 istream& operator >>(istream& input, Account& obj)
 {
-	string
-		tmp,
-		firstName,
-		lastName;
+	string line;
 
-	// Always discard the value label.
-	input >> tmp;
+	// We know the width of the label, so we can just throw away that many
+	// characters to get the data we want.
+	getline(input, line);
+	line.erase(0, LABEL_WIDTH);
+	obj.mAccountNumber = line;
 
-	// Get SSN.
-	input >> obj.mSSN;
+	getline(input, line);
+	line.erase(0, LABEL_WIDTH);
+	obj.mSSN = line;
 
-	// Advance to next line.
-	input.ignore(INT_MAX, '\n');
+	getline(input, line);
+	line.erase(0, LABEL_WIDTH);
+	obj.mName = line;
 
-	input >> tmp;
-	input >> firstName;
-	input >> lastName;
-	obj.mName = firstName + " " + lastName;
+	getline(input, line);
+	line.erase(0, LABEL_WIDTH);
+	obj.mAddress = line;
 
-	input.ignore(INT_MAX, '\n');
+	getline(input, line);
+	line.erase(0, LABEL_WIDTH);
+	obj.mPhoneNumber = line;
 
-	input >> tmp;
-	input >> tmp;
-	input >> obj.mSaving;
-	input >> obj.mChecking;
-	obj.mTotal = obj.mSaving + obj.mChecking;
+	// In the case of the checking and savings data we need to ignore one more character
+	// to get rid of the dollar sign.
+	getline(input, line);
+	line.erase(0, LABEL_WIDTH + 1);
+	obj.mChecking = stod(line);
+
+	getline(input, line);
+	line.erase(0, LABEL_WIDTH + 1);
+	obj.mSaving = stod(line);
+
+	obj.mTotal = obj.mChecking + obj.mSaving;
 
 	input.ignore(INT_MAX, '\n');
 
@@ -361,39 +488,57 @@ istream& operator >>(istream& input, Account& obj)
 /*	Function: ifstream& operator >>(ifstream& input, Account& obj);
 *	Pre: None.
 *	Post: The values of the account object will be set using the
-*	contents of the file stream.
+*	contents of the file stream and the contents of the appropriate
+*	.sav and .chk files.
 *	Purpose: Populate an account object from a file stream.
 *********************************************************/
 ifstream& operator >>(ifstream& input, Account& obj)
 {
-	string
-		tmp,
-		firstName,
-		lastName;
+	string line;
 
-	// Always discard the value label.
-	input >> tmp;
+	// Balance files
+	ifstream sin;
+	ifstream chin;
 
-	// Get SSN.
-	input >> obj.mSSN;
+	// Get non-balance data using the methodology as the istream extraction operator
+	getline(input, line);
+	line.erase(0, LABEL_WIDTH);
+	obj.mAccountNumber = line;
 
-	// Advance to next line.
-	input.ignore(INT_MAX, '\n');
+	getline(input, line);
+	line.erase(0, LABEL_WIDTH);
+	obj.mSSN = line;
 
-	input >> tmp;
-	input >> firstName;
-	input >> lastName;
-	obj.mName = firstName + " " + lastName;
+	getline(input, line);
+	line.erase(0, LABEL_WIDTH);
+	obj.mName = line;
 
-	input.ignore(INT_MAX, '\n');
+	getline(input, line);
+	line.erase(0, LABEL_WIDTH);
+	obj.mAddress = line;
 
-	input >> tmp;
-	input >> tmp;
-	input >> obj.mSaving;
-	input >> obj.mChecking;
+	getline(input, line);
+	line.erase(0, LABEL_WIDTH);
+	obj.mPhoneNumber = line;
+
+	// Get balance data
+	sin.open((obj.mAccountNumber + ".sav").c_str());
+	
+	if (sin.good())
+	{
+		sin >> obj.mSaving;
+	}
+	sin.close();
+
+	chin.open((obj.mAccountNumber + ".chk").c_str());
+
+	if (chin.good())
+	{
+		chin >> obj.mChecking;
+	}
+	chin.close();
+
 	obj.mTotal = obj.mSaving + obj.mChecking;
-
-	input.ignore(INT_MAX, '\n');
 
 	return input;
 }
@@ -401,46 +546,24 @@ ifstream& operator >>(ifstream& input, Account& obj)
 
 /*	Function: bool operator ==(const string& lhs, const Account& rhs);
 *	Pre: None.
-*	Post: Return whether or not the string is equal to the account
-*	objects SSN.
-*	Purpose: Check if the objects SSN matches a string and return true
-*	if it does.
+*	Post: Return whether or not the string is equal to the accounts
+*	account number.
+*	Purpose: Check if the objects account number matches the value of the string.
 *********************************************************/
 bool operator ==(const string& lhs, const Account& rhs)
 {
-	return lhs == rhs.mSSN;
+	return lhs == rhs.mAccountNumber;
 }
 
 
 /*	Function: bool operator !=(const string& lhs, const Account& rhs);
 *	Pre: None.
-*	Post: Return whether or not the string is equal to the account
-*	objects SSN.
-*	Purpose: Check if the objects SSN matches a string and return false
-*	if it does.
+*	Post: Return whether or not the string is equal to the accounts
+*	account number.
+*	Purpose: Check if the objects account number matches a string
+*	and returns false if it does.
 *********************************************************/
 bool operator !=(const string& lhs, const Account& rhs)
 {
-	return lhs != rhs.mSSN;
-}
-
-
-/*	Function: string boolToString(bool input);
-*	Pre: A bool to convert to a string.
-*	Post: If the provided bool is false the word "false"
-*	will be returned, if the proved bool is true the word
-*	"true" will be returned.
-*	Purpose: Make stub output more human readible without
-*	including a ton of if statements.
-*********************************************************/
-string boolToString(bool input)
-{
-	if (input)
-	{
-		return "true";
-	}
-	else
-	{
-		return "false";
-	}
+	return lhs != rhs.mAccountNumber;
 }

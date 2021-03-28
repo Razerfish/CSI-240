@@ -24,50 +24,49 @@
 
 using namespace std;
 
-const string TEST_STRING = "SSN                           9876-54-321\nName                          Jane Doe\nSaving Checking               1000.50 500.00\n";
+const int LABEL_WIDTH = 30;
 
 class Account
 {
 private:
+	string mAccountNumber;
+
 	string mSSN;
 	string mName;
+	string mAddress;
+	string mPhoneNumber;
 
 	double mChecking;
 	double mSaving;
 	double mTotal;
-
-	/*
-	Naming scheme incorrect.
-	Should be:
-	string mSSN;
-	string mName;
-
-	double mChecking;
-	double mSaving;
-	double mTotal;
-	*/
 
 public:
 	// Default constructor.
 	Account();
 
 	// Non-default constructer.
-	Account(string ssn, string name, double checkingAmt, double savingAmt);
+	Account(string accountNumber, string ssn, string name, string address, string phoneNumber, double checking, double saving);
 
 	// Destructer.
 	~Account();
 
 	// Accessors
+	string getAccountNumber();
+	string getAddress();
 	double getChecking();
 	string getName();
+	string getPhoneNumber();
 	double getSaving();
 	string getSSN();
 	double getTotal();
 
 	// Mutators.
-	void setChecking(double checkingAmt);
+	void setAccountNumber(string accountNumber);
+	void setAddress(string address);
+	void setChecking(double checking);
 	void setName(string name);
-	void setSaving(double savingAmt);
+	void setPhoneNumber(string phoneNumber); // I'm assuming that the phone number mutator being named getPhoneNumber in the UML was a typo.
+	void setSaving(double saving);
 	void setSSN(string ssn);
 
 	// Operators
@@ -90,8 +89,5 @@ public:
 	friend bool operator ==(const string& lhs, const Account& rhs);
 	friend bool operator !=(const string& lhs, const Account& rhs);
 };
-
-
-string boolToString(bool input);
 
 #endif
