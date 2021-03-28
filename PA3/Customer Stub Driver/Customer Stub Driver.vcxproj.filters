@@ -21,10 +21,35 @@
     <ClCompile Include="..\PA3\customer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\PA3\account.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\PA3\customer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\PA3\account.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="customer_input.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="1234.chk">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="1234.sav">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="5678.chk">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="5678.sav">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

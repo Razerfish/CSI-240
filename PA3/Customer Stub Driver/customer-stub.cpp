@@ -13,3 +13,69 @@
 // - Communicate a copy of this assignment to a plagiarism checking service
 // (which may then retain a copy of this assignment on its database for
 // the purpose of future plagiarism checking)
+
+#include <iostream>
+
+#include "customer.h"
+
+using namespace std;
+
+int main()
+{
+	Customer test;
+
+	// Expected value: false
+	cout << "Test 1: ";
+	if (test.loadData())
+	{
+		cout << " FAILED\n";
+	}
+	else
+	{
+		cout << " PASSED\n";
+	}
+
+	test.setFilename("customer_input.txt");
+
+	// Expected value: "customer_input.txt"
+	cout << "Test 2: ";
+	if (test.getFilename() == "customer_input.txt")
+	{
+		cout << "PASSED\n";
+	}
+	else
+	{
+		cout << "FAILED\n";
+	}
+
+	// Expected value: true
+	cout << "Test 3: ";
+	if (test.loadData())
+	{
+		cout << "PASSED\n";
+	}
+	else
+	{
+		cout << "FAILED\n";
+	}
+
+	// Expected value: 2
+	cout << "Test 3: ";
+	if (test.getCount() == 2)
+	{
+		cout << "PASSED\n";
+	}
+	else
+	{
+		cout << "FAILED\n";
+	}
+
+	cout << endl;
+
+	cout << test.getCustomer("1234") << endl << endl;
+
+	test.setFilename("output.txt");
+	test.storeData();
+
+	return 0;
+}

@@ -17,4 +17,40 @@
 #ifndef _CUSTOMER_H
 #define _CUSTOMER_H
 
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <string>
+
+#include "account.h"
+
+using namespace std;
+
+class Customer
+{
+private:
+	int mCount;
+	Account* mAccounts;
+	string mFilename;
+
+public:
+	// Default constructor
+	Customer();
+
+	// Destructor
+	~Customer();
+
+	// Accessors
+	int getCount();
+	Account getCustomer(string accountNumber);
+	string getFilename();
+
+	// Mutators
+	void setFilename(string filename);
+
+	// Other
+	bool loadData();
+	void storeData();
+};
+
 #endif
