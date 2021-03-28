@@ -59,7 +59,7 @@ int main()
 
 	input >> acc3;
 
-	fin.open("input.txt");
+	fin.open("account_input.txt");
 	if (fin.good())
 	{
 		fin >> acc4;
@@ -94,7 +94,7 @@ int main()
 
 	ofstream fout;
 
-	fout.open("output.txt", ios::out | ios::trunc);
+	fout.open("account_output.txt", ios::out | ios::trunc);
 	if (fout.good())
 	{
 		fout << acc3;

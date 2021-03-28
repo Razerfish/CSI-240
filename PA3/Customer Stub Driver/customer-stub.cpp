@@ -28,11 +28,11 @@ int main()
 	cout << "Test 1: ";
 	if (test.loadData())
 	{
-		cout << " FAILED\n";
+		cout << "FAILED\n";
 	}
 	else
 	{
-		cout << " PASSED\n";
+		cout << "PASSED\n";
 	}
 
 	test.setFilename("customer_input.txt");
@@ -74,7 +74,7 @@ int main()
 
 	cout << test.getCustomer("1234") << endl << endl;
 
-	test.setFilename("output.txt");
+	test.setFilename("customer_output.txt");
 	test.storeData();
 
 	return 0;
