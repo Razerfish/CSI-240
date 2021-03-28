@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Employee Stub Driver", "Emp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Teller Stub Driver", "Teller Stub Driver\Teller Stub Driver.vcxproj", "{44931274-46FB-4019-8524-5B8C7762B17F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Account Stub Driver", "Account Stub Driver\Account Stub Driver.vcxproj", "{B47944F2-EDC3-40B8-907D-5AE74164235D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{44931274-46FB-4019-8524-5B8C7762B17F}.Release|x64.Build.0 = Release|x64
 		{44931274-46FB-4019-8524-5B8C7762B17F}.Release|x86.ActiveCfg = Release|Win32
 		{44931274-46FB-4019-8524-5B8C7762B17F}.Release|x86.Build.0 = Release|Win32
+		{B47944F2-EDC3-40B8-907D-5AE74164235D}.Debug|x64.ActiveCfg = Debug|x64
+		{B47944F2-EDC3-40B8-907D-5AE74164235D}.Debug|x64.Build.0 = Debug|x64
+		{B47944F2-EDC3-40B8-907D-5AE74164235D}.Debug|x86.ActiveCfg = Debug|Win32
+		{B47944F2-EDC3-40B8-907D-5AE74164235D}.Debug|x86.Build.0 = Debug|Win32
+		{B47944F2-EDC3-40B8-907D-5AE74164235D}.Release|x64.ActiveCfg = Release|x64
+		{B47944F2-EDC3-40B8-907D-5AE74164235D}.Release|x64.Build.0 = Release|x64
+		{B47944F2-EDC3-40B8-907D-5AE74164235D}.Release|x86.ActiveCfg = Release|Win32
+		{B47944F2-EDC3-40B8-907D-5AE74164235D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
