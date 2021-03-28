@@ -100,4 +100,6 @@ int main()
 		fout << acc3;
 	}
 	fout.close();
+
+	return 0;
 }
