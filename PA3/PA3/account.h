@@ -29,12 +29,12 @@ const string TEST_STRING = "SSN                           9876-54-321\nName     
 class Account
 {
 private:
-	string _ssn;
-	string _name;
+	string mSSN;
+	string mName;
 
-	double _checking;
-	double _saving;
-	double _total;
+	double mChecking;
+	double mSaving;
+	double mTotal;
 
 	/*
 	Naming scheme incorrect.

@@ -30,12 +30,12 @@ using namespace std;
 *********************************************************/
 Account::Account()
 {
-	_ssn = "";
-	_name = "";
+	mSSN = "";
+	mName = "";
 
-	_checking = 0.0;
-	_saving = 0.0;
-	_total = 0.0;
+	mChecking = 0.0;
+	mSaving = 0.0;
+	mTotal = 0.0;
 }
 
 
@@ -46,12 +46,12 @@ Account::Account()
 *********************************************************/
 Account::Account(string ssn, string name, double checkingAmt, double savingAmt)
 {
-	_ssn = ssn;
-	_name = name;
+	mSSN = ssn;
+	mName = name;
 
-	_checking = checkingAmt;
-	_saving = savingAmt;
-	_total = checkingAmt + savingAmt;
+	mChecking = checkingAmt;
+	mSaving = savingAmt;
+	mTotal = checkingAmt + savingAmt;
 }
 
 
@@ -82,7 +82,7 @@ Account::~Account()
 *********************************************************/
 double Account::getChecking()
 {
-	return _checking;
+	return mChecking;
 }
 
 
@@ -93,7 +93,7 @@ double Account::getChecking()
 *********************************************************/
 string Account::getName()
 {
-	return _name;
+	return mName;
 }
 
 
@@ -104,7 +104,7 @@ string Account::getName()
 *********************************************************/
 double Account::getSaving()
 {
-	return _saving;
+	return mSaving;
 }
 
 
@@ -115,7 +115,7 @@ double Account::getSaving()
 *********************************************************/
 string Account::getSSN()
 {
-	return _ssn;
+	return mSSN;
 }
 
 
@@ -126,7 +126,7 @@ string Account::getSSN()
 *********************************************************/
 double Account::getTotal()
 {
-	return _checking + _saving;
+	return mChecking + mSaving;
 }
 
 
@@ -142,8 +142,8 @@ double Account::getTotal()
 *********************************************************/
 void Account::setChecking(double checkingAmt)
 {
-	_checking = checkingAmt;
-	_total = checkingAmt + _saving;
+	mChecking = checkingAmt;
+	mTotal = checkingAmt + mSaving;
 }
 
 
@@ -154,7 +154,7 @@ void Account::setChecking(double checkingAmt)
 *********************************************************/
 void Account::setName(string name)
 {
-	_name = name;
+	mName = name;
 }
 
 
@@ -166,8 +166,8 @@ void Account::setName(string name)
 *********************************************************/
 void Account::setSaving(double savingAmt)
 {
-	_saving = savingAmt;
-	_total = savingAmt + _checking;
+	mSaving = savingAmt;
+	mTotal = savingAmt + mChecking;
 }
 
 
@@ -178,7 +178,7 @@ void Account::setSaving(double savingAmt)
 *********************************************************/
 void Account::setSSN(string ssn)
 {
-	_ssn = ssn;
+	mSSN = ssn;
 }
 
 
@@ -194,7 +194,7 @@ void Account::setSSN(string ssn)
 *********************************************************/
 bool Account::operator ==(const Account& rhs)
 {
-	return _ssn == rhs._ssn;
+	return mSSN == rhs.mSSN;
 }
 
 
@@ -206,7 +206,7 @@ bool Account::operator ==(const Account& rhs)
 *********************************************************/
 bool Account::operator ==(const string& rhs)
 {
-	return _ssn == rhs;
+	return mSSN == rhs;
 }
 
 
@@ -217,7 +217,7 @@ bool Account::operator ==(const string& rhs)
 *********************************************************/
 bool Account::operator !=(const Account& rhs)
 {
-	return _ssn != rhs._ssn;
+	return mSSN != rhs.mSSN;
 }
 
 
@@ -229,7 +229,7 @@ bool Account::operator !=(const Account& rhs)
 *********************************************************/
 bool Account::operator !=(const string& rhs)
 {
-	return _ssn != rhs;
+	return mSSN != rhs;
 }
 
 
@@ -242,7 +242,7 @@ bool Account::operator !=(const string& rhs)
 *********************************************************/
 bool Account::operator >(const Account& rhs)
 {
-	return _total > rhs._total;
+	return mTotal > rhs.mTotal;
 }
 
 
@@ -255,7 +255,7 @@ bool Account::operator >(const Account& rhs)
 *********************************************************/
 bool Account::operator <(const Account& rhs)
 {
-	return _total < rhs._total;
+	return mTotal < rhs.mTotal;
 }
 
 
@@ -276,15 +276,15 @@ ostream& operator <<(ostream& output, const Account& obj)
 
 	output
 		<< setw(30) << left << "SSN"
-		<< obj._ssn << endl;
+		<< obj.mSSN << endl;
 
 	output
 		<< setw(30) << left << "Name"
-		<< obj._name << endl;
+		<< obj.mName << endl;
 
 	output
 		<< setw(30) << left << "Saving Checking"
-		<< obj._saving << " " << obj._checking << endl;
+		<< obj.mSaving << " " << obj.mChecking << endl;
 
 	return output;
 }
@@ -303,15 +303,15 @@ ofstream& operator <<(ofstream& output, const Account& obj)
 
 	output
 		<< setw(30) << left << "SSN"
-		<< obj._ssn << endl;
+		<< obj.mSSN << endl;
 
 	output
 		<< setw(30) << left << "Name"
-		<< obj._name << endl;
+		<< obj.mName << endl;
 
 	output
 		<< setw(30) << left << "Saving Checking"
-		<< obj._saving << " " << obj._checking << endl;
+		<< obj.mSaving << " " << obj.mChecking << endl;
 
 	return output;
 }
@@ -334,7 +334,7 @@ istream& operator >>(istream& input, Account& obj)
 	input >> tmp;
 
 	// Get SSN.
-	input >> obj._ssn;
+	input >> obj.mSSN;
 
 	// Advance to next line.
 	input.ignore(INT_MAX, '\n');
@@ -342,15 +342,15 @@ istream& operator >>(istream& input, Account& obj)
 	input >> tmp;
 	input >> firstName;
 	input >> lastName;
-	obj._name = firstName + " " + lastName;
+	obj.mName = firstName + " " + lastName;
 
 	input.ignore(INT_MAX, '\n');
 
 	input >> tmp;
 	input >> tmp;
-	input >> obj._saving;
-	input >> obj._checking;
-	obj._total = obj._saving + obj._checking;
+	input >> obj.mSaving;
+	input >> obj.mChecking;
+	obj.mTotal = obj.mSaving + obj.mChecking;
 
 	input.ignore(INT_MAX, '\n');
 
@@ -375,7 +375,7 @@ ifstream& operator >>(ifstream& input, Account& obj)
 	input >> tmp;
 
 	// Get SSN.
-	input >> obj._ssn;
+	input >> obj.mSSN;
 
 	// Advance to next line.
 	input.ignore(INT_MAX, '\n');
@@ -383,15 +383,15 @@ ifstream& operator >>(ifstream& input, Account& obj)
 	input >> tmp;
 	input >> firstName;
 	input >> lastName;
-	obj._name = firstName + " " + lastName;
+	obj.mName = firstName + " " + lastName;
 
 	input.ignore(INT_MAX, '\n');
 
 	input >> tmp;
 	input >> tmp;
-	input >> obj._saving;
-	input >> obj._checking;
-	obj._total = obj._saving + obj._checking;
+	input >> obj.mSaving;
+	input >> obj.mChecking;
+	obj.mTotal = obj.mSaving + obj.mChecking;
 
 	input.ignore(INT_MAX, '\n');
 
@@ -408,7 +408,7 @@ ifstream& operator >>(ifstream& input, Account& obj)
 *********************************************************/
 bool operator ==(const string& lhs, const Account& rhs)
 {
-	return lhs == rhs._ssn;
+	return lhs == rhs.mSSN;
 }
 
 
@@ -421,7 +421,7 @@ bool operator ==(const string& lhs, const Account& rhs)
 *********************************************************/
 bool operator !=(const string& lhs, const Account& rhs)
 {
-	return lhs != rhs._ssn;
+	return lhs != rhs.mSSN;
 }
 
 
