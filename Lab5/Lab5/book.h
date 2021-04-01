@@ -19,4 +19,39 @@ the purpose of future plagiarism checking)
 #ifndef _BOOK_H
 #define _BOOK_H
 
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+#include "item.h"
+
+using namespace std;
+
+class Book : public Item
+{
+private:
+	string mTitle;
+	string mAuthor;
+
+public:
+	// Constructors
+	Book();
+	Book(string code, string title, string author, double price, int quantity);
+
+	// Destructor
+	~Book();
+
+	// Accessors
+	string getAuthor() const;
+	string getTitle() const;
+
+	// Mutators
+	void setAuthor(string author);
+	void setTitle(string title);
+
+	// Friend Functions
+	friend istream& operator >>(istream& input, Book& book);
+	friend ostream& operator <<(ostream& output, const Book& book);
+};
+
 #endif

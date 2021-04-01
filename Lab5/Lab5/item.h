@@ -19,4 +19,40 @@ the purpose of future plagiarism checking)
 #ifndef _ITEM_H
 #define _ITEM_H
 
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+class Item
+{
+protected:
+	string mCode;
+	double mPrice;
+	int mQuantity;
+
+public:
+	// Constructors
+	Item();
+	Item(string code, double price, int quantity);
+
+	// Destructor
+	~Item();
+
+	// Accessors
+	string getCode() const;
+	double getPrice() const;
+	int getQuantity() const;
+
+	// Mutators
+	void setCode(string code);
+	void setPrice(double price);
+	void setQuantity(int quantity);
+
+	// Friend functions
+	friend istream& operator >>(istream& input, Item& item);
+	friend ostream& operator <<(ostream& output, const Item& item);
+};
+
 #endif
