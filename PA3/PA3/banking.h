@@ -53,7 +53,7 @@ void clearScreen();
 bool convertStr2Double(string stringValue, double& doubleValue);
 void displayLogo();
 void displayMessage(int errorCode);
-string mainMenu();
+int mainMenu();
 void systemPause();
 string toUpper(string stringValue);
 

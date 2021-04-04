@@ -114,7 +114,7 @@ void displayMessage(int errorCode)
 *	from the teller.
 *	Purpose: Display the main menu to the teller and get their selection.
 *********************************************************/
-string mainMenu()
+int mainMenu()
 {
 	int selection;
 
@@ -147,22 +147,13 @@ string mainMenu()
 		cin.clear();
 		cin.ignore(INT_MAX, '\n');
 
-		switch (selection)
+		if (selection > 0 && selection < 10)
 		{
-		case 1: return "addAccount";
-		case 2: return "delAccount";
-		case 3: return "updateAccount";
-		case 4: return "searchAccounts";
-		case 5: return "deposit";
-		case 6: return "withdrawl";
-		case 7: return "checkBalance";
-		case 8: return "logout";
-		case 9: return "shutdown";
-		default:
-			displayMessage(INVALID_SELECTION);
-			systemPause();
-			break;
+			return selection;
 		}
+
+		displayMessage(INVALID_SELECTION);
+		systemPause();
 	}
 }
 
