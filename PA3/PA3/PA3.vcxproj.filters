@@ -27,6 +27,9 @@
     <ClInclude Include="customer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="banking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="employee.cpp">
@@ -39,6 +42,24 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="customer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pa3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="commonFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="customerOperations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="searchOperations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tellerOperations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="updateOperations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

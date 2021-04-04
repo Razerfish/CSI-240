@@ -143,12 +143,19 @@
     <ClInclude Include="customer.h" />
     <ClInclude Include="employee.h" />
     <ClInclude Include="teller.h" />
+    <ClInclude Include="banking.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="account.cpp" />
+    <ClCompile Include="commonFunctions.cpp" />
     <ClCompile Include="customer.cpp" />
+    <ClCompile Include="customerOperations.cpp" />
     <ClCompile Include="employee.cpp" />
+    <ClCompile Include="pa3.cpp" />
+    <ClCompile Include="searchOperations.cpp" />
     <ClCompile Include="teller.cpp" />
+    <ClCompile Include="tellerOperations.cpp" />
+    <ClCompile Include="updateOperations.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
