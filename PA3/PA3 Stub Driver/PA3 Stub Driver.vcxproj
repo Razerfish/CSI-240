@@ -145,7 +145,6 @@
     <ClCompile Include="..\PA3\customer.cpp" />
     <ClCompile Include="..\PA3\customerOperations.cpp" />
     <ClCompile Include="..\PA3\employee.cpp" />
-    <ClCompile Include="..\PA3\pa3.cpp" />
     <ClCompile Include="..\PA3\searchOperations.cpp" />
     <ClCompile Include="..\PA3\teller.cpp" />
     <ClCompile Include="..\PA3\tellerOperations.cpp" />

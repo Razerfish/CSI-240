@@ -22,5 +22,46 @@ using namespace std;
 
 int main()
 {
-	return 0;
+	clearScreen();
+
+	double x;
+	if (convertStr2Double("15.0", x))
+	{
+		cout << "true\n";
+	}
+	else
+	{
+		cout << "false\n";
+	}
+
+	cout << x << endl;
+
+	if (convertStr2Double("dgfdg", x))
+	{
+		cout << "true\n";
+	}
+	else
+	{
+		cout << "false\n";
+	}
+
+	displayLogo();
+
+
+	displayMessage(5);
+	displayMessage(10);
+	displayMessage(15);
+	displayMessage(20);
+	displayMessage(25);
+	displayMessage(30);
+	displayMessage(35);
+	displayMessage(40);
+	displayMessage(45);
+	displayMessage(0);
+
+	cout << toUpper("test123!") << endl;
+
+	systemPause();
+
+	cout << mainMenu() << endl;
 }

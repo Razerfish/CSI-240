@@ -33,9 +33,6 @@
     <ClCompile Include="..\PA3\employee.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\PA3\pa3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\PA3\searchOperations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

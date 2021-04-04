@@ -15,3 +15,182 @@ academic staff; and/or
 (which may then retain a copy of this assignment on its database for
 the purpose of future plagiarism checking)
 */
+
+#include "banking.h"
+
+/*	Function: void clearScreen();
+*	Pre: None
+*	Post: The console will be cleared.
+*	Purpose: Clear the console.
+*********************************************************/
+void clearScreen()
+{
+	system("CLS");
+}
+
+
+/*	Function: bool convertStr2Double(string stringValue, double& doubleValue);
+*	Pre: A string to convert and a reference to where to store the result if successful.
+*	Post: If successful, true is returned and the converted value is stored in doubleValue,
+*	otherwise returns false.
+*	Purpose: Convert a string to a double.
+*********************************************************/
+bool convertStr2Double(string stringValue, double& doubleValue)
+{
+	try
+	{
+		doubleValue = stod(stringValue);
+	}
+	catch (invalid_argument)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+
+/*	void displayLogo();
+*	Pre: None
+*	Post: The bank logo will be printed to the console.
+*	Purpose: Display the bank's logo.
+*********************************************************/
+void displayLogo()
+{
+	cout
+		<< string(50, '$') << endl
+		<< setw(15) << left << '$'
+		<< "Generic Credit Union"
+		<< setw(15) << right << '$' << endl
+		<< string(50, '$') << endl << endl;
+}
+
+
+/*	Function: void displayMessage(int errorCode);
+*	Pre: The code of the message to display.
+*	Post: The message with the corrasponding code will be displayed.
+*	Purpose: Display an error message.
+*********************************************************/
+void displayMessage(int errorCode)
+{
+	switch (errorCode)
+	{
+	case 5:
+		cout << "ERROR:	ACCOUNT ALREADY EXISTS\n";
+		break;
+	case 10:
+		cout << "ERROR: ACCOUNT NOT FOUND\n";
+		break;
+	case 15:
+		cout << "ERROR: INSUFFICIENT FUNDS FOR WITHDRAWL\n";
+		break;
+	case 20:
+		cout << "ERROR: INVALID AMOUNT\n";
+		break;
+	case 25:
+		cout << "ERROR: INVALID INPUT\n";
+		break;
+	case 30:
+		cout << "ERROR: INVALID LOGIN CREDENTIALS\n";
+		break;
+	case 35:
+		cout << "ERROR: INVALID SELECTION\n";
+		break;
+	case 40:
+		cout << "ERROR: ACCOUNT DATABASE NOT AVAILABLE\n";
+		break;
+	case 45:
+		cout << "ERROR: TELLER DATABASE NOT AVAILABLE\n";
+		break;
+	default:
+		cout << "ERROR: UNKNOWN ERROR CODE: " << errorCode << endl;
+	}
+}
+
+
+/*	Function: string mainMenu();
+*	Pre: None
+*	Post: Returns a string contained the validated selection
+*	from the teller.
+*	Purpose: Display the main menu to the teller and get their selection.
+*********************************************************/
+string mainMenu()
+{
+	int selection;
+
+	// Loop until we get good input
+	while (true)
+	{
+		clearScreen();
+		displayLogo();
+
+		cout
+			<< "1. Add acccount\n"
+			<< "2. Delete account\n"
+			<< "3. Update account information\n"
+			<< "4. Search accounts\n"
+			<< "5. Deposit\n"
+			<< "6. Withdrawl\n"
+			<< "7. Check balance\n"
+			<< "8. Logout\n"
+			<< "9. Shutdown\n"
+			<< "\nInput your selection: ";
+
+		cin >> selection;
+
+		if (cin.fail())
+		{
+			selection = 0;
+		}
+
+		// Clear cin of leftover input
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+
+		switch (selection)
+		{
+		case 1: return "addAccount";
+		case 2: return "delAccount";
+		case 3: return "updateAccount";
+		case 4: return "searchAccounts";
+		case 5: return "deposit";
+		case 6: return "withdrawl";
+		case 7: return "checkBalance";
+		case 8: return "logout";
+		case 9: return "shutdown";
+		default:
+			displayMessage(35);
+			systemPause();
+			break;
+		}
+	}
+}
+
+
+/*	Function: void systemPause();
+*	Pre: None
+*	Post: Execution is paused until a key is pressed.
+*	Purpose: Pause the program.
+*********************************************************/
+void systemPause()
+{
+	system("PAUSE");
+}
+
+
+/*	Function: string toUpper(string stringValue);
+*	Pre: The string to set to upper case.
+*	Post: The provided string will be set to all caps.
+*	Purpose: Make a string all caps.
+*********************************************************/
+string toUpper(string stringValue)
+{
+	string output = "";
+
+	for (unsigned int i = 0; i < stringValue.length(); i++)
+	{
+		output += toupper(stringValue[i]);
+	}
+
+	return output;
+}

@@ -19,5 +19,27 @@ the purpose of future plagiarism checking)
 #ifndef _BANKING_H
 #define _BANKING_H
 
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <string>
+#include <stdexcept>
+
+#include "account.h"
+#include "customer.h"
+#include "employee.h"
+#include "teller.h"
+
+using namespace std;
+
+// commonFunctions.cpp
+
+void clearScreen();
+bool convertStr2Double(string stringValue, double& doubleValue);
+void displayLogo();
+void displayMessage(int errorCode);
+string mainMenu();
+void systemPause();
+string toUpper(string stringValue);
 
 #endif
