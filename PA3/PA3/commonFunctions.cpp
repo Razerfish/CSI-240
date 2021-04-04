@@ -35,11 +35,11 @@ void clearScreen()
 *	otherwise returns false.
 *	Purpose: Convert a string to a double.
 *********************************************************/
-bool convertStr2Double(string stringValue, double& doubleValue)
+bool convertStr2Double(string input, double& output)
 {
 	try
 	{
-		doubleValue = stod(stringValue);
+		output = stod(input);
 	}
 	catch (invalid_argument)
 	{
@@ -174,13 +174,13 @@ void systemPause()
 *	Post: The provided string will be set to all caps.
 *	Purpose: Make a string all caps.
 *********************************************************/
-string toUpper(string stringValue)
+string toUpper(string input)
 {
 	string output = "";
 
-	for (unsigned int i = 0; i < stringValue.length(); i++)
+	for (unsigned int i = 0; i < input.length(); i++)
 	{
-		output += toupper(stringValue[i]);
+		output += toupper(input[i]);
 	}
 
 	return output;
