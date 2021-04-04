@@ -63,4 +63,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="accounts.dat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tellers.dat">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

@@ -32,6 +32,21 @@ the purpose of future plagiarism checking)
 
 using namespace std;
 
+// Data files
+#define TELLER_DATAFILE "tellers.dat"
+#define ACCOUNT_DATAFILE "accounts.dat"
+
+// Error codes
+#define ACCOUNT_ALREADY_EXIST 5
+#define	ACCOUNT_NOT_FOUND 10
+#define INSUFFICIENT_FUNDS 15
+#define INVALID_AMOUNT 20
+#define INVALID_INPUT 25
+#define INVALID_CREDS 30
+#define INVALID_SELECTION 35
+#define ACCOUNT_DB_NOT_AVAILABLE 40
+#define TELLER_DB_NOT_AVAILABLE 45
+
 // commonFunctions.cpp
 
 void clearScreen();
@@ -41,5 +56,11 @@ void displayMessage(int errorCode);
 string mainMenu();
 void systemPause();
 string toUpper(string stringValue);
+
+// tellerOperations.cpp
+
+void getIdPassword(string& id, string& password);
+void login();
+bool validateLogin(string id, string password);
 
 #endif

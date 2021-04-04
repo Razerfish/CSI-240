@@ -159,7 +159,7 @@ string mainMenu()
 		case 8: return "logout";
 		case 9: return "shutdown";
 		default:
-			displayMessage(35);
+			displayMessage(INVALID_SELECTION);
 			systemPause();
 			break;
 		}

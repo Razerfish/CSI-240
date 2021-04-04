@@ -22,6 +22,7 @@ using namespace std;
 
 int main()
 {
+	/*
 	clearScreen();
 
 	double x;
@@ -64,4 +65,7 @@ int main()
 	systemPause();
 
 	cout << mainMenu() << endl;
+	*/
+
+	login();
 }

@@ -158,6 +158,10 @@
     <ClInclude Include="..\PA3\employee.h" />
     <ClInclude Include="..\PA3\teller.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="accounts.dat" />
+    <None Include="tellers.dat" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
