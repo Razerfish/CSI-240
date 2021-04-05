@@ -45,10 +45,10 @@
     <None Include="1234.sav">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="5678.chk">
+    <None Include="55555.chk">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="5678.sav">
+    <None Include="55555.sav">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

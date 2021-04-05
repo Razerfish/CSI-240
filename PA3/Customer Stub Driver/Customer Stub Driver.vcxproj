@@ -154,8 +154,8 @@
   <ItemGroup>
     <None Include="1234.chk" />
     <None Include="1234.sav" />
-    <None Include="5678.chk" />
-    <None Include="5678.sav" />
+    <None Include="55555.chk" />
+    <None Include="55555.sav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
