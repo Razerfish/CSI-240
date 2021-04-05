@@ -47,8 +47,12 @@ public:
 
 	// Mutators
 	void setFilename(string filename);
+	void modifyAccount(string accountNumber, Account modified);
 
 	// Other
+	bool accountExists(string accountNumber);
+	void addCustomer(string accountNumber, Account customer);
+	void deleteCustomer(string accountNumber);
 	bool loadData();
 	void storeData();
 };

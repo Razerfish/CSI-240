@@ -51,12 +51,10 @@ using namespace std;
 // commonFunctions.cpp
 
 void clearScreen();
-bool convertStr2Double(string input, double& output);
 void displayLogo();
 void displayMessage(int errorCode);
 int mainMenu();
 void systemPause();
-string toUpper(string input);
 
 // tellerOperations.cpp
 

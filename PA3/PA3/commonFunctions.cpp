@@ -29,27 +29,6 @@ void clearScreen()
 }
 
 
-/*	Function: bool convertStr2Double(string stringValue, double& doubleValue);
-*	Pre: A string to convert and a reference to where to store the result if successful.
-*	Post: If successful, true is returned and the converted value is stored in doubleValue,
-*	otherwise returns false.
-*	Purpose: Convert a string to a double.
-*********************************************************/
-bool convertStr2Double(string input, double& output)
-{
-	try
-	{
-		output = stod(input);
-	}
-	catch (invalid_argument)
-	{
-		return false;
-	}
-
-	return true;
-}
-
-
 /*	void displayLogo();
 *	Pre: None
 *	Post: The bank logo will be printed to the console.
@@ -108,9 +87,9 @@ void displayMessage(int errorCode)
 }
 
 
-/*	Function: string mainMenu();
+/*	Function: int mainMenu();
 *	Pre: None
-*	Post: Returns a string contained the validated selection
+*	Post: Returns an int containing the validated selection
 *	from the teller.
 *	Purpose: Display the main menu to the teller and get their selection.
 *********************************************************/
@@ -166,22 +145,4 @@ int mainMenu()
 void systemPause()
 {
 	system("PAUSE");
-}
-
-
-/*	Function: string toUpper(string stringValue);
-*	Pre: The string to set to upper case.
-*	Post: The provided string will be set to all caps.
-*	Purpose: Make a string all caps.
-*********************************************************/
-string toUpper(string input)
-{
-	string output = "";
-
-	for (unsigned int i = 0; i < input.length(); i++)
-	{
-		output += toupper(input[i]);
-	}
-
-	return output;
 }

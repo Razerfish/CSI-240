@@ -122,14 +122,192 @@ void Customer::setFilename(string filename)
 }
 
 
+/*	Function: void Customer::modifyAccount(string accountNumber, Account modified);
+*	Pre: The number of the account to update and an Account object containing the
+*	new values. The account number must exist and the database and must match
+*	the account number of the updated Account object or else nothing will be done.
+*	Post: Assuming that all requirements are met the existing account object
+*	will be replaced with the provided object and the database on disk will
+*	be refreshed.
+*	Purpose: Modify the parameters of an account in the database.
+*********************************************************/
+void Customer::modifyAccount(string accountNumber, Account modified)
+{
+	int fountAt = -1;
+
+	// Abort if account numbers don't match
+	if (accountNumber != modified)
+	{
+		return;
+	}
+
+	// Find the index of the target account
+	for (int i = 0; i < mCount; i++)
+	{
+		if (accountNumber == mAccounts[i])
+		{
+			fountAt = i;
+			break;
+		}
+	}
+
+	// Abort if the requested account doesn't exist
+	if (fountAt == -1)
+	{
+		return;
+	}
+
+	// Update account
+	mAccounts[fountAt] = modified;
+
+	// Refresh database on disk
+	if (mFilename != "")
+	{
+		storeData();
+	}
+}
+
+
 /*********************************************************
 *						Other							 *
 *********************************************************/
 
+/*	Function: bool Customer::accountExists(string accountNumber);
+*	Pre: Provide the account number to look up.
+*	Post: Returns true if an account with the matching account number
+*	exists in the database, otherwise returns false.
+*	Purpose: Check if an account is present in the database.
+*********************************************************/
+bool Customer::accountExists(string accountNumber)
+{
+	for (int i = 0; i < mCount; i++)
+	{
+		if (accountNumber == mAccounts[i])
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
+
+/*	Function: void Customer::addCustomer(string accountNumber);
+*	Pre: Provide the account number of the account to create and
+*	an Account object to add.
+*	Post: If the account number is not already in use the account
+*	will be added to the database, the entry count will be updated
+*	and the database will be refreshed on disk.
+*	Purpose: Add a new account to the database.
+*********************************************************/
+void Customer::addCustomer(string accountNumber, Account customer)
+{
+	int i;
+	Account* temp;
+
+	// Abort if account number already exists
+	for (i = 0; i < mCount; i++)
+	{
+		if (accountNumber == mAccounts[i])
+		{
+			return;
+		}
+	}
+
+	// Copy current database into temp array
+	temp = new Account[mCount + 1];
+
+	for (i = 0; i < mCount; i++)
+	{
+		temp[i] = mAccounts[i];
+	}
+
+	// Fill last position with the new account
+	temp[i] = customer;
+
+	// Copy temp to database
+	delete[] mAccounts;
+	mAccounts = temp;
+
+	// Update entry count
+	mCount++;
+
+	// Refresh data on disk
+	if (mFilename != "")
+	{
+		storeData();
+	}
+}
+
+
+/*	Function: void Customer::deleteCustomer(string accountNumber);
+*	Pre: The account number of the account to delete.
+*	Post: If the account exists it will be deleted from the
+*	database, the entry count will be updated and the data
+*	on disk will be refreshed. If there is only one account in
+*	the database the nothing will be done.
+*	Purpose: Delete an existing account.
+*********************************************************/
+void Customer::deleteCustomer(string accountNumber)
+{
+	int foundAt = -1;
+	int i;
+
+	Account* temp;
+
+	// Abort if there is only 1 account in the database
+	if (mCount == 1)
+	{
+		return;
+	}
+
+	// Get the index of the account to delete
+	for (i = 0; i < mCount; i++)
+	{
+		if (accountNumber == mAccounts[i])
+		{
+			foundAt = i;
+			break;
+		}
+	}
+
+	// Abort if not found
+	if (foundAt == -1)
+	{
+		return;
+	}
+
+	temp = new Account[mCount - 1];
+
+	// Copy all other accounts over
+	for (i = 0; i < mCount; i++)
+	{
+		if (i < foundAt)
+		{
+			temp[i] = mAccounts[i];
+		}
+		else if (i > foundAt)
+		{
+			temp[i - 1] = mAccounts[i];
+		}
+	}
+
+	delete[] mAccounts;
+	mAccounts = temp;
+
+	mCount--;
+
+	if (mFilename != "")
+	{
+		storeData();
+	}
+}
+
+
 /*	bool Customer::loadData();
 *	Pre: The filename should be set before running this.
 *	Post: The Account array will be populated from the contents
-*	of the file
+*	of the file.
 *	Purpose: Load data from a file.
 *********************************************************/
 bool Customer::loadData()

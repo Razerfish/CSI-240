@@ -79,8 +79,10 @@ int main()
 	}
 	*/
 
-	while (true)
-	{
-		deposit("1234");
-	}
+	Customer database;
+
+	database.setFilename(ACCOUNT_DATAFILE);
+	database.loadData();
+
+	database.deleteCustomer("9876");
 }
