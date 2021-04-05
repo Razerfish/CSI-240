@@ -70,4 +70,17 @@ int main()
 	/*
 	login();
 	*/
+
+	/*
+	while (true)
+	{
+		cout << getPhoneNumber() << endl;
+		cout << getSSN() << endl;
+	}
+	*/
+
+	while (true)
+	{
+		deposit("1234");
+	}
 }

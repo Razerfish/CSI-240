@@ -24,6 +24,7 @@ the purpose of future plagiarism checking)
 #include <fstream>
 #include <string>
 #include <stdexcept>
+#include <sstream>
 
 #include "account.h"
 #include "customer.h"
@@ -62,5 +63,25 @@ string toUpper(string input);
 void getIdPassword(string& id, string& password);
 void login();
 bool validateLogin(string id, string password);
+
+// customerOperations.cpp
+
+void addAccount();
+void checkBalance(string accountNumber);
+void deleteAccount();
+void deposit(string accountNumber);
+string getAccountNumber(bool forceExist = true);
+double getAmount(string message);
+double getCurrentBalance(string accountNumber);
+bool isAccountExists(string accountNumber);
+void withdrawl(string accountNumber);
+
+// updateOperations.cpp
+
+string getPhoneNumber();
+string getSSN();
+
+bool isValidPhoneNumber(string number);
+bool isValidSSN(string ssn);
 
 #endif

@@ -70,5 +70,17 @@
     <None Include="tellers.dat">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="1234.chk">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="1234.sav">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="5678.chk">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="5678.sav">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
