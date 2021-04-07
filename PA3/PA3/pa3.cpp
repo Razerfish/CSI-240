@@ -23,5 +23,61 @@ using namespace std;
 
 int main()
 {
+	int selection;
+	bool proceed;
 
+	Customer database;
+	database.setFilename(ACCOUNT_DATAFILE);
+	
+	// Set precision
+	cout << fixed << setprecision(2);
+
+	if (!database.loadData())
+	{
+		displayMessage(ACCOUNT_DB_NOT_AVAILABLE);
+		return 1;
+	}
+
+	while (true) // Always stay in this loop.
+	{
+		login();
+
+		proceed = true;
+
+		while (proceed)
+		{
+			selection = mainMenu();
+			switch (selection)
+			{
+			case 1:
+				addAccount(database);
+				break;
+			case 2:
+				deleteAccount(database);
+				break;
+			case 3:
+				updateAccount(database);
+				break;
+			case 4:
+				customerSearch(database);
+				break;
+			case 5:
+				deposit(database);
+				break;
+			case 6:
+				withdraw(database);
+				break;
+			case 7:
+				displayBalance(database);
+				break;
+			case 8:
+				proceed = false;
+				break;
+			case 9:
+				return 0;
+			}
+			systemPause();
+			clearScreen();
+		}
+	}
 }
