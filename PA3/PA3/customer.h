@@ -21,6 +21,7 @@
 #include <iomanip>
 #include <fstream>
 #include <string>
+#include <sstream>
 
 #include "account.h"
 
@@ -32,6 +33,8 @@ private:
 	int mCount;
 	Account* mAccounts;
 	string mFilename;
+
+	string parseCustomer(int index); // Deals directly with the index of account so access should be restricted to other members
 
 public:
 	// Default constructor
@@ -54,6 +57,11 @@ public:
 	void addCustomer(string accountNumber, Account customer);
 	void deleteCustomer(string accountNumber);
 	bool loadData();
+	void searchByAccountNum(string query);
+	void searchByAddress(string query);
+	void searchByName(string query);
+	void searchByPhoneNumber(string query);
+	void searchBySSN(string query);
 	void storeData();
 };
 

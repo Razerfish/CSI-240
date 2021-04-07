@@ -81,4 +81,8 @@ string promptSSN(bool allowBlank = false);
 bool isValidPhoneNumber(string number, bool allowBlank);
 bool isValidSSN(string ssn, bool allowBlank);
 
+// searchOperations.cpp
+
+void customerSearch(Customer& database);
+int searchMenu();
 #endif

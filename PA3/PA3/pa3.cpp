@@ -16,7 +16,8 @@ academic staff; and/or
 the purpose of future plagiarism checking)
 */
 
-#include <iostream>
+#include "customer.h"
+#include "banking.h"
 
 using namespace std;
 

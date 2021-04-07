@@ -83,5 +83,8 @@ int main()
 	database.setFilename(ACCOUNT_DATAFILE);
 	database.loadData();
 
-	deleteAccount(database);
+	while (true)
+	{
+		customerSearch(database);
+	}
 }

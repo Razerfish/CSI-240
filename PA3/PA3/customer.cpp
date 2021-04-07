@@ -346,6 +346,207 @@ bool Customer::loadData()
 }
 
 
+/*	Function: string Customer::parseCustomer(int index);
+*	Pre: Provide the index of the account to generate a string from.
+*	Post: Returns a string containing formatted information
+*	about the provided account. If the provided index is out of range
+*	a blank string is returned.
+*	Purpose: Generate "pretty" output for accounts.
+*********************************************************/
+string Customer::parseCustomer(int index)
+{
+	// Return empty string if out of range
+	if (index < 0 || index > mCount)
+	{
+		return string();
+	}
+
+	Account& acc = mAccounts[index];
+	
+	ostringstream output;
+
+	output << fixed << setprecision(2);
+
+	output
+		<< string(LABEL_WIDTH * 2, '-') << endl
+		<< setw(LABEL_WIDTH) << left << "Account Number:" << acc.getAccountNumber() << endl
+		<< setw(LABEL_WIDTH) << left << "Name:" << acc.getName() << endl
+		<< setw(LABEL_WIDTH) << left << "SSN: " << acc.getSSN() << endl
+		<< setw(LABEL_WIDTH) << left << "Address:" << acc.getAddress() << endl
+		<< setw(LABEL_WIDTH) << left << "Phone Number:" << acc.getPhoneNumber() << endl
+		<< setw(LABEL_WIDTH) << left << "Savings:" << "$" << acc.getSaving() << endl
+		<< setw(LABEL_WIDTH) << left << "Checking:" << "$" << acc.getChecking() << endl
+		<< setw(LABEL_WIDTH) << left << "Total:" << "$" << acc.getTotal() << endl;
+
+	return output.str();
+}
+
+
+/*	Function: void Customer::searchByAccountNum(string query);
+*	Pre: Provide the account number to search for.
+*	Post: Displays all matches from the database.
+*	Purpose: Search for accounts by account number.
+*********************************************************/
+void Customer::searchByAccountNum(string query)
+{
+	ostringstream results;
+
+	int hits = 0;
+
+	for (int i = 0; i < mCount; i++)
+	{
+		if (mAccounts[i] == query)
+		{
+			results << parseCustomer(i);
+			hits++;
+		}
+	}
+
+	if (hits > 0)
+	{
+		cout
+			<< "Found " << hits << " account(s) matching the query\n"
+			<< results.str() << string(LABEL_WIDTH * 2, '-') << endl;
+	}
+	else
+	{
+		cout << "No accounts found matching query\n";
+	}
+}
+
+
+/*	Function: void Customer::searchByAddress(string query);
+*	Pre: The address to search for
+*	Post: Any matches will be printed to the console
+*	Purpose: Search accounts in the database by address
+*********************************************************/
+void Customer::searchByAddress(string query)
+{
+	ostringstream results;
+
+	int hits = 0;
+
+	for (int i = 0; i < mCount; i++)
+	{
+		if (mAccounts[i].getAddress() == query)
+		{
+			results << parseCustomer(i);
+			hits++;
+		}
+	}
+
+	if (hits > 0)
+	{
+		cout
+			<< "Found " << hits << " account(s) matching the query\n"
+			<< results.str() << string(LABEL_WIDTH * 2, '-') << endl;
+	}
+	else
+	{
+		cout << "No accounts found matching query\n";
+	}
+}
+
+
+/*	Function: void Customer::searchByPhoneNumber(string query);
+*	Pre: The phone number to search for
+*	Post: Any matches will be printed to the console
+*	Purpose: Search accounts in the database by phone number
+*********************************************************/
+void Customer::searchByPhoneNumber(string query)
+{
+	ostringstream results;
+
+	int hits = 0;
+
+	for (int i = 0; i < mCount; i++)
+	{
+		if (mAccounts[i].getPhoneNumber() == query)
+		{
+			results << parseCustomer(i);
+			hits++;
+		}
+	}
+
+	if (hits > 0)
+	{
+		cout
+			<< "Found " << hits << " account(s) matching the query\n"
+			<< results.str() << string(LABEL_WIDTH * 2, '-') << endl;
+	}
+	else
+	{
+		cout << "No accounts found matching query\n";
+	}
+}
+
+
+/*	Function: void Customer::searchBySSN(string query);
+*	Pre: The SSN to search for
+*	Post: Any matches will be printed to the console
+*	Purpose: Search accounts in the database by SSN
+*********************************************************/
+void Customer::searchBySSN(string query)
+{
+	ostringstream results;
+
+	int hits = 0;
+
+	for (int i = 0; i < mCount; i++)
+	{
+		if (mAccounts[i].getSSN() == query)
+		{
+			results << parseCustomer(i);
+			hits++;
+		}
+	}
+
+	if (hits > 0)
+	{
+		cout
+			<< "Found " << hits << " account(s) matching the query\n"
+			<< results.str() << string(LABEL_WIDTH * 2, '-') << endl;
+	}
+	else
+	{
+		cout << "No accounts found matching query\n";
+	}
+}
+
+
+/*	Function: void Customer::searchByName(string query);
+*	Pre: The name to search for
+*	Post: Any matches will be printed to the console
+*	Purpose: Search accounts in the database by name
+*********************************************************/
+void Customer::searchByName(string query)
+{
+	ostringstream results;
+
+	int hits = 0;
+
+	for (int i = 0; i < mCount; i++)
+	{
+		if (mAccounts[i].getName() == query)
+		{
+			results << parseCustomer(i);
+			hits++;
+		}
+	}
+
+	if (hits > 0)
+	{
+		cout
+			<< "Found " << hits << " account(s) matching the query\n"
+			<< results.str() << string(LABEL_WIDTH * 2, '-') << endl;
+	}
+	else
+	{
+		cout << "No accounts found matching query\n";
+	}
+}
+
+
 /*	Function: void Customer::storeData();
 *	Pre: The filename should be set before running this.
 *	Post: The current state of the Account array will be
