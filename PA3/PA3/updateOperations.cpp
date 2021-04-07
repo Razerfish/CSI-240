@@ -18,20 +18,20 @@ the purpose of future plagiarism checking)
 
 #include "banking.h"
 
-/*	Function: string getPhoneNumber();
+/*	Function: string promptPhoneNumber();
 *	Pre: None
 *	Post: A valid phone number will be returned.
 *	Purpose: Prompt the user until they enter a phone number
 *	in the correct format.
 *********************************************************/
-string getPhoneNumber()
+string promptPhoneNumber(bool allowBlank)
 {
 	string number;
 
 	cout << "Please enter a phone number in the format (xxx) xxx-xxxx: ";
 	getline(cin, number);
 
-	while (!isValidPhoneNumber(number))
+	while (!isValidPhoneNumber(number, allowBlank))
 	{
 		displayMessage(INVALID_INPUT);
 		cout << "Please enter a phone number in the format (xxx) xxx-xxxx: ";
@@ -45,20 +45,20 @@ string getPhoneNumber()
 }
 
 
-/*	Function: string getSSN();
+/*	Function: string promptSSN();
 *	Pre: None
 *	Post: A valid SSN will be returned.
 *	Purpose: Prompt the user until they enter an SSN
 *	in the correct format.
 *********************************************************/
-string getSSN()
+string promptSSN(bool allowBlank)
 {
 	string ssn;
 
 	cout << "Please enter an SSN in the format xxx-xx-xxxx: ";
 	getline(cin, ssn);
 
-	while (!isValidSSN(ssn))
+	while (!isValidSSN(ssn, allowBlank))
 	{
 		displayMessage(INVALID_INPUT);
 		cout << "Please enter an ssn in the format xxx-xx-xxxx: ";
@@ -77,15 +77,19 @@ string getSSN()
 *	Post: Returns whether or not the number is valid.
 *	Purpose: Check if a phone number if formatted properly.
 *********************************************************/
-bool isValidPhoneNumber(string number)
+bool isValidPhoneNumber(string number, bool allowBlank)
 {
 	// Check length
-	if (number.length() != 14) // 9 digit phone number + open and close paratheses and a space
+	if (number.length() != 14 && !(allowBlank && number.length() == 0)) // 9 digit phone number + open and close paratheses and a space
 	{
 		return false;
 	}
+	else if (allowBlank && number.length() == 0)
+	{
+		return true;
+	}
 
-	for (int i = 0; i < 14; i++) // We already know that it's exactly 10 chars long
+	for (int i = 0; i < 14; i++) // We already know that it's exactly 14 chars long
 	{
 		switch (i)
 		{
@@ -130,12 +134,16 @@ bool isValidPhoneNumber(string number)
 *	Post: Returns whether or not the ssn is valid.
 *	Purpose: Check if an ssn is formatted properly.
 *********************************************************/
-bool isValidSSN(string ssn)
+bool isValidSSN(string ssn, bool allowBlank)
 {
 	// Check length
-	if (ssn.length() != 11) // 3 digits + dash + 2 digits + dash + 4 digits = 11
+	if (ssn.length() != 11 && !(allowBlank && ssn.length() == 0)) // 3 digits + dash + 2 digits + dash + 4 digits = 11
 	{
 		return false;
+	}
+	else if (allowBlank && ssn.length() == 0)
+	{
+		return true;
 	}
 
 	for (int i = 0; i < 11; i++)

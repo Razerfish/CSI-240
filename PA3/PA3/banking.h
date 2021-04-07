@@ -64,22 +64,21 @@ bool validateLogin(string id, string password);
 
 // customerOperations.cpp
 
-void addAccount();
-void checkBalance(string accountNumber);
-void deleteAccount();
-void deposit(string accountNumber);
-string getAccountNumber(bool forceExist = true);
-double getAmount(string message);
-double getCurrentBalance(string accountNumber);
-bool isAccountExists(string accountNumber);
-void withdrawl(string accountNumber);
+void addAccount(Customer& database);
+void deleteAccount(Customer& database);
+void deposit(Customer& database);
+void displayBalance(Customer& database);
+string promptAccountNumber(string message);
+double promptAmount(string message);
+void updateAccount(Customer& database);
+void withdraw(Customer& database);
 
 // updateOperations.cpp
 
-string getPhoneNumber();
-string getSSN();
+string promptPhoneNumber(bool allowBlank = false);
+string promptSSN(bool allowBlank = false);
 
-bool isValidPhoneNumber(string number);
-bool isValidSSN(string ssn);
+bool isValidPhoneNumber(string number, bool allowBlank);
+bool isValidSSN(string ssn, bool allowBlank);
 
 #endif

@@ -80,9 +80,8 @@ int main()
 	*/
 
 	Customer database;
-
 	database.setFilename(ACCOUNT_DATAFILE);
 	database.loadData();
 
-	database.deleteCustomer("9876");
+	deleteAccount(database);
 }

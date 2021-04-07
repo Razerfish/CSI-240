@@ -18,265 +18,152 @@ the purpose of future plagiarism checking)
 
 #include "banking.h"
 
-/*	Function: void addAccount();
-*	Pre: None
-*	Post: The user will be prompted for information and an account will
-*	attempted to be created.
-*	Purpose: Create a new account and add it to the database.
+/*	Function: void addAccount(Customer& database);
+*	Pre: Provide an initialized database to add to.
+*	Post: A new customer will be added to the provided
+*	database.
+*	Purpose: Add a new customer.
 *********************************************************/
-void addAccount()
+void addAccount(Customer& database)
 {
-	string data = "";
-	string number = getAccountNumber();
+	const string message = "Enter the number for the new account: ";
 	string
-		ssn,
 		name,
-		line,
 		address,
-		phoneNumber;
+		accountNumber;
 
-	double checking;
+	Account acc;
 
-	int entries;
-
-	ifstream din;
-	ofstream dout;
-
-	while (isAccountExists(number))
+	accountNumber = promptAccountNumber(message);
+	while (database.accountExists(accountNumber))
 	{
 		displayMessage(ACCOUNT_ALREADY_EXIST);
-		number = getAccountNumber();
+		accountNumber = promptAccountNumber(message);
 	}
 
-	ssn = getSSN();
-	phoneNumber = getPhoneNumber();
-	
-	cout << "Enter the applicants name: ";
+	cout << "Enter the name of the account holder: ";
 	getline(cin, name);
 
-	cout << "Enter the applicants address: ";
+	cout << "Enter the address of the account holder: ";
 	getline(cin, address);
 
-	checking = getAmount("Enter initial deposit: ");
+	acc.setAccountNumber(accountNumber);
+	acc.setName(name);
+	acc.setAddress(address);
+	acc.setPhoneNumber(promptPhoneNumber());
+	acc.setSSN(promptSSN());
 
-	Account acc(number, ssn, name, address, phoneNumber, checking, 0.0);
-
-	// Get current length of database.
-	din.open(ACCOUNT_DATAFILE);
-	
-	if (!din.good())
-	{
-		displayMessage(ACCOUNT_DB_NOT_AVAILABLE);
-		return;
-	}
-
-	din >> entries;
-
-	// Read database into memory
-	while (!din.eof())
-	{
-		getline(din, line);
-		data += line + "\n";
-	}
-
-	din.close();
-
-	// Increment database length
-	entries++;
-
-	// Check if we have a trailing newline and if so discard the last newline
-	if (data[data.length() - 1] == '\n' && data[data.length() - 2] == '\n')
-	{
-		data = data.substr(0, data.length() - 1);
-	}
-
-	// Output updated database
-	dout.open(ACCOUNT_DATAFILE, ios::out);
-
-	if (!dout.good())
-	{
-		displayMessage(ACCOUNT_DB_NOT_AVAILABLE);
-		return;
-	}
-
-	dout
-		<< entries
-		<< data
-		<< acc;
-
-	dout.close();
+	database.addCustomer(accountNumber, acc);
 }
 
 
-/*	Function: void checkBalance(string accountNumber);
-*	Pre: The account number of which to check the balance of.
-*	Post: The accounts balance will be displayed in the console.
-*	Purpose: Display an accounts balance.
+/*	Function: void deleteAccount(Customer& database);
+*	Pre: Provide an initialized database to remove from.
+*	Post: The selected customer will be removed from the
+*	database.
+*	Purpose: Remove a customer from the database.
 *********************************************************/
-void checkBalance(string accountNumber)
+void deleteAccount(Customer& database)
 {
-	Customer database;
-	database.setFilename(ACCOUNT_DATAFILE);
-	if (!database.loadData())
+	const string message = "Enter the account number of the account to remove: ";
+	string accountNumber = promptAccountNumber(message);
+
+	while (!database.accountExists(accountNumber))
 	{
-		displayMessage(ACCOUNT_DB_NOT_AVAILABLE);
-		return;
+		displayMessage(ACCOUNT_NOT_FOUND);
+		accountNumber = promptAccountNumber(message);
 	}
 
-	Account acc = database.getCustomer(accountNumber);
+	database.deleteCustomer(accountNumber);
 
-	cout << "Checking: $" << acc.getChecking() << endl;
-	cout << "Savings: $" << acc.getSaving() << endl;
-	cout << "Total: $" << acc.getTotal();
-}
-
-
-/*	Function: void deleteAccount();
-*	Pre: None
-*	Post: The specified account will be deleted
-*	Purpose: Delete an account
-*********************************************************/
-void deleteAccount()
-{
-	string data = "";
-	string accountNumber;
-	string line;
-
-	istringstream dataStream;
-
-	int entries;
-
-	ifstream din;
-	ofstream dout;
-
-	accountNumber = getAccountNumber(false);
-
-	// Get entries
-	din.open(ACCOUNT_DATAFILE);
-
-	if (!din.good())
-	{
-		displayMessage(ACCOUNT_DB_NOT_AVAILABLE);
-		return;
-	}
-
-	din >> entries;
-
-	while (!din.eof())
-	{
-		getline(din, line);
-		data += line + '\n';
-	}
-
-	din.close();
-
-	// Reduce entry count
-	entries--;
-
-	// Check if we have a trailing newline and if so discard the last newline
-	if (data[data.length() - 1] == '\n' && data[data.length() - 2] == '\n')
-	{
-		data = data.substr(0, data.length() - 1);
-	}
-
-	// Remove the target entry from the loaded database
-	dataStream.str(data);
-	data = "";
-	// Check each account number line for the target account number
-	int i = 0;
-	while (!dataStream.eof())
-	{
-		getline(dataStream, line);
-		if (i % 4 == 0)
-		{
-			if (line.substr(LABEL_WIDTH, (line.length() - LABEL_WIDTH) - 1) == accountNumber)
-			{
-				// Discard next 3 lines
-				getline(dataStream, line);
-				getline(dataStream, line);
-				getline(dataStream, line);
-				i += 3;
-			}
-			else
-			{
-				data += line + '\n';
-			}
-		}
-		else
-		{
-			data += line + '\n';
-		}
-		i++;
-	}
-
-	// Output updated database
-	dout.open(ACCOUNT_DATAFILE, ios::out);
-
-	if (!dout.good())
-	{
-		displayMessage(ACCOUNT_DB_NOT_AVAILABLE);
-		return;
-	}
-
-	dout
-		<< entries
-		<< data;
-
-	dout.close();
-
-	// Delete balance files
 	remove((accountNumber + ".sav").c_str());
 	remove((accountNumber + ".chk").c_str());
 }
 
 
-/*	Function: void deposit(string accountNumber);
-*	Pre: The account number to deposit funds into.
-*	Post: The user will be prompted for an amount and that amount will be deposited into the account.
-*	Purpose: Deposit to an account.
+/*	Function: void deposit(Customer& database);
+*	Pre: Provide the initialized database containing the
+*	account to deposit to.
+*	Post: The user will be prompted for an amount and that
+*	amount will be deposited into the target checking account.
+*	Purpose: Deposit funds into an account.
 *********************************************************/
-void deposit(string accountNumber)
+void deposit(Customer& database)
 {
+	const string amountMessage = "Enter the amount to deposit: ";
+	const string accountMessage = "Enter the account number of the account to deposit to: ";
+	string accountNumber;
+	
 	double amount;
-	double balance;
-	Customer database;
+
 	Account acc;
 
-	database.setFilename(ACCOUNT_DATAFILE);
-	if (!database.loadData())
+	accountNumber = promptAccountNumber(accountMessage);
+	while (!database.accountExists(accountNumber))
 	{
-		displayMessage(ACCOUNT_DB_NOT_AVAILABLE);
-		return;
+		displayMessage(ACCOUNT_NOT_FOUND);
+		accountNumber = promptAccountNumber(accountMessage);
 	}
 
+	amount = promptAmount(amountMessage);
+
 	acc = database.getCustomer(accountNumber);
+	acc.setChecking(acc.getChecking() + amount);
 
-	balance = acc.getChecking();
+	database.modifyAccount(accountNumber, acc);
 
-	amount = getAmount("Amount to deposit: ");
-
-	acc.setChecking(balance + amount);
-
-	database.storeData();
+	cout << "Thank you! Your new balance is: $" << acc.getChecking() << endl;
 }
 
 
-/*	Function: string getAccountNumber(bool forceExist = true);
+/*	Function: void displayBalance(Customer& database);
+*	Pre: An initialized customer database
+*	Post: The user will be prompted for an account number
+*	and the account matching that number will have it's
+*	balance displayed.
+*	Purpose: Display the balance of an account.
+*********************************************************/
+void displayBalance(Customer& database)
+{
+	const string message = "Enter the account number for the account to display: ";
+	string accountNumber;
+
+	Account acc;
+
+	accountNumber = promptAccountNumber(message);
+	while (!database.accountExists(accountNumber))
+	{
+		displayMessage(ACCOUNT_NOT_FOUND);
+		accountNumber = promptAccountNumber(message);
+	}
+
+	acc = database.getCustomer(accountNumber);
+	
+	cout
+		<< "Balance of account " << acc.getAccountNumber() << endl
+		<< "Savings: $" << acc.getSaving() << endl
+		<< "Checking: $" << acc.getChecking() << endl
+		<< "Total: $" << acc.getSaving() + acc.getChecking() << endl;
+}
+
+
+/*	Function: string promptAccountNumber(bool forceExist = true);
 *	Pre: Whether or not to ensure that the entered account number exists,
 *	defaults to true.
 *	Post: A proper account number is returned
 *	Purpose: Prompt the user for an account number.
 *********************************************************/
-string getAccountNumber(bool forceExist)
+string promptAccountNumber(string message)
 {
 	string accountNumber;
 	bool isValid = true;
 
 	unsigned int i;
 
-	cout << "Enter an account number: ";
+	cout << message;
 	getline(cin, accountNumber);
 
+	// Only allow digits
 	for (i = 0; i < accountNumber.length(); i++)
 	{
 		if (!isdigit(accountNumber[i]))
@@ -286,26 +173,18 @@ string getAccountNumber(bool forceExist)
 		}
 	}
 
-	// Don't allow blank account numbers
+	// Don't allow blank entries
 	if (accountNumber.length() == 0)
 	{
 		isValid = false;
 	}
 
-	while (!isValid || (forceExist && isAccountExists(accountNumber)))
+	while (!isValid)
 	{
-		if (!isValid)
-		{
-			displayMessage(INVALID_INPUT);
-		}
-		else
-		{
-			displayMessage(ACCOUNT_NOT_FOUND);
-		}
-
 		isValid = true;
 
-		cout << "Enter an account number: ";
+		displayMessage(INVALID_INPUT);
+		cout << message;
 		getline(cin, accountNumber);
 
 		for (i = 0; i < accountNumber.length(); i++)
@@ -327,15 +206,18 @@ string getAccountNumber(bool forceExist)
 }
 
 
-/*	Function: double getAmount(string message);
+/*	Function: double promptAmount(string message);
 *	Pre: The message to use to prompt the user for an amount.
 *	Post: A double will be returned.
 *	Purpose: Prompt the user to enter an amount
 *********************************************************/
-double getAmount(string message)
+double promptAmount(string message)
 {
 	string line;
 	bool isValid = true;
+
+	int digitCount = 0;
+	int periodCount = 0;
 
 	unsigned int i;
 
@@ -349,10 +231,18 @@ double getAmount(string message)
 			isValid = false;
 			break;
 		}
+		else if (isdigit(line[i]))
+		{
+			digitCount++;
+		}
+		else if (line[i] == '.')
+		{
+			periodCount++;
+		}
 	}
 
-	// Ensure that it's not empty
-	if (line.length() == 0)
+	// Ensure that it's not empty, contains at least 1 digit and contains no more than 1 period
+	if (line.length() == 0 || digitCount == 0 || periodCount > 1)
 	{
 		isValid = false;
 	}
@@ -362,6 +252,8 @@ double getAmount(string message)
 		displayMessage(INVALID_AMOUNT);
 
 		isValid = true;
+		digitCount = 0;
+		periodCount = 0;
 
 		cout << message;
 		getline(cin, line);
@@ -373,9 +265,18 @@ double getAmount(string message)
 				isValid = false;
 				break;
 			}
+			else if (isdigit(line[i]))
+			{
+				digitCount++;
+			}
+			else if (line[i] == '.')
+			{
+				periodCount++;
+			}
 		}
 
-		if (line.length() == 0)
+
+		if (line.length() == 0 || digitCount == 0 || periodCount > 1)
 		{
 			isValid = false;
 		}
@@ -385,51 +286,107 @@ double getAmount(string message)
 }
 
 
-/*	Function: double getCurrentBalance(string accountNumber);
-*	Pre: The account number to get the balance of.
-*	Post: Returns the checking balance of that account.
-*	Assumes that the provided account exists.
-*	Purpose: Get the balance of an account.
+/*	Function: void updateAccount(Customer& database);
+*	Pre: An initialized database of customers
+*	Post: The user will be prompted for an account number
+*	and the matching account's details will be updated.
+*	Purpose: Update the personal information of an account
+*	holder.
 *********************************************************/
-double getCurrentBalance(string accountNumber)
+void updateAccount(Customer& database)
 {
-	Customer database;
+	const string message = "Enter the account number of the account to modify: ";
+	string
+		accountNumber,
+		phoneNumber,
+		address,
+		name,
+		ssn;
 
-	database.setFilename(ACCOUNT_DATAFILE);
+	Account acc;
 
-	if (!database.loadData())
+	accountNumber = promptAccountNumber(message);
+	while (!database.accountExists(accountNumber))
 	{
-		displayMessage(ACCOUNT_DB_NOT_AVAILABLE);
-		return 0.0;
+		displayMessage(ACCOUNT_NOT_FOUND);
+		accountNumber = promptAccountNumber(message);
 	}
 
-	return database.getCustomer(accountNumber).getChecking();
+	cout << "Enter the new phone number of the account holder (or leave blank to leave unchanged): ";
+	phoneNumber = promptPhoneNumber(true);
+
+	cout << "Enter the new ssn of the account holder (or leave blank to leave unchanged): ";
+	ssn = promptSSN(true);
+
+	cout << "Enter the new name of the account holder (or leave blank to leave unchanged): ";
+	getline(cin, name);
+
+	cout << "Enter the new address of the account holder (or leave blank to leave unchanged): ";
+	getline(cin, address);
+
+	acc = database.getCustomer(accountNumber);
+
+	if (phoneNumber != "")
+	{
+		acc.setPhoneNumber(phoneNumber);
+	}
+
+	if (ssn != "")
+	{
+		acc.setSSN(ssn);
+	}
+
+	if (name != "")
+	{
+		acc.setName(name);
+	}
+
+	if (address != "")
+	{
+		acc.setAddress(address);
+	}
+
+	database.modifyAccount(accountNumber, acc);
 }
 
 
-/*	Function: bool isAccountExists(string accountNumber);
-*	Pre: The account number to look up.
-*	Post: Returns whether or not the account exists.
-*	Purpose: Check if an account exists.
+/*	Function: void withdraw(Customer& database);
+*	Pre: An initalized customer database.
+*	Post: The user will be prompted for an account number
+*	and an amount and that amount will be withdrawn from that
+*	account.
+*	Purpose: Withdraw funds from an account.
 *********************************************************/
-bool isAccountExists(string accountNumber)
+void withdraw(Customer& database)
 {
-	Customer database;
+	const string accountMessage = "Enter the account number of the account to withdraw from: ";
+	const string amountMessage = "Enter the amount to withdraw: ";
+	string accountNumber;
 
-	database.setFilename(ACCOUNT_DATAFILE);
-	if (!database.loadData())
+	double amount;
+
+	Account acc;
+
+	accountNumber = promptAccountNumber(accountMessage);
+	while (!database.accountExists(accountNumber))
 	{
-		displayMessage(ACCOUNT_DB_NOT_AVAILABLE);
-		return false;
+		displayMessage(ACCOUNT_NOT_FOUND);
+		accountNumber = promptAccountNumber(accountMessage);
 	}
 
-	// If account does not exist database.getCustomer will return a blank account object
-	if (database.getCustomer(accountNumber).getAccountNumber() == "")
+	amount = promptAmount(amountMessage);
+	
+	acc = database.getCustomer(accountNumber);
+
+	while (acc.getChecking() < amount)
 	{
-		return false;
+		displayMessage(INSUFFICIENT_FUNDS);
+		amount = promptAmount(amountMessage);
 	}
-	else
-	{
-		return true;
-	}
+
+	acc.setChecking(acc.getChecking() - amount);
+
+	database.modifyAccount(accountNumber, acc);
+
+	cout << "Thank you! Your new balance is: $" << acc.getChecking() << endl;
 }
