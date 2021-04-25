@@ -200,7 +200,7 @@ ifstream& operator >>(ifstream& in, Account& obj)
 *	Post: The state of the account object will be output into the stream.
 *	Purpose: Save an account to a file.
 *********************************************************/
-ofstream& operator <<(ofstream& out, Account& obj)
+ofstream& operator <<(ofstream& out, const Account& obj)
 {
 	out
 		<< obj.mUsername << endl

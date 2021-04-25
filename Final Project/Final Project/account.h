@@ -56,7 +56,7 @@ public:
 
 	// Friend functions
 	friend ifstream& operator >>(ifstream& in, Account& obj);
-	friend ofstream& operator <<(ofstream& out, Account& obj);
+	friend ofstream& operator <<(ofstream& out, const Account& obj);
 };
 
 #endif
