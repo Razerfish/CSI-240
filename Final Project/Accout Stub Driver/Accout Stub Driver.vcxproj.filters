@@ -15,19 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="linkedList.cpp">
+    <ClInclude Include="..\Final Project\account.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Final Project\account.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="account.cpp">
+    <ClCompile Include="AccountStubDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="linkedList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="account.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <Text Include="accounts.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="out.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

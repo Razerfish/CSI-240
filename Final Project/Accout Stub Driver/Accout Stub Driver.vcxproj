@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7a9a1ed3-e37d-4d91-a0d2-7c475a825124}</ProjectGuid>
-    <RootNamespace>FinalProject</RootNamespace>
+    <ProjectGuid>{5b168a00-16cf-4778-a952-7f2888d9a019}</ProjectGuid>
+    <RootNamespace>AccoutStubDriver</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Final Project;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,12 +140,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="account.cpp" />
-    <ClCompile Include="linkedList.cpp" />
+    <ClInclude Include="..\Final Project\account.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="account.h" />
-    <ClInclude Include="linkedList.h" />
+    <ClCompile Include="..\Final Project\account.cpp" />
+    <ClCompile Include="AccountStubDriver.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="accounts.txt" />
+    <Text Include="out.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
