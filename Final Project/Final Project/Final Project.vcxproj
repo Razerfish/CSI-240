@@ -142,11 +142,13 @@
     <ClCompile Include="account.cpp" />
     <ClCompile Include="item.cpp" />
     <ClCompile Include="linkedList.cpp" />
+    <ClCompile Include="snack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="account.h" />
     <ClInclude Include="item.h" />
     <ClInclude Include="linkedList.h" />
+    <ClInclude Include="snack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

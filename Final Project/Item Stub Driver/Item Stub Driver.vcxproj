@@ -141,10 +141,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Final Project\item.cpp" />
+    <ClCompile Include="..\Final Project\snack.cpp" />
     <ClCompile Include="ItemStubDriver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Final Project\item.h" />
+    <ClInclude Include="..\Final Project\snack.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="book_input.txt" />
+    <Text Include="book_output.txt" />
+    <Text Include="item_input.txt" />
+    <Text Include="item_output.txt" />
+    <Text Include="snack_input.txt" />
+    <Text Include="snack_output.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
