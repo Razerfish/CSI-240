@@ -16,58 +16,51 @@ academic staff; and/or
 the purpose of future plagiarism checking)
 */
 
-#ifndef ITEM_H
-#define ITEM_H
+#ifndef SNACK_H
+#define SNACK_H
 
 #include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <string>
 
+#include "item.h"
+
 using namespace std;
 
-class Item
+class Snack : public Item
 {
-protected:
-	string mCode;
-	double mPrice;
-	int mStock;
+private:
+	string mName;
 
 public:
 	// Constructors
-	Item();
-	Item(string code, double price, int stock);
+	Snack();
+	Snack(string code, double price, int stock, string name);
 
 	// Destructor
-	~Item();
+	~Snack();
 
 	// Accessors
-	string getCode();
-	double getPrice();
-	int getStock();
+	string getName();
 
 	// Mutators
-	void setCode(string code);
-	void setPrice(double price);
-	void setStock(int stock);
+	void setName(string name);
 
 	// Other
-	virtual istream& load(istream& in);
-	virtual ifstream& load(ifstream& in);
+	istream& load(istream& in) override;
+	ifstream& load(ifstream& in) override;
 
-	virtual ostream& print(ostream& out);
-	virtual ofstream& print(ofstream& out);
+	ostream& print(ostream& out) override;
+	ofstream& print(ofstream& out) override;
 
-	// Operators
-	bool operator ==(const string& rhs);
-	bool operator !=(const string& rhs);
+	// Overloads
+	bool operator ==(const Snack& rhs);
+	bool operator !=(const Snack& rhs);
 
 	// Friends
-	friend istream& operator >>(istream& in, Item& obj);
-	friend ifstream& operator >>(ifstream& in, Item& obj);
-
-	friend ostream& operator <<(ostream& out, Item& obj);
-	friend ofstream& operator <<(ofstream& out, Item& obj);
+	friend bool operator ==(const string& lhs, const Snack& rhs);
+	friend bool operator !=(const string& lhs, const Snack& rhs);
 };
 
 #endif
