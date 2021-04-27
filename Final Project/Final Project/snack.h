@@ -56,7 +56,9 @@ public:
 
 	// Overloads
 	bool operator ==(const Snack& rhs);
+	bool operator ==(const string& rhs);
 	bool operator !=(const Snack& rhs);
+	bool operator !=(const string& rhs);
 
 	// Friends
 	friend bool operator ==(const string& lhs, const Snack& rhs);

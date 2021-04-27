@@ -195,6 +195,18 @@ bool Snack::operator ==(const Snack& rhs)
 }
 
 
+/*	Function: bool Snack::operator ==(const string& rhs);
+*	Pre: The string to compare to.
+*	Post: Returns true if the string matches the snack
+*	objects code, otherwise returns false.
+*	Purpose: Compare a snack objects code with a string.
+*********************************************************/
+bool Snack::operator ==(const string& rhs)
+{
+	return rhs == mCode;
+}
+
+
 /*	Function: bool Snack::operator !=(const Snack& rhs);
 *	Pre: The snack item to compare.
 *	Post: Returns false if the items have the same code
@@ -205,6 +217,18 @@ bool Snack::operator ==(const Snack& rhs)
 bool Snack::operator !=(const Snack& rhs)
 {
 	return mCode != rhs.mCode;
+}
+
+
+/*	Function: bool Snack::operator !=(const string& rhs);
+*	Pre: The string to compare to.
+*	Post: Returns false if the string matches the snack
+*	objects code, otherwise returns true.
+*	Purpose: Compare a snack objects code with a string.
+*********************************************************/
+bool Snack::operator !=(const string& rhs)
+{
+	return rhs != mCode;
 }
 
 
