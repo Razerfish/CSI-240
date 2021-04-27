@@ -24,12 +24,18 @@
     <ClCompile Include="..\Final Project\snack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Final Project\book.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Final Project\item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Final Project\snack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Final Project\book.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

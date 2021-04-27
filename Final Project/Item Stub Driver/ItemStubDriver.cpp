@@ -22,6 +22,7 @@ the purpose of future plagiarism checking)
 
 #include "item.h"
 #include "snack.h"
+#include "book.h"
 
 using namespace std;
 
@@ -47,6 +48,15 @@ void testItem()
 
 	Item test2("123", 1.99, 15);
 	cout << test2 << endl;
+
+	if (test1 == "123")
+	{
+		cout << "true\n";
+	}
+	else
+	{
+		cout << "false\n";
+	}
 
 	Item* arr;
 
@@ -108,6 +118,24 @@ void testSnack()
 	Snack test2("123", 2.99, 15, "Chocolate Bar");
 	cout << test2 << endl;
 
+	if ("123" == test1)
+	{
+		cout << "true\n";
+	}
+	else
+	{
+		cout << "false\n";
+	}
+
+	if (test1 == test2)
+	{
+		cout << "true\n";
+	}
+	else
+	{
+		cout << "false\n";
+	}
+
 	Snack* arr;
 
 	din.open("snack_input.txt");
@@ -144,10 +172,100 @@ void testSnack()
 }
 
 
+void testBook()
+{
+	ifstream din;
+	ofstream dout;
+
+	int count;
+
+	Book test1;
+
+	test1.setCode("123");
+	test1.setPrice(8.99);
+	test1.setStock(5);
+	test1.setISBN("978-1591169208");
+	test1.setTitle("Fullmetal Alchemist Vol. 1");
+	test1.setAuthor("Hiromu Arakawa");
+
+	cout << fixed << setprecision(2);
+
+	cout
+		<< test1.getCode() << endl
+		<< test1.getPrice() << endl
+		<< test1.getStock() << endl
+		<< test1.getISBN() << endl
+		<< test1.getTitle() << endl
+		<< test1.getAuthor() << endl << endl;
+
+	Book test2("123", 0.0, 0, "", "", "");
+
+	if (test1 == test2)
+	{
+		cout << "true\n";
+	}
+	else
+	{
+		cout << "false\n";
+	}
+
+	if (test1 == "123")
+	{
+		cout << "true\n";
+	}
+	else
+	{
+		cout << "false\n";
+	}
+
+	if ("123" == test1)
+	{
+		cout << "true\n";
+	}
+	else
+	{
+		cout << "false\n";
+	}
+
+	din.open("book_input.txt");
+
+	din >> count;
+	din.ignore(INT_MAX, '\n');
+	din.clear();
+
+	Book* arr = new Book[count];
+
+	for (int i = 0; i < count; i++)
+	{
+		din >> arr[i];
+	}
+
+	din.close();
+
+	dout.open("book_output.txt");
+
+	dout << fixed << setprecision(2);
+	
+	cout << count << endl;
+	dout << count << endl;
+
+	for (int i = 0; i < count; i++)
+	{
+		cout << arr[i];
+		dout << arr[i];
+	}
+
+	dout.close();
+
+	delete[] arr;
+}
+
+
 int main()
 {
 	testItem();
 	testSnack();
+	testBook();
 
 	return 0;
 }

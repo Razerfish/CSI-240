@@ -140,11 +140,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Final Project\book.cpp" />
     <ClCompile Include="..\Final Project\item.cpp" />
     <ClCompile Include="..\Final Project\snack.cpp" />
     <ClCompile Include="ItemStubDriver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Final Project\book.h" />
     <ClInclude Include="..\Final Project\item.h" />
     <ClInclude Include="..\Final Project\snack.h" />
   </ItemGroup>
