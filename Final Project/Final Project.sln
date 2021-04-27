@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedList Stub Driver", "L
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Accout Stub Driver", "Accout Stub Driver\Accout Stub Driver.vcxproj", "{5B168A00-16CF-4778-A952-7F2888D9A019}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Item Stub Driver", "Item Stub Driver\Item Stub Driver.vcxproj", "{B02465C7-FC1B-490C-85C9-BC0ACB7F6AAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{5B168A00-16CF-4778-A952-7F2888D9A019}.Release|x64.Build.0 = Release|x64
 		{5B168A00-16CF-4778-A952-7F2888D9A019}.Release|x86.ActiveCfg = Release|Win32
 		{5B168A00-16CF-4778-A952-7F2888D9A019}.Release|x86.Build.0 = Release|Win32
+		{B02465C7-FC1B-490C-85C9-BC0ACB7F6AAE}.Debug|x64.ActiveCfg = Debug|x64
+		{B02465C7-FC1B-490C-85C9-BC0ACB7F6AAE}.Debug|x64.Build.0 = Debug|x64
+		{B02465C7-FC1B-490C-85C9-BC0ACB7F6AAE}.Debug|x86.ActiveCfg = Debug|Win32
+		{B02465C7-FC1B-490C-85C9-BC0ACB7F6AAE}.Debug|x86.Build.0 = Debug|Win32
+		{B02465C7-FC1B-490C-85C9-BC0ACB7F6AAE}.Release|x64.ActiveCfg = Release|x64
+		{B02465C7-FC1B-490C-85C9-BC0ACB7F6AAE}.Release|x64.Build.0 = Release|x64
+		{B02465C7-FC1B-490C-85C9-BC0ACB7F6AAE}.Release|x86.ActiveCfg = Release|Win32
+		{B02465C7-FC1B-490C-85C9-BC0ACB7F6AAE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
