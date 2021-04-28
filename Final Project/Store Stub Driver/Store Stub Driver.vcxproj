@@ -158,6 +158,11 @@
     <ClCompile Include="..\Final Project\store.cpp" />
     <ClCompile Include="StoreStubDriver.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="books.dat" />
+    <None Include="employees.dat" />
+    <None Include="snacks.dat" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

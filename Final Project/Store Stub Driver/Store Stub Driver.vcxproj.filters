@@ -63,4 +63,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="books.dat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="employees.dat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="snacks.dat">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
