@@ -73,10 +73,13 @@ public:
 
 	void checkout(double total);
 
+	bool decrementStock(string code);
 	void deleteCashier();
 
 	void generateReport();
 	Summary getSummary(string code);
+
+	bool itemAvailable(string code);
 
 	Account& login();
 	bool loadData();

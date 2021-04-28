@@ -190,6 +190,45 @@ void Store::checkout(double total)
 }
 
 
+/*	Function: bool Store::decrementStock(string code);
+*	Pre: The code of the item to decrement, that item
+*	should already be confirmed to be in stock.
+*	Post: If and item with the specified code exists its
+*	stock will be decremented and true will be returned,
+*	otherwise nothing will be done and false will be returned.
+*	Purpose: Update stock after a sale.
+*********************************************************/
+bool Store::decrementStock(string code)
+{
+	bool found = false;
+	int i;
+
+	// Search books first.
+	for (i = 0; i < mBookCount; i++)
+	{
+		if (mBooks[i].getCode() == code)
+		{
+			found = true;
+			mBooks[i].setStock(mBooks[i].getStock() - 1);
+			break;
+		}
+	}
+
+	// Search snacks next if not found.
+	for (i = 0; i < mSnackCount; i++)
+	{
+		if (mSnacks[i].getCode() == code)
+		{
+			found = true;
+			mSnacks[i].setStock(mSnacks[i].getStock() - 1);
+			break;
+		}
+	}
+
+	return found;
+}
+
+
 /*	Function: void deleteCashier();
 *	Pre: A manager should be logged in.
 *	Post: The user will be prompted for a cashier to delete.
@@ -364,6 +403,39 @@ Summary Store::getSummary(string code)
 	}
 
 	return output;
+}
+
+
+/*	Function: bool Store::itemAvailable(string code);
+*	Pre: The code of the item to check the stock of.
+*	Post: Returns false if the item is out of stock or
+*	doesn't exist, otherwise returns true.
+*	Purpose: Check that an item is in stock.
+*********************************************************/
+bool Store::itemAvailable(string code)
+{
+	int i;
+
+	// Check books first.
+	for (i = 0; i < mBookCount; i++)
+	{
+		if (mBooks[i].getCode() == code)
+		{
+			return mBooks[i].getStock() > 0;
+		}
+	}
+
+	// Check snacks next if not found.
+	for (i = 0; i < mSnackCount; i++)
+	{
+		if (mSnacks[i].getCode() == code)
+		{
+			return mSnacks[i].getStock() > 0;
+		}
+	}
+
+	// Return false if not found
+	return false;
 }
 
 
