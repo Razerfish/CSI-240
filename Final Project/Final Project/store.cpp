@@ -59,52 +59,52 @@ Store::~Store()
 		booksOUT,
 		snacksOUT;
 
-	// Store employees
-	employeesOUT.open(EMPLOYEE_FILE.c_str());
-
-	employeesOUT << mEmployeeCount << endl;
-	for (i = 0; i < mEmployeeCount; i++)
-	{
-		employeesOUT << mEmployees[i];
-	}
-	employeesOUT.close();
-
-	// Store books
-	booksOUT.open(BOOK_FILE.c_str());
-	
-	booksOUT << fixed << setprecision(2);
-	booksOUT << mBookCount << endl;
-	for (i = 0; i < mBookCount; i++)
-	{
-		booksOUT << mBooks[i];
-	}
-	booksOUT.close();
-
-	// Store snacks
-	snacksOUT.open(SNACK_FILE.c_str());
-
-	snacksOUT << fixed << setprecision(2);
-	snacksOUT << mSnackCount << endl;
-	for (i = 0; i < mSnackCount; i++)
-	{
-		snacksOUT << mSnacks[i];
-	}
-	snacksOUT.close();
-
 	if (mEmployees != nullptr)
 	{
+		// Store employees
+		employeesOUT.open(EMPLOYEE_FILE.c_str());
+
+		employeesOUT << mEmployeeCount << endl;
+		for (i = 0; i < mEmployeeCount; i++)
+		{
+			employeesOUT << mEmployees[i];
+		}
+		employeesOUT.close();
+
 		delete[] mEmployees;
 	}
 	mEmployees = nullptr;
 
 	if (mBooks != nullptr)
 	{
+		// Store books
+		booksOUT.open(BOOK_FILE.c_str());
+
+		booksOUT << fixed << setprecision(2);
+		booksOUT << mBookCount << endl;
+		for (i = 0; i < mBookCount; i++)
+		{
+			booksOUT << mBooks[i];
+		}
+		booksOUT.close();
+
 		delete[] mBooks;
 	}
 	mBooks = nullptr;
 
 	if (mSnacks != nullptr)
 	{
+		// Store snacks
+		snacksOUT.open(SNACK_FILE.c_str());
+
+		snacksOUT << fixed << setprecision(2);
+		snacksOUT << mSnackCount << endl;
+		for (i = 0; i < mSnackCount; i++)
+		{
+			snacksOUT << mSnacks[i];
+		}
+		snacksOUT.close();
+
 		delete[] mSnacks;
 	}
 	mSnacks = nullptr;
@@ -221,15 +221,6 @@ void Store::deleteCashier()
 		}
 	}
 
-	// Ensure that account is not a manager.
-	if (mEmployees[foundAt].isManager())
-	{
-		cout << "Account is a manager, you do not have permission to fire this employee.\n";
-		cout << "Aborting...\n";
-		systemPause();
-		return;
-	}
-
 	cout << "Are you sure you want to fire this cashier? This action cannot be undone (y/n): ";
 	cin >> confirm;
 
@@ -248,6 +239,15 @@ void Store::deleteCashier()
 
 	if (exists)
 	{
+		// Ensure that account is not a manager.
+		if (mEmployees[foundAt].isManager())
+		{
+			cout << "Account is a manager, you do not have permission to fire this employee.\n";
+			cout << "Aborting...\n";
+			systemPause();
+			return;
+		}
+
 		temp = new Account[mEmployeeCount - 1];
 		for (i = 0; i < mEmployeeCount; i++)
 		{
@@ -442,7 +442,8 @@ bool Store::loadData()
 	snacksIN.open(SNACK_FILE.c_str());
 	employeesIN.open(EMPLOYEE_FILE.c_str());
 
-	if (booksIN.bad() || snacksIN.bad() || employeesIN.bad())
+	//if (booksIN.bad() || snacksIN.bad() || employeesIN.bad())
+	if (booksIN.fail() || snacksIN.fail() || employeesIN.fail())
 	{
 		booksIN.close();
 		snacksIN.close();

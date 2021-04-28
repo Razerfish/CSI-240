@@ -26,5 +26,9 @@ using namespace std;
 
 int main()
 {
-	return 0;
+	Store database;
+
+	database.loadData();
+
+
 }
