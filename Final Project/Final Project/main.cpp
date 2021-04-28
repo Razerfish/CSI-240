@@ -16,23 +16,28 @@ academic staff; and/or
 the purpose of future plagiarism checking)
 */
 
-#ifndef COMMONFUNCTIONS_H
-#define COMMONFUNCTIONS_H
-
-#include <iostream>
-#include <iomanip>
-#include <string>
-
-#include "account.h"
+#include "store.h"
+#include "mainFunctions.h"
+#include "commonFunctions.h"
 
 using namespace std;
 
-void clearScreen();
+int main()
+{
+	bool shutdown = false;
 
-string promptName(string message);
-string promptPassword(string message);
-string promptUsername(string message);
+	Store database;
 
-void systemPause();
+	if (!load(database))
+	{
+		return 1;
+	}
 
-#endif
+	clearScreen();
+
+	while (!shutdown)
+	{
+		database.login();
+		shutdown = true;
+	}
+}

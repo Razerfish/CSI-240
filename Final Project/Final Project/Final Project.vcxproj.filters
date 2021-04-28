@@ -36,6 +36,12 @@
     <ClCompile Include="commonFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linkedList.h">
@@ -59,5 +65,19 @@
     <ClInclude Include="commonFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="mainFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="books.dat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="employees.dat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="snacks.dat">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

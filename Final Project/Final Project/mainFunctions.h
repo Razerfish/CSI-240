@@ -16,23 +16,22 @@ academic staff; and/or
 the purpose of future plagiarism checking)
 */
 
-#ifndef COMMONFUNCTIONS_H
-#define COMMONFUNCTIONS_H
+#ifndef MAINFUNCTIONS_H
+#define MAINFUNCTION_H
 
 #include <iostream>
-#include <iomanip>
-#include <string>
 
-#include "account.h"
+#include "store.h"
+#include "commonFunctions.h"
 
 using namespace std;
 
-void clearScreen();
+int cashierMenu(Account& cashier);
 
-string promptName(string message);
-string promptPassword(string message);
-string promptUsername(string message);
+bool load(Store& database);
 
-void systemPause();
+int managerMenu(Account& manager);
+
+int promptSearchType();
 
 #endif

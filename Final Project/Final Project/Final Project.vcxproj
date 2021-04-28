@@ -144,6 +144,8 @@
     <ClCompile Include="commonFunctions.cpp" />
     <ClCompile Include="item.cpp" />
     <ClCompile Include="linkedList.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainFunctions.cpp" />
     <ClCompile Include="snack.cpp" />
     <ClCompile Include="store.cpp" />
   </ItemGroup>
@@ -153,8 +155,14 @@
     <ClInclude Include="commonFunctions.h" />
     <ClInclude Include="item.h" />
     <ClInclude Include="linkedList.h" />
+    <ClInclude Include="mainFunctions.h" />
     <ClInclude Include="snack.h" />
     <ClInclude Include="store.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="books.dat" />
+    <None Include="employees.dat" />
+    <None Include="snacks.dat" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
