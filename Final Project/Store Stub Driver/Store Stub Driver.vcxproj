@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7a9a1ed3-e37d-4d91-a0d2-7c475a825124}</ProjectGuid>
-    <RootNamespace>FinalProject</RootNamespace>
+    <ProjectGuid>{7b9d246f-fe51-42dd-a81a-ba015b45e659}</ProjectGuid>
+    <RootNamespace>StoreStubDriver</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Final Project;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,22 +140,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="account.cpp" />
-    <ClCompile Include="book.cpp" />
-    <ClCompile Include="commonFunctions.cpp" />
-    <ClCompile Include="item.cpp" />
-    <ClCompile Include="linkedList.cpp" />
-    <ClCompile Include="snack.cpp" />
-    <ClCompile Include="store.cpp" />
+    <ClInclude Include="..\Final Project\account.h" />
+    <ClInclude Include="..\Final Project\book.h" />
+    <ClInclude Include="..\Final Project\commonFunctions.h" />
+    <ClInclude Include="..\Final Project\item.h" />
+    <ClInclude Include="..\Final Project\linkedList.h" />
+    <ClInclude Include="..\Final Project\snack.h" />
+    <ClInclude Include="..\Final Project\store.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="account.h" />
-    <ClInclude Include="book.h" />
-    <ClInclude Include="commonFunctions.h" />
-    <ClInclude Include="item.h" />
-    <ClInclude Include="linkedList.h" />
-    <ClInclude Include="snack.h" />
-    <ClInclude Include="store.h" />
+    <ClCompile Include="..\Final Project\account.cpp" />
+    <ClCompile Include="..\Final Project\book.cpp" />
+    <ClCompile Include="..\Final Project\commonFunctions.cpp" />
+    <ClCompile Include="..\Final Project\item.cpp" />
+    <ClCompile Include="..\Final Project\linkedList.cpp" />
+    <ClCompile Include="..\Final Project\snack.cpp" />
+    <ClCompile Include="..\Final Project\store.cpp" />
+    <ClCompile Include="StoreStubDriver.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

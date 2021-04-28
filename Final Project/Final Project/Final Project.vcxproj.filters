@@ -30,6 +30,12 @@
     <ClCompile Include="book.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="store.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="commonFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linkedList.h">
@@ -45,6 +51,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="book.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="store.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commonFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
