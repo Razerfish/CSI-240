@@ -34,6 +34,9 @@ the purpose of future plagiarism checking)
 using namespace std;
 
 const string REPORT_FILE = "report.txt";
+const string EMPLOYEE_FILE = "employees.dat";
+const string SNACK_FILE = "snacks.dat";
+const string BOOK_FILE = "books.dat";
 const int FILL_WIDTH = 30;
 
 struct Summary
@@ -76,6 +79,7 @@ public:
 	Summary getSummary(string code);
 
 	Account& login();
+	bool loadData();
 
 	void modifyCashier();
 

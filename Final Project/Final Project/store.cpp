@@ -47,11 +47,50 @@ Store::Store()
 
 /*	Function: Store::~Store();
 *	Pre: None
-*	Post: All dynamic arrays will be freed.
+*	Post: Data will be written to disk and memory will be freed.
 *	Purpose: Destructor
 *********************************************************/
 Store::~Store()
 {
+	int i;
+
+	ofstream
+		employeesOUT,
+		booksOUT,
+		snacksOUT;
+
+	// Store employees
+	employeesOUT.open(EMPLOYEE_FILE.c_str());
+
+	employeesOUT << mEmployeeCount << endl;
+	for (i = 0; i < mEmployeeCount; i++)
+	{
+		employeesOUT << mEmployees[i];
+	}
+	employeesOUT.close();
+
+	// Store books
+	booksOUT.open(BOOK_FILE.c_str());
+	
+	booksOUT << fixed << setprecision(2);
+	booksOUT << mBookCount << endl;
+	for (i = 0; i < mBookCount; i++)
+	{
+		booksOUT << mBooks[i];
+	}
+	booksOUT.close();
+
+	// Store snacks
+	snacksOUT.open(SNACK_FILE.c_str());
+
+	snacksOUT << fixed << setprecision(2);
+	snacksOUT << mSnackCount << endl;
+	for (i = 0; i < mSnackCount; i++)
+	{
+		snacksOUT << mSnacks[i];
+	}
+	snacksOUT.close();
+
 	if (mEmployees != nullptr)
 	{
 		delete[] mEmployees;
@@ -380,6 +419,76 @@ Account& Store::login()
 	}
 
 	return mEmployees[i];
+}
+
+
+/*	Function: bool Store::loadData();
+*	Pre: None
+*	Post: Attempts to load data, returns true if successful,
+*	otherwise returns false.
+*	Purpose: Load the store from the datafiles.
+*********************************************************/
+bool Store::loadData()
+{
+	string line;
+	int i;
+
+	ifstream
+		booksIN,
+		snacksIN,
+		employeesIN;
+
+	booksIN.open(BOOK_FILE.c_str());
+	snacksIN.open(SNACK_FILE.c_str());
+	employeesIN.open(EMPLOYEE_FILE.c_str());
+
+	if (booksIN.bad() || snacksIN.bad() || employeesIN.bad())
+	{
+		booksIN.close();
+		snacksIN.close();
+		employeesIN.close();
+		return false;
+	}
+	else
+	{
+		// Load employees
+		getline(employeesIN, line);
+		mEmployeeCount = stoi(line);
+
+		mEmployees = new Account[mEmployeeCount];
+
+		for (i = 0; i < mEmployeeCount; i++)
+		{
+			employeesIN >> mEmployees[i];
+		}
+		employeesIN.close();
+
+		// Load books
+		getline(booksIN, line);
+		mBookCount = stoi(line);
+
+		mBooks = new Book[mBookCount];
+
+		for (i = 0; i < mBookCount; i++)
+		{
+			booksIN >> mBooks[i];
+		}
+		booksIN.close();
+
+		// Load snacks
+		getline(snacksIN, line);
+		mSnackCount = stoi(line);
+
+		mSnacks = new Snack[mSnackCount];
+
+		for (i = 0; i < mSnackCount; i++)
+		{
+			snacksIN >> mSnacks[i];
+		}
+		snacksIN.close();
+
+		return true;
+	}
 }
 
 
