@@ -71,7 +71,7 @@ public:
 	// Other
 	void addCashier();
 
-	void checkout(double total);
+	void addTransaction(double total);
 
 	bool decrementStock(string code);
 	void deleteCashier();
@@ -79,6 +79,7 @@ public:
 	void generateReport();
 	Summary getSummary(string code);
 
+	bool incrementStock(string code);
 	bool itemAvailable(string code);
 
 	Account& login();

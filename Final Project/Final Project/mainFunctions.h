@@ -26,12 +26,23 @@ the purpose of future plagiarism checking)
 
 using namespace std;
 
+void addToCart(Store& database, Summary* &cart, int& length, double& total);
+
+void cashierLoop(Store& database, Account& user);
 int cashierMenu(Account& cashier);
+void checkout(Store& database, Summary*& cart, int& length, double& total);
+
+void emptyCart(Summary*& cart, int& length, double& total);
 
 bool load(Store& database);
 
+bool managerLoop(Store& database, Account& user);
 int managerMenu(Account& manager);
 
 int promptSearchType();
+
+void removeFromCart(Store& database, Summary*& cart, int& length, double& total);
+
+void searchItems(Store& database);
 
 #endif

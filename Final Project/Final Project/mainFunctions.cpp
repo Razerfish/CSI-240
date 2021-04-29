@@ -18,6 +18,128 @@ the purpose of future plagiarism checking)
 
 #include "mainFunctions.h"
 
+/*	Function: void addToCart(Store& database, Summary* &cart, int& length, double& total);
+*	Pre: References of the variables to work with.
+*	Post: The user will be prompted for an item and that item
+*	will be added to the cart and related values will be updated.
+*	Purpose: Add an item to the cart.
+*********************************************************/
+void addToCart(Store& database, Summary* &cart, int& length, double& total)
+{
+	string code;
+	Summary* temp;
+	Summary newItem;
+
+	int i;
+	cout << "Enter the code of the item to add: ";
+	getline(cin, code);
+
+	if (!database.itemAvailable(code))
+	{
+		cout << "Item not available.\n";
+		systemPause();
+	}
+	else
+	{
+		newItem = database.getSummary(code);
+		database.decrementStock(code);
+
+		if (cart == nullptr)
+		{
+			cart = new Summary[1];
+			cart[0] = newItem;
+			length = 1;
+			total = newItem.price;
+		}
+		else
+		{
+			temp = new Summary[length + 1];
+			for (i = 0; i < length; i++)
+			{
+				temp[i] = cart[i];
+			}
+			temp[i] = newItem; // Pretty sure the C6385 here is a false positive.
+
+			delete[] cart;
+			cart = temp;
+
+			length++;
+			total += newItem.price;
+		}
+	}
+}
+
+
+/*	Function: void cashierLoop(Store& database, Account& user);
+*	Pre: The Store and Account objects to work with.
+*	Post: The function exits when the cashier logs out.
+*	Purpose: Display the cashier menu on loop until the
+*	user logs out.
+*********************************************************/
+void cashierLoop(Store& database, Account& user)
+{
+	int choice;
+
+	Summary* cart = nullptr;
+	int length = 0;
+	double total = 0.0;
+
+	while (true) // Loop until the user logs out.
+	{
+		clearScreen();
+
+		if (length != 0)
+		{
+			cout << "Cart:\n";
+
+			for (int i = 0; i < length; i++)
+			{
+				cout
+					<< string(FILL_WIDTH, '*')
+					<< "Item: " << cart[i].note << endl
+					<< "Code: " << cart[i].code << endl
+					<< "Price: $" << cart[i].price << endl;
+			}
+			cout << string(FILL_WIDTH, '*') << endl << endl;
+		}
+
+		choice = cashierMenu(user);
+
+		switch (choice)
+		{
+		case 1: // Add item to cart
+			addToCart(database, cart, length, total);
+			break;
+		
+		case 2: // Remove from cart.
+			removeFromCart(database, cart, length, total);
+			break;
+
+		case 3: // Search items
+			searchItems(database);
+			break;
+
+		case 4: // Checkout
+			checkout(database, cart, length, total);
+			break;
+
+		case 5: // Cancel transaction
+			emptyCart(cart, length, total);
+			break;
+
+		case 6: // Logout
+			if (cart != nullptr)
+			{
+				delete[] cart;
+				cart = nullptr;
+			}
+			cout << "Goodbye!\n";
+			systemPause();
+			return;
+		}
+	}
+}
+
 
 /*	Function: int cashierMenu(Account& cashier);
 *	Pre: The account of the cashier to greet.
@@ -45,8 +167,8 @@ int cashierMenu(Account& cashier)
 	while (choice < 1 || choice > 6 || cin.fail())
 	{
 		clearScreen();
-		cin.ignore(INT_MAX, '\n');
 		cin.clear();
+		cin.ignore(INT_MAX, '\n');
 
 		cout
 			<< "Invalid selection!\n"
@@ -63,10 +185,63 @@ int cashierMenu(Account& cashier)
 	}
 
 	// Cleanup for possible future getlines
-	cin.ignore(INT_MAX, '\n');
 	cin.clear();
+	cin.ignore(INT_MAX, '\n');
 
 	return choice;
+}
+
+
+/*	Function: void checkout(Store& database, Summary*& cart, int& length, double& total);
+*	Pre: A cart with items in it.
+*	Post: A transaction will be recorded and the cart will be emptied.
+*	Purpose: Checkout a customer.
+*********************************************************/
+void checkout(Store& database, Summary*& cart, int& length, double& total)
+{
+	if (cart == nullptr)
+	{
+		cout << "Cart is empty!\n";
+		systemPause();
+	}
+	else
+	{
+		database.addTransaction(total);
+		delete[] cart;
+		cart = nullptr;
+		length = 0;
+		total = 0.0;
+
+		cout << "Thank you!\n";
+		systemPause();
+	}
+}
+
+
+/*	Function: void emptyCart(Summary*& cart, int& length, double& total);
+*	Pre: The variables to work with.
+*	Post: All items will be removed from the cart.
+*	Purpose: Abort a transaction.
+*********************************************************/
+void emptyCart(Summary*& cart, int& length, double& total)
+{
+	if (cart != nullptr)
+	{
+		delete[] cart;
+		cart = nullptr;
+		length = 0;
+		total = 0.0;
+		cout << "Goodbye...\n";
+		systemPause();
+	}
+	else
+	{
+		cout << "Cart is already empty!\n";
+		// Reset things just to be sure.
+		length = 0;
+		total = 0.0;
+		systemPause();
+	}
 }
 
 
@@ -103,6 +278,60 @@ bool load(Store& database)
 }
 
 
+/*	Function: bool managerLoop(Store& database, Account& user);
+*	Pre: The database and user to work with.
+*	Post: Returns true if logged out normally, returns false
+*	if shutdown was triggered.
+*	Purpose: Run the manager menu on a loop.
+*********************************************************/
+bool managerLoop(Store& database, Account& user)
+{
+	int choice;
+
+	while (true) // Loop until return is called
+	{
+		clearScreen();
+		choice = managerMenu(user);
+
+		switch (choice)
+		{
+		case 1: // Generate report
+			database.generateReport();
+			systemPause();
+			break;
+
+		case 2: // Search cashiers
+			database.searchCashiers();
+			systemPause();
+			break;
+
+		case 3: // Update cashier info
+			database.modifyCashier();
+			systemPause();
+			break;
+
+		case 4: // Hire cashier
+			database.addCashier();
+			systemPause();
+			break;
+
+		case 5: // Fire cashier
+			database.deleteCashier();
+			systemPause();
+			break;
+
+		case 6: // Logout
+			cout << "\nGoodbye!\n\n";
+			return false; // Exit without triggering shutdown
+
+		case 7:
+			cout << "\nGoodnight!\n\n";
+			return true; // Trigger shutdown
+		}
+	}
+}
+
+
 /*	Function: int managerMenu(Account& manager);
 *	Pre: The manager to greet.
 *	Post: The user will be prompted for an action.
@@ -128,9 +357,13 @@ int managerMenu(Account& manager)
 
 	while (choice < 1 || choice > 7 || cin.fail())
 	{
-		clearScreen();
-		cin.ignore(INT_MAX, '\n');
+		bool fuck = cin.fail();
+		//clearScreen();
 		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+		fuck = cin.fail();
+
+		clearScreen();
 
 		cout
 			<< "Invalid selection!\n"
@@ -148,8 +381,8 @@ int managerMenu(Account& manager)
 	}
 
 	// Cleanup after cin extraction
-	cin.ignore(INT_MAX, '\n');
 	cin.clear();
+	cin.ignore(INT_MAX, '\n');
 
 	return choice;
 }
@@ -178,8 +411,8 @@ int promptSearchType()
 	{
 		clearScreen();
 
-		cin.ignore(INT_MAX, '\n');
 		cin.clear();
+		cin.ignore(INT_MAX, '\n');
 
 		cout
 			<< "Invalid selection!\n"
@@ -190,8 +423,111 @@ int promptSearchType()
 			<< "Enter your selection: ";
 	}
 
-	cin.ignore(INT_MAX, '\n');
 	cin.clear();
+	cin.ignore(INT_MAX, '\n');
 
 	return choice;
+}
+
+
+/*	Function: void removeFromCart(Store& database, Summary*& cart, int& length, double& total);
+*	Pre: The variables to work with.
+*	Post: The user will be prompted for the item to remove,
+*	if that item exists in the cart it will be removed,
+*	otherwise the function will abort.
+*	Purpose: Remove an item from the cart.
+*********************************************************/
+void removeFromCart(Store& database, Summary*& cart, int& length, double& total)
+{
+	string code;
+	Summary* temp;
+	Summary toRemove;
+
+	int i;
+	int foundAt = -1;
+
+	if (cart == nullptr)
+	{
+		cout << "Cart is empty!\n";
+		systemPause();
+	}
+	else
+	{
+		cout << "Enter the code of the item to remove: ";
+		getline(cin, code);
+
+		for (i = 0; i < length; i++)
+		{
+			if (cart[i].code == code)
+			{
+				foundAt = i;
+				toRemove = cart[i];
+				break;
+			}
+		}
+
+		database.incrementStock(code);
+
+		if (foundAt == -1)
+		{
+			cout << "No item with the specified code is in the cart.\n";
+			systemPause();
+		}
+		else if (length == 1)
+		{
+			delete[] cart;
+			cart = nullptr;
+			length = 0;
+			total = 0.0;
+		}
+		else
+		{
+			temp = new Summary[length - 1];
+			for (i = 0; i < length; i++)
+			{
+				if (i < foundAt)
+				{
+					temp[i] = cart[i];
+				}
+				else if (i > foundAt)
+				{
+					temp[i - 1] = cart[i];
+				}
+			}
+
+			length--;
+			delete[] cart;
+			cart = temp;
+			total -= toRemove.price;
+		}
+	}
+}
+
+
+/*	Function: void searchItems(Store& database);
+*	Pre: A reference to the store database.
+*	Post: The user will be prompted for search terms
+*	and the result will be printed to the screen.
+*	Purpose: Search through inventory and display the results.
+*********************************************************/
+void searchItems(Store& database)
+{
+	int choice = promptSearchType();
+
+	switch (choice)
+	{
+	case 1: // Book search
+		database.searchBooks();
+		break;
+
+	case 2: // Snack search
+		database.searchSnacks();
+		break;
+
+	case 3: // Abort
+		cout << "Aborting...\n";
+		break;
+	}
+
+	systemPause();
 }

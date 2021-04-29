@@ -27,6 +27,7 @@ int main()
 	bool shutdown = false;
 
 	Store database;
+	Account user;
 
 	if (!load(database))
 	{
@@ -37,7 +38,18 @@ int main()
 
 	while (!shutdown)
 	{
-		database.login();
+		user = database.login();
 		shutdown = true;
+
+		if (user.isManager())
+		{
+			shutdown = managerLoop(database, user);
+			systemPause();
+			clearScreen();
+		}
+		else
+		{
+			cashierLoop(database, user);
+		}
 	}
 }

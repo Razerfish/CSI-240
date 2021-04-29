@@ -154,7 +154,6 @@ void Store::addCashier()
 	if (exists)
 	{
 		cout << "Account already exists!\nAborting...\n";
-		systemPause();
 	}
 	else
 	{
@@ -171,18 +170,17 @@ void Store::addCashier()
 		mEmployeeCount++;
 
 		cout << "Cashier added!\n";
-		systemPause();
 	}
 }
 
 
-/*	Function: void Store::checkout(double total);
+/*	Function: void Store::addTransaction(double total);
 *	Pre: The total of the transaction.
 *	Post: The total is added to the daily record.
 *	Purpose: Checkout a customer and add a record of the
 *	transaction to the database.
 *********************************************************/
-void Store::checkout(double total)
+void Store::addTransaction(double total)
 {
 	mTransactions.append(total);
 
@@ -269,7 +267,6 @@ void Store::deleteCashier()
 		cin.clear();
 
 		cout << "Operation cancelled\n";
-		systemPause();
 		return;
 	}
 
@@ -283,7 +280,6 @@ void Store::deleteCashier()
 		{
 			cout << "Account is a manager, you do not have permission to fire this employee.\n";
 			cout << "Aborting...\n";
-			systemPause();
 			return;
 		}
 
@@ -305,13 +301,11 @@ void Store::deleteCashier()
 		mEmployees = temp;
 
 		cout << "Cashier deleted!\n";
-		systemPause();
 	}
 	else
 	{
 		cout << "No account with the username: " << username << " exists!\n";
 		cout << "Aborting...\n";
-		systemPause();
 	}
 }
 
@@ -336,7 +330,14 @@ void Store::generateReport()
 		total += mTransactions[i];
 	}
 
-	average = total / double(count);
+	if (count > 0)
+	{
+		average = total / double(count);
+	}
+	else
+	{
+		average = 0.0;
+	}
 
 	dout.open(REPORT_FILE.c_str());
 
@@ -403,6 +404,44 @@ Summary Store::getSummary(string code)
 	}
 
 	return output;
+}
+
+
+/*	Function: bool Store::incrementStock(string code);
+*	Pre: The code of the item to alter.
+*	Post: If an item with the given code exists its stock
+*	will be incremented by 1 and true will be returned,
+*	otherwise nothing will be done and false will be returned.
+*	Purpose: Increment an items stock.
+*********************************************************/
+bool Store::incrementStock(string code)
+{
+	bool found = false;
+	int i;
+
+	// Search books first.
+	for (i = 0; i < mBookCount; i++)
+	{
+		if (mBooks[i].getCode() == code)
+		{
+			found = true;
+			mBooks[i].setStock(mBooks[i].getStock() + 1);
+			break;
+		}
+	}
+
+	// Search snacks next if not found.
+	for (i = 0; i < mSnackCount; i++)
+	{
+		if (mSnacks[i].getCode() == code)
+		{
+			found = true;
+			mSnacks[i].setStock(mSnacks[i].getStock() + 1);
+			break;
+		}
+	}
+
+	return found;
 }
 
 
@@ -647,9 +686,9 @@ void Store::modifyCashier()
 			}
 			else
 			{
-				mEmployees[i].setUsername(username);
-				mEmployees[i].setPassword(password);
-				mEmployees[i].setName(name);
+				mEmployees[foundAt].setUsername(username);
+				mEmployees[foundAt].setPassword(password);
+				mEmployees[foundAt].setName(name);
 			}
 
 			cin.ignore(INT_MAX, '\n');
@@ -768,7 +807,7 @@ void Store::searchCashiers()
 
 	for (int i = 0; i < mEmployeeCount; i++)
 	{
-		if (mEmployees[i].getName() == name)
+		if (mEmployees[i].getName() == name && !mEmployees[i].isManager())
 		{
 			hits++;
 			results
