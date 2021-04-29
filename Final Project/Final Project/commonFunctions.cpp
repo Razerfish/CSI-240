@@ -23,6 +23,7 @@ the purpose of future plagiarism checking)
 *	Pre: None
 *	Post: The terminal will be cleared.
 *	Purpose: Clear the terminal window.
+*	Author: Fiona Wilson
 *********************************************************/
 void clearScreen()
 {
@@ -34,6 +35,7 @@ void clearScreen()
 *	Pre: The message to prompt the user with.
 *	Post: A non-blank name will be returned.
 *	Purpose: Prompt the user for a name.
+*	Author: Fiona Wilson
 *********************************************************/
 string promptName(string message)
 {
@@ -57,6 +59,7 @@ string promptName(string message)
 *	Pre: The message to prompt the user with.
 *	Post: A non-blank password will be returned.
 *	Purpose: Prompt the user for a password.
+*	Author: Fiona Wilson
 *********************************************************/
 string promptPassword(string message)
 {
@@ -80,6 +83,7 @@ string promptPassword(string message)
 *	Pre: The message to prompt the user with.
 *	Post: Returns a valid username.
 *	Purpose: Prompt the user for a valid username.
+*	Author: Fiona Wilson
 *********************************************************/
 string promptUsername(string message)
 {
@@ -125,6 +129,7 @@ string promptUsername(string message)
 *	Post: Execution will be halted until the user presses
 *	a key.
 *	Purpose: Pause execution.
+*	Author: Fiona Wilson
 *********************************************************/
 void systemPause()
 {

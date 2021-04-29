@@ -27,6 +27,7 @@ the purpose of future plagiarism checking)
 *	Pre: None
 *	Post: All member variable will be set to default values.
 *	Purpose: Default constructor.
+*	Author: Fiona Wilson
 *********************************************************/
 Account::Account()
 {
@@ -43,6 +44,7 @@ Account::Account()
 *	Post: The object will be initialized using the values provided.
 *	Purpose: Non-default constructor. Note: mManager will always be set to false
 *	and can only be changed by reading an entry from a database.
+*	Author: Fiona Wilson
 *********************************************************/
 Account::Account(string username, string password, string name)
 {
@@ -62,6 +64,7 @@ Account::Account(string username, string password, string name)
 *	Pre: None
 *	Post: None
 *	Purpose: Destructor
+*	Author: Fiona Wilson
 *********************************************************/
 Account::~Account()
 {
@@ -78,6 +81,7 @@ Account::~Account()
 *	Pre: None
 *	Post: Returns the name of the account holder.
 *	Purpose: Get the name of the account holder.
+*	Author: Fiona Wilson
 *********************************************************/
 string Account::getName()
 {
@@ -89,6 +93,7 @@ string Account::getName()
 *	Pre: None
 *	Post: Returns the username of the account.
 *	Purpose: Get the username of an account.
+*	Author: Fiona Wilson
 *********************************************************/
 string Account::getUsername()
 {
@@ -117,6 +122,7 @@ void Account::setName(string name)
 *	Post: The password of the account will be changed to the
 *	supplied value.
 *	Purpose: Change the password of an account.
+*	Author: Fiona Wilson
 *********************************************************/
 void Account::setPassword(string password)
 {
@@ -129,6 +135,7 @@ void Account::setPassword(string password)
 *	Post: The username of the account will be updated to the
 *	supplied value.
 *	Purpose: Change the username of an account.
+*	Author: Fiona Wilson
 *********************************************************/
 void Account::setUsername(string username)
 {
@@ -146,6 +153,7 @@ void Account::setUsername(string username)
 *	Post: Returns whether or not the account has manager
 *	privileges.
 *	Purpose: Check the manager status of an account.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Account::isManager()
 {
@@ -158,6 +166,7 @@ bool Account::isManager()
 *	Post: Returns true if the login credentials are valid,
 *	otherwise returns false.
 *	Purpose: Validate login credentials.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Account::validateLogin(string username, string password)
 {
@@ -179,6 +188,7 @@ bool Account::validateLogin(string username, string password)
 *	Post: The account object will be initialized using data from
 *	the ifstream.
 *	Purpose: Read an account from a file stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ifstream& operator >>(ifstream& in, Account& obj)
 {
@@ -199,6 +209,7 @@ ifstream& operator >>(ifstream& in, Account& obj)
 *	Pre: References to the ofstream and account objects to use.
 *	Post: The state of the account object will be output into the stream.
 *	Purpose: Save an account to a file.
+*	Author: Fiona Wilson
 *********************************************************/
 ofstream& operator <<(ofstream& out, const Account& obj)
 {

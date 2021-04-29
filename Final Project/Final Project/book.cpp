@@ -27,6 +27,7 @@ the purpose of future plagiarism checking)
 *	Pre: None.
 *	Post: All member variables will be initialized.
 *	Purpose: Default constructor.
+*	Author: Fiona Wilson
 *********************************************************/
 Book::Book() : Item()
 {
@@ -40,6 +41,7 @@ Book::Book() : Item()
 *	Pre: Initial values.
 *	Post: Member variables will be initialized with the provided values.
 *	Purpose: Paramaterized constructor.
+*	Author: Fiona Wilson
 *********************************************************/
 Book::Book(string code, double price, int stock, string isbn, string title, string author) : Item(code, price, stock)
 {
@@ -57,6 +59,7 @@ Book::Book(string code, double price, int stock, string isbn, string title, stri
 *	Pre: None
 *	Post: None
 *	Purpose: Destructor
+*	Author: Fiona Wilson
 *********************************************************/
 Book::~Book()
 {
@@ -72,6 +75,7 @@ Book::~Book()
 *	Pre: None
 *	Post: Returns the author.
 *	Purpose: Get the author of a book.
+*	Author: Fiona Wilson
 *********************************************************/
 string Book::getAuthor()
 {
@@ -83,6 +87,7 @@ string Book::getAuthor()
 *	Pre: None
 *	Post: Returns the ISBN.
 *	Purpose: Get the ISBN of a book.
+*	Author: Fiona Wilson
 *********************************************************/
 string Book::getISBN()
 {
@@ -94,6 +99,7 @@ string Book::getISBN()
 *	Pre: None
 *	Post: Returns the title.
 *	Purpose: Get the title of a book.
+*	Author: Fiona Wilson
 *********************************************************/
 string Book::getTitle()
 {
@@ -109,6 +115,7 @@ string Book::getTitle()
 *	Pre: The new author.
 *	Post: The author of the book will be updated.
 *	Purpose: Change the author of a book.
+*	Author: Fiona Wilson
 *********************************************************/
 void Book::setAuthor(string author)
 {
@@ -120,6 +127,7 @@ void Book::setAuthor(string author)
 *	Pre: The new ISBN.
 *	Post: The ISBN of the book will be updated.
 *	Purpose: Change the ISBN of a book.
+*	Author: Fiona Wilson
 *********************************************************/
 void Book::setISBN(string isbn)
 {
@@ -131,6 +139,7 @@ void Book::setISBN(string isbn)
 *	Pre: The new title.
 *	Post: The title of the book will be updated.
 *	Purpose: Change the title of a book.
+*	Author: Fiona Wilson
 *********************************************************/
 void Book::setTitle(string title)
 {
@@ -146,6 +155,7 @@ void Book::setTitle(string title)
 *	Pre: The stream to read from.
 *	Post: The state of the object will be read from the stream.
 *	Purpose: Load a Book object from a stream.
+*	Author: Fiona Wilson
 *********************************************************/
 istream& Book::load(istream& in)
 {
@@ -171,6 +181,7 @@ istream& Book::load(istream& in)
 *	Pre: The file stream to read from.
 *	Post: The state of the object will be read from the stream.
 *	Purpose: Load a Book object from a file stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ifstream& Book::load(ifstream& in)
 {
@@ -196,6 +207,7 @@ ifstream& Book::load(ifstream& in)
 *	Pre: The stream to print to.
 *	Post: The state of the object will be printed to the stream.
 *	Purpose: Print a Book object to a stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ostream& Book::print(ostream& out)
 {
@@ -217,6 +229,7 @@ ostream& Book::print(ostream& out)
 *	Pre: The file stream to print to.
 *	Post: The state of the object will be printed to the stream.
 *	Purpose: Print a Book object to a file stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ofstream& Book::print(ofstream& out)
 {
@@ -242,6 +255,7 @@ ofstream& Book::print(ofstream& out)
 *	Pre: The book to compare to.
 *	Post: Returns true if the codes match, otherwise returns false.
 *	Purpose: Compare the codes of two Book objects.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Book::operator ==(const Book& rhs)
 {
@@ -254,6 +268,7 @@ bool Book::operator ==(const Book& rhs)
 *	Post: Returns true if the string matches the code of
 *	the Book object, otherwise returns false.
 *	Purpose: Check if a string matches a Book objects code.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Book::operator ==(const string& rhs)
 {
@@ -265,6 +280,7 @@ bool Book::operator ==(const string& rhs)
 *	Pre: The Book object to use.
 *	Post: Returns false if the codes match, otherwise returns true.
 *	Purpose: Compare the codes of two Book objects.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Book::operator !=(const Book& rhs)
 {
@@ -277,6 +293,7 @@ bool Book::operator !=(const Book& rhs)
 *	Post: Returns false if the string matches the code of
 *	the book object, otherwise returns true.
 *	Purpose: Check if a string doesn't match a Book objects code.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Book::operator !=(const string& rhs)
 {
@@ -293,6 +310,7 @@ bool Book::operator !=(const string& rhs)
 *	Post: Returns true if the string matches the books code,
 *	otherwise returns false.
 *	Purpose: Compare a string with a Book objects code.
+*	Author: Fiona Wilson
 *********************************************************/
 bool operator ==(const string& lhs, const Book& rhs)
 {
@@ -305,6 +323,7 @@ bool operator ==(const string& lhs, const Book& rhs)
 *	Post: Returns false if the string matches the books code,
 *	otherwise returns true.
 *	Purpose: Compare a string with a Book objects code.
+*	Author: Fiona Wilson
 *********************************************************/
 bool operator !=(const string& lhs, const Book& rhs)
 {

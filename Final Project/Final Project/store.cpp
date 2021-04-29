@@ -27,6 +27,7 @@ the purpose of future plagiarism checking)
 *	Pre: None
 *	Post: All members will be initialized.
 *	Purpose: Default constructor.
+*	Author: Fiona Wilson
 *********************************************************/
 Store::Store()
 {
@@ -49,6 +50,7 @@ Store::Store()
 *	Pre: None
 *	Post: Data will be written to disk and memory will be freed.
 *	Purpose: Destructor
+*	Author: Fiona Wilson
 *********************************************************/
 Store::~Store()
 {
@@ -120,6 +122,7 @@ Store::~Store()
 *	Post: If the specified username is not already taken a
 *	new cashier account will be created.
 *	Purpose: Create a new cashier.
+*	Author: Fiona Wilson
 *********************************************************/
 void Store::addCashier()
 {
@@ -179,6 +182,7 @@ void Store::addCashier()
 *	Post: The total is added to the daily record.
 *	Purpose: Checkout a customer and add a record of the
 *	transaction to the database.
+*	Author: Fiona Wilson
 *********************************************************/
 void Store::addTransaction(double total)
 {
@@ -195,6 +199,7 @@ void Store::addTransaction(double total)
 *	stock will be decremented and true will be returned,
 *	otherwise nothing will be done and false will be returned.
 *	Purpose: Update stock after a sale.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Store::decrementStock(string code)
 {
@@ -231,6 +236,7 @@ bool Store::decrementStock(string code)
 *	Pre: A manager should be logged in.
 *	Post: The user will be prompted for a cashier to delete.
 *	Purpose: Delete a cashier.
+*	Author: Fiona Wilson
 *********************************************************/
 void Store::deleteCashier()
 {
@@ -314,6 +320,7 @@ void Store::deleteCashier()
 *	Pre: A manager should be logged in.
 *	Post: Attempts to save a daily report to disk.
 *	Purpose: Save a daily report.
+*	Author: Fiona Wilson
 *********************************************************/
 void Store::generateReport()
 {
@@ -369,6 +376,7 @@ void Store::generateReport()
 *	containing the title if it's a book or the name
 *	if it's a snack, the price of the item and its code.
 *	Purpose: Get the summary of an item by its code.
+*	Author: Fiona Wilson
 *********************************************************/
 Summary Store::getSummary(string code)
 {
@@ -413,6 +421,7 @@ Summary Store::getSummary(string code)
 *	will be incremented by 1 and true will be returned,
 *	otherwise nothing will be done and false will be returned.
 *	Purpose: Increment an items stock.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Store::incrementStock(string code)
 {
@@ -450,6 +459,7 @@ bool Store::incrementStock(string code)
 *	Post: Returns false if the item is out of stock or
 *	doesn't exist, otherwise returns true.
 *	Purpose: Check that an item is in stock.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Store::itemAvailable(string code)
 {
@@ -484,6 +494,7 @@ bool Store::itemAvailable(string code)
 *	the user logged in to.
 *	Purpose: Loop until a user provides valid login
 *	credentials.
+*	Author: Fiona Wilson
 *********************************************************/
 Account& Store::login()
 {
@@ -538,6 +549,7 @@ Account& Store::login()
 *	Post: Attempts to load data, returns true if successful,
 *	otherwise returns false.
 *	Purpose: Load the store from the datafiles.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Store::loadData()
 {
@@ -609,6 +621,7 @@ bool Store::loadData()
 *	Post: The manager will be prompted for the new values
 *	to apply to the cashier.
 *	Purpose: Modify a cashier.
+*	Author: Fiona Wilson
 *********************************************************/
 void Store::modifyCashier()
 {
@@ -708,6 +721,7 @@ void Store::modifyCashier()
 *	Post: The user will be prompted for search parameters and
 *	the results of that search will be printed to the screen.
 *	Purpose: Search through the book inventory.
+*	Author: Fiona Wilson
 *********************************************************/
 void Store::searchBooks()
 {
@@ -794,6 +808,7 @@ void Store::searchBooks()
 *	Post: The user will be prompted for a name to search for
 *	and the results of that search will be printed to the screen.
 *	Purpose: Search cashiers by name.
+*	Author: Fiona Wilson
 *********************************************************/
 void Store::searchCashiers()
 {
@@ -834,6 +849,7 @@ void Store::searchCashiers()
 *	Post: The user will be prompted for the name of a snack
 *	and the results of that search will be printed to the screen.
 *	Purpose: Search snacks by name.
+*	Author: Fiona Wilson
 *********************************************************/
 void Store::searchSnacks()
 {

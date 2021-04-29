@@ -26,6 +26,7 @@ the purpose of future plagiarism checking)
 *	Pre: None
 *	Post: All member variables will be initialized.
 *	Purpose: Default constructor.
+*	Author: Fiona Wilson
 *********************************************************/
 Item::Item()
 {
@@ -40,6 +41,7 @@ Item::Item()
 *	Post: Member variables will be initialized using the
 *	provided values.
 *	Purpose: Paramaterized constructor.
+*	Author: Fiona Wilson
 *********************************************************/
 Item::Item(string code, double price, int stock)
 {
@@ -57,6 +59,7 @@ Item::Item(string code, double price, int stock)
 *	Pre: None
 *	Post: None
 *	Purpose: Destructor
+*	Author: Fiona Wilson
 *********************************************************/
 Item::~Item()
 {
@@ -72,6 +75,7 @@ Item::~Item()
 *	Pre: None
 *	Post: Returns the code of the item.
 *	Purpose: Get the code of an item.
+*	Author: Fiona Wilson
 *********************************************************/
 string Item::getCode()
 {
@@ -83,6 +87,7 @@ string Item::getCode()
 *	Pre: None
 *	Post: Returns the price of the item.
 *	Purpose: Get the price of an item.
+*	Author: Fiona Wilson
 *********************************************************/
 double Item::getPrice()
 {
@@ -94,6 +99,7 @@ double Item::getPrice()
 *	Pre: None
 *	Post: Returns the quantity of the item.
 *	Purpose: Get the quantity of an item.
+*	Author: Fiona Wilson
 *********************************************************/
 int Item::getStock()
 {
@@ -109,6 +115,7 @@ int Item::getStock()
 *	Pre: The new code.
 *	Post: The code of the item will be set to the provided value.
 *	Purpose: Change an items code.
+*	Author: Fiona Wilson
 *********************************************************/
 void Item::setCode(string code)
 {
@@ -120,6 +127,7 @@ void Item::setCode(string code)
 *	Pre: The new price.
 *	Post: The price of the item will be set to the provided value.
 *	Purpose: Change the price of an item.
+*	Author: Fiona Wilson
 *********************************************************/
 void Item::setPrice(double price)
 {
@@ -131,6 +139,7 @@ void Item::setPrice(double price)
 *	Pre: The new stock.
 *	Post: The stock of the item will be set to the provided value.
 *	Purpose: Change the stock of an item.
+*	Author: Fiona Wilson
 *********************************************************/
 void Item::setStock(int stock)
 {
@@ -147,6 +156,7 @@ void Item::setStock(int stock)
 *	Post: The state of object will be updated using the data
 *	from the stream.
 *	Purpose: Read item state from a stream.
+*	Author: Fiona Wilson
 *********************************************************/
 istream& Item::load(istream& in)
 {
@@ -169,6 +179,7 @@ istream& Item::load(istream& in)
 *	Post: The object state will be updated using the data
 *	from the file stream.
 *	Purpose: Read item state from a file stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ifstream& Item::load(ifstream& in)
 {
@@ -190,6 +201,7 @@ ifstream& Item::load(ifstream& in)
 *	Pre: The stream to output to.
 *	Post: The state of the object will be output to the stream.
 *	Purpose: Output the item state to a stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ostream& Item::print(ostream& out)
 {
@@ -208,6 +220,7 @@ ostream& Item::print(ostream& out)
 *	Pre: The file stream to output to.
 *	Post: The item state will be output to the file stream.
 *	Purpose: Output the state of the item to a file stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ofstream& Item::print(ofstream& out)
 {
@@ -231,6 +244,7 @@ ofstream& Item::print(ofstream& out)
 *	Post: Returns true if the string and the code match,
 *	otherwise returns false.
 *	Purpose: Check if a string is equal to an items code.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Item::operator ==(const string& rhs)
 {
@@ -243,6 +257,7 @@ bool Item::operator ==(const string& rhs)
 *	Post: Returns true if the string and the code don't match
 *	otherwise returns false.
 *	Purpose: Check if a string is unequal to an items code.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Item::operator !=(const string& rhs)
 {
@@ -259,6 +274,7 @@ bool Item::operator !=(const string& rhs)
 *	Post: The data in the stream will be used to populated
 *	the item object.
 *	Purpose: Read Item state from a stream.
+*	Author: Fiona Wilson
 *********************************************************/
 istream& operator >>(istream& in, Item& obj)
 {
@@ -271,6 +287,7 @@ istream& operator >>(istream& in, Item& obj)
 *	Post: The data in the file stream will be used to populate
 *	the item object.
 *	Purpose: Read Item state from a file stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ifstream& operator >>(ifstream& in, Item& obj)
 {
@@ -282,6 +299,7 @@ ifstream& operator >>(ifstream& in, Item& obj)
 *	Pre: The output stream and Item object to use.
 *	Post: The Item state will be output to the stream.
 *	Purpose: Output the Item state to a stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ostream& operator <<(ostream& out, Item& obj)
 {
@@ -293,6 +311,7 @@ ostream& operator <<(ostream& out, Item& obj)
 *	Pre: The file stream and Item object to use.
 *	Post: The Item state will be output to the file stream.
 *	Purpose: Output the Item state to a file stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ofstream& operator <<(ofstream& out, Item& obj)
 {

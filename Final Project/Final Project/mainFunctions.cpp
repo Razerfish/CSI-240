@@ -23,6 +23,7 @@ the purpose of future plagiarism checking)
 *	Post: The user will be prompted for an item and that item
 *	will be added to the cart and related values will be updated.
 *	Purpose: Add an item to the cart.
+*	Author: Fiona Wilson
 *********************************************************/
 void addToCart(Store& database, Summary* &cart, int& length, double& total)
 {
@@ -75,6 +76,7 @@ void addToCart(Store& database, Summary* &cart, int& length, double& total)
 *	Post: The function exits when the cashier logs out.
 *	Purpose: Display the cashier menu on loop until the
 *	user logs out.
+*	Author: Fiona Wilson
 *********************************************************/
 void cashierLoop(Store& database, Account& user)
 {
@@ -149,6 +151,7 @@ void cashierLoop(Store& database, Account& user)
 *	Post: The cashier will be presented with the actions
 *	they can perform and input will be prompted.
 *	Purpose: Prompt the cashier for an action.
+*	Author: Fiona Wilson
 *********************************************************/
 int cashierMenu(Account& cashier)
 {
@@ -199,6 +202,7 @@ int cashierMenu(Account& cashier)
 *	Pre: A cart with items in it.
 *	Post: A transaction will be recorded and the cart will be emptied.
 *	Purpose: Checkout a customer.
+*	Author: Fiona Wilson
 *********************************************************/
 void checkout(Store& database, Summary*& cart, int& length, double& total)
 {
@@ -225,6 +229,7 @@ void checkout(Store& database, Summary*& cart, int& length, double& total)
 *	Pre: The variables to work with.
 *	Post: All items will be removed from the cart.
 *	Purpose: Abort a transaction.
+*	Author: Fiona Wilson
 *********************************************************/
 void emptyCart(Store& database, Summary*& cart, int& length, double& total)
 {
@@ -259,6 +264,7 @@ void emptyCart(Store& database, Summary*& cart, int& length, double& total)
 *	returns false if loading was aborted.
 *	Purpose: Attempt to load data until success, or the
 *	user chooses to abort.
+*	Author: Fiona Wilson
 *********************************************************/
 bool load(Store& database)
 {
@@ -291,6 +297,7 @@ bool load(Store& database)
 *	Post: Returns true if logged out normally, returns false
 *	if shutdown was triggered.
 *	Purpose: Run the manager menu on a loop.
+*	Author: Fiona Wilson
 *********************************************************/
 bool managerLoop(Store& database, Account& user)
 {
@@ -344,6 +351,7 @@ bool managerLoop(Store& database, Account& user)
 *	Pre: The manager to greet.
 *	Post: The user will be prompted for an action.
 *	Purpose: Get the user to choose an action.
+*	Author: Fiona Wilson
 *********************************************************/
 int managerMenu(Account& manager)
 {
@@ -397,6 +405,7 @@ int managerMenu(Account& manager)
 *	Post: Prompts the user for the type of search
 *	to perform.
 *	Purpose: Prompt search type.
+*	Author: Fiona Wilson
 *********************************************************/
 int promptSearchType()
 {
@@ -442,6 +451,7 @@ int promptSearchType()
 *	if that item exists in the cart it will be removed,
 *	otherwise the function will abort.
 *	Purpose: Remove an item from the cart.
+*	Author: Fiona Wilson
 *********************************************************/
 void removeFromCart(Store& database, Summary*& cart, int& length, double& total)
 {
@@ -515,6 +525,7 @@ void removeFromCart(Store& database, Summary*& cart, int& length, double& total)
 *	Post: The user will be prompted for search terms
 *	and the result will be printed to the screen.
 *	Purpose: Search through inventory and display the results.
+*	Author: Fiona Wilson
 *********************************************************/
 void searchItems(Store& database)
 {

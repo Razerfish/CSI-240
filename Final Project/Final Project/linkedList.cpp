@@ -29,6 +29,8 @@ the purpose of future plagiarism checking)
 *	Post: mNext is initialized to nullptr.
 *	Purpose: Initialize mNext to nullptr to indicate that it
 *	doesn't point anywhere.
+*	Author: Fiona Wilson
+*	Citation: Wei Kian Chen, https://champlain.instructure.com/courses/1623244/files/184733441
 *********************************************************/
 LinkedList::Node::Node()
 {
@@ -42,6 +44,8 @@ LinkedList::Node::Node()
 *	Post: mNext is set to nullptr and mData is set to
 *	the provided value.
 *	Purpose: Initialize mNext and mData.
+*	Author: Fiona Wilson
+*	Citation: Wei Kian Chen, https://champlain.instructure.com/courses/1623244/files/184733441
 *********************************************************/
 LinkedList::Node::Node(double data)
 {
@@ -55,6 +59,8 @@ LinkedList::Node::Node(double data)
 *	Post: mHead and mTail are set to nullptr and mCount
 *	is set to 0.
 *	Purpose: Initialize the LinkedList object.
+*	Author: Fiona Wilson
+*	Citation: Wei Kian Chen, https://champlain.instructure.com/courses/1623244/files/184733441
 *********************************************************/
 LinkedList::LinkedList()
 {
@@ -72,6 +78,8 @@ LinkedList::LinkedList()
 *	Pre: None
 *	Post: All elements will be deleted.
 *	Purpose: Clean up and prevent memory leaks.
+*	Author: Fiona Wilson
+*	Citation: Wei Kian Chen, https://champlain.instructure.com/courses/1623244/files/184733441
 *********************************************************/
 LinkedList::~LinkedList()
 {
@@ -87,6 +95,8 @@ LinkedList::~LinkedList()
 *	Pre: None
 *	Post: Returns the amount of elements in the object.
 *	Purpose: Get the length of the LinkedList object.
+*	Author: Fiona Wilson
+*	Citation: Wei Kian Chen, https://champlain.instructure.com/courses/1623244/files/184733441
 *********************************************************/
 int LinkedList::getCount()
 {
@@ -99,6 +109,8 @@ int LinkedList::getCount()
 *	Post: If the given index exists the data at that location
 *	is returned, otherwise an out_of_range exception is thrown.
 *	Purpose: Get the data located at an index.
+*	Author: Fiona Wilson
+*	Citation: Wei Kian Chen, https://champlain.instructure.com/courses/1623244/files/184733441
 *********************************************************/
 double LinkedList::getData(int index)
 {
@@ -130,6 +142,8 @@ double LinkedList::getData(int index)
 *	to the provided value, otherwise an out_of_range error
 *	will be thrown.
 *	Purpose: Modify the data of an element in the list.
+*	Author: Fiona Wilson
+*	Citation: Wei Kian Chen, https://champlain.instructure.com/courses/1623244/files/184733441
 *********************************************************/
 void LinkedList::setData(int index, double data)
 {
@@ -161,6 +175,8 @@ void LinkedList::setData(int index, double data)
 *	be appended to the end of the list. Returns true
 *	if successful, otherwise returns false.
 *	Purpose: Append an element to the end of the list.
+*	Author: Fiona Wilson
+*	Citation: Wei Kian Chen, https://champlain.instructure.com/courses/1623244/files/184733441
 *********************************************************/
 bool LinkedList::append(double data)
 {
@@ -192,6 +208,8 @@ bool LinkedList::append(double data)
 *	Pre: None
 *	Post: All elements in the list will be deleted.
 *	Purpose: Delete all elements/nodes in the list.
+*	Author: Fiona Wilson
+*	Citation: Wei Kian Chen, https://champlain.instructure.com/courses/1623244/files/184733441
 *********************************************************/
 void LinkedList::clear()
 {
@@ -218,6 +236,8 @@ void LinkedList::clear()
 *	If there are no nodes in the list a length_error will
 *	be thrown.
 *	Purpose: Remove a node from the list.
+*	Author: Fiona Wilson
+*	Citation: Wei Kian Chen, https://champlain.instructure.com/courses/1623244/files/184733441
 *********************************************************/
 void LinkedList::remove(int index)
 {
@@ -288,6 +308,8 @@ void LinkedList::remove(int index)
 *	be returned, otherwise an out_of_range error will be
 *	thrown.
 *	Purpose: Indices operator overload.
+*	Author: Fiona Wilson
+*	Citation: Wei Kian Chen, https://champlain.instructure.com/courses/1623244/files/184733441
 *********************************************************/
 double LinkedList::operator [](int index)
 {

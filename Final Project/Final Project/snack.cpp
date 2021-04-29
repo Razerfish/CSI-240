@@ -27,6 +27,7 @@ the purpose of future plagiarism checking)
 *	Post: All member variables will be initialized to default
 *	values.
 *	Purpose: Default constructor.
+*	Author: Fiona Wilson
 *********************************************************/
 Snack::Snack() : Item()
 {
@@ -38,6 +39,7 @@ Snack::Snack() : Item()
 *	Pre: Values to use.
 *	Post: Member variables will be initialized to the supplied values.
 *	Purpose: Parameterized constructor.
+*	Author: Fiona Wilson
 *********************************************************/
 Snack::Snack(string code, double price, int stock, string name) : Item(code, price, stock)
 {
@@ -53,6 +55,7 @@ Snack::Snack(string code, double price, int stock, string name) : Item(code, pri
 *	Pre: None
 *	Post: None
 *	Purpose: Deconstructor
+*	Author: Fiona Wilson
 *********************************************************/
 Snack::~Snack()
 {
@@ -68,6 +71,7 @@ Snack::~Snack()
 *	Pre: None
 *	Post: The name of the snack will be returned.
 *	Purpose: Get the name of a snack.
+*	Author: Fiona Wilson
 *********************************************************/
 string Snack::getName()
 {
@@ -84,6 +88,7 @@ string Snack::getName()
 *	Post: The name of the snack will be changed to the
 *	supplied value.
 *	Purpose: Change the name of a snack item.
+*	Author: Fiona Wilson
 *********************************************************/
 void Snack::setName(string name)
 {
@@ -99,6 +104,7 @@ void Snack::setName(string name)
 *	Pre: The stream to read from.
 *	Post: The state of the object will be read from the stream.
 *	Purpose: Load a snack object from a stream.
+*	Author: Fiona Wilson
 *********************************************************/
 istream& Snack::load(istream& in)
 {
@@ -122,6 +128,7 @@ istream& Snack::load(istream& in)
 *	Pre: The file stream to read from.
 *	Post: The state of the object will be read from the stream.
 *	Purpose: Load a snack object from a file stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ifstream& Snack::load(ifstream& in)
 {
@@ -145,6 +152,7 @@ ifstream& Snack::load(ifstream& in)
 *	Pre: The stream to write to.
 *	Post: The state of the object will be written to the stream.
 *	Purpose: Write the state of the object to a stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ostream& Snack::print(ostream& out)
 {
@@ -164,6 +172,7 @@ ostream& Snack::print(ostream& out)
 *	Pre: The file stream to write to.
 *	Post: The state of the object will be written to the stream.
 *	Purpose: Write the state of the object to a file stream.
+*	Author: Fiona Wilson
 *********************************************************/
 ofstream& Snack::print(ofstream& out)
 {
@@ -188,6 +197,7 @@ ofstream& Snack::print(ofstream& out)
 *	Post: Returns true if the items have the same code,
 *	otherwise returns false.
 *	Purpose: Check if two snack objects have the same code.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Snack::operator ==(const Snack& rhs)
 {
@@ -200,6 +210,7 @@ bool Snack::operator ==(const Snack& rhs)
 *	Post: Returns true if the string matches the snack
 *	objects code, otherwise returns false.
 *	Purpose: Compare a snack objects code with a string.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Snack::operator ==(const string& rhs)
 {
@@ -213,6 +224,7 @@ bool Snack::operator ==(const string& rhs)
 *	otherwise returns true.
 *	Purpose: Check if two snack object don't have the same
 *	code.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Snack::operator !=(const Snack& rhs)
 {
@@ -225,6 +237,7 @@ bool Snack::operator !=(const Snack& rhs)
 *	Post: Returns false if the string matches the snack
 *	objects code, otherwise returns true.
 *	Purpose: Compare a snack objects code with a string.
+*	Author: Fiona Wilson
 *********************************************************/
 bool Snack::operator !=(const string& rhs)
 {
@@ -241,6 +254,7 @@ bool Snack::operator !=(const string& rhs)
 *	Post: Returns true if the string matches the snacks code,
 *	otherwise returns false.
 *	Purpose: Compare a string with a snack objects code.
+*	Author: Fiona Wilson
 *********************************************************/
 bool operator ==(const string& lhs, const Snack& rhs)
 {
@@ -253,6 +267,7 @@ bool operator ==(const string& lhs, const Snack& rhs)
 *	Post: Returns false if the string matches the snacks code,
 *	otherwise returns true.
 *	Purpose: Compare a string with a snack objects code.
+*	Author: Fiona Wilson
 *********************************************************/
 bool operator !=(const string& lhs, const Snack& rhs)
 {
