@@ -318,8 +318,8 @@ void Store::deleteCashier()
 
 /*	Function: void Store::generateReport();
 *	Pre: A manager should be logged in.
-*	Post: Attempts to save a daily report to disk.
-*	Purpose: Save a daily report.
+*	Post: Display the end of day report.
+*	Purpose: Generate a daily report.
 *	Author: Fiona Wilson
 *********************************************************/
 void Store::generateReport()
@@ -327,8 +327,6 @@ void Store::generateReport()
 	double total = 0.0;
 	double average;
 	int count;
-
-	ofstream dout;
 
 	count = mTransactions.getCount();
 
@@ -346,27 +344,10 @@ void Store::generateReport()
 		average = 0.0;
 	}
 
-	dout.open(REPORT_FILE.c_str());
-
-	if (dout.good())
-	{
-		dout << fixed << setprecision(2);
-
-		dout
-			<< "Amount of transactions: " << count << endl
-			<< "Total sales: $" << total << endl
-			<< "Average sale amount: $" << average << endl;
-
-		dout.close();
-		
-		cout << "Report successfully saved to disk.\n";
-	}
-	else
-	{
-		dout.close();
-
-		cout << "Failed to save report.\n";
-	}
+	cout
+		<< "\nAmount of transactions: " << count << endl
+		<< "Total sales: $" << total << endl
+		<< "Average sale amount: $" << average << endl << endl;
 }
 
 

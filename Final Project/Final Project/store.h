@@ -33,7 +33,6 @@ the purpose of future plagiarism checking)
 
 using namespace std;
 
-const string REPORT_FILE = "report.txt";
 const string EMPLOYEE_FILE = "employees.dat";
 const string SNACK_FILE = "snacks.dat";
 const string BOOK_FILE = "books.dat";
