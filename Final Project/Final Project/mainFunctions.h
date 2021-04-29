@@ -32,7 +32,7 @@ void cashierLoop(Store& database, Account& user);
 int cashierMenu(Account& cashier);
 void checkout(Store& database, Summary*& cart, int& length, double& total);
 
-void emptyCart(Summary*& cart, int& length, double& total);
+void emptyCart(Store& database, Summary*& cart, int& length, double& total);
 
 bool load(Store& database);
 

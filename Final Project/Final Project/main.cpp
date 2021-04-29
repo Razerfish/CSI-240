@@ -39,7 +39,6 @@ int main()
 	while (!shutdown)
 	{
 		user = database.login();
-		shutdown = true;
 
 		if (user.isManager())
 		{
@@ -50,6 +49,7 @@ int main()
 		else
 		{
 			cashierLoop(database, user);
+			clearScreen();
 		}
 	}
 }

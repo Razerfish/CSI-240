@@ -651,7 +651,7 @@ void Store::modifyCashier()
 			// Check that username isn't already taken.
 			for (i = 0; i < mEmployeeCount; i++)
 			{
-				if (mEmployees[i].getUsername() == username)
+				if (mEmployees[i].getUsername() == username && i != foundAt)
 				{
 					duplicate = true;
 					break;
@@ -666,7 +666,7 @@ void Store::modifyCashier()
 				duplicate = false;
 				for (i = 0; i < mEmployeeCount; i++)
 				{
-					if (mEmployees[i].getUsername() == username)
+					if (mEmployees[i].getUsername() == username && i != foundAt)
 					{
 						duplicate = true;
 						break;
@@ -779,7 +779,7 @@ void Store::searchBooks()
 	if (hits > 0)
 	{
 		results << string(FILL_WIDTH, '-') << endl;
-		cout << "Got" << hits << " hits\n\n" << results.str();
+		cout << "\nGot " << hits << " hits\n" << results.str();
 	}
 	else
 	{
@@ -845,12 +845,29 @@ void Store::searchSnacks()
 
 	results << fixed << setprecision(2);
 
-	// promptNames is meant for people names but it works just fine here so why not reuse it?
-	name = promptName("Enter the snack name to search for: ");
+	cout << "Enter the name to search for or leave blank to list all: ";
+	getline(cin, name);
 
-	for (int i = 0; i < mSnackCount; i++)
+	if (name.length() > 0)
 	{
-		if (mSnacks[i].getName() == name)
+		for (int i = 0; i < mSnackCount; i++)
+		{
+			if (mSnacks[i].getName() == name)
+			{
+				hits++;
+				results
+					<< string(FILL_WIDTH, '-') << endl
+					<< "Name: " << mSnacks[i].getName() << endl
+					<< "Price: $" << mSnacks[i].getPrice() << endl
+					<< "Stock: " << mSnacks[i].getStock() << endl
+					<< "Code: " << mSnacks[i].getCode() << endl;
+			}
+		}
+	}
+	else
+	{
+		// Just include all
+		for (int i = 0; i < mSnackCount; i++)
 		{
 			hits++;
 			results
@@ -861,6 +878,7 @@ void Store::searchSnacks()
 				<< "Code: " << mSnacks[i].getCode() << endl;
 		}
 	}
+	
 
 	if (hits > 0)
 	{

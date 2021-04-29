@@ -95,12 +95,13 @@ void cashierLoop(Store& database, Account& user)
 			for (int i = 0; i < length; i++)
 			{
 				cout
-					<< string(FILL_WIDTH, '*')
+					<< string(FILL_WIDTH, '*') << endl
 					<< "Item: " << cart[i].note << endl
 					<< "Code: " << cart[i].code << endl
 					<< "Price: $" << cart[i].price << endl;
 			}
-			cout << string(FILL_WIDTH, '*') << endl << endl;
+			cout << string(FILL_WIDTH, '*') << endl;
+			cout << "Total: $" << total << endl << endl;
 		}
 
 		choice = cashierMenu(user);
@@ -124,17 +125,19 @@ void cashierLoop(Store& database, Account& user)
 			break;
 
 		case 5: // Cancel transaction
-			emptyCart(cart, length, total);
+			emptyCart(database, cart, length, total);
 			break;
 
 		case 6: // Logout
 			if (cart != nullptr)
 			{
-				delete[] cart;
-				cart = nullptr;
+				emptyCart(database, cart, length, total);
 			}
-			cout << "Goodbye!\n";
-			systemPause();
+			else
+			{
+				cout << "Goodbye!\n";
+				systemPause();
+			}
 			return;
 		}
 	}
@@ -218,15 +221,20 @@ void checkout(Store& database, Summary*& cart, int& length, double& total)
 }
 
 
-/*	Function: void emptyCart(Summary*& cart, int& length, double& total);
+/*	Function: void emptyCart(Store& database, Summary*& cart, int& length, double& total);
 *	Pre: The variables to work with.
 *	Post: All items will be removed from the cart.
 *	Purpose: Abort a transaction.
 *********************************************************/
-void emptyCart(Summary*& cart, int& length, double& total)
+void emptyCart(Store& database, Summary*& cart, int& length, double& total)
 {
 	if (cart != nullptr)
 	{
+		for (int i = 0; i < length; i++)
+		{
+			database.incrementStock(cart[i].code);
+		}
+
 		delete[] cart;
 		cart = nullptr;
 		length = 0;
@@ -357,13 +365,9 @@ int managerMenu(Account& manager)
 
 	while (choice < 1 || choice > 7 || cin.fail())
 	{
-		bool fuck = cin.fail();
-		//clearScreen();
+		clearScreen();
 		cin.clear();
 		cin.ignore(INT_MAX, '\n');
-		fuck = cin.fail();
-
-		clearScreen();
 
 		cout
 			<< "Invalid selection!\n"
@@ -421,6 +425,8 @@ int promptSearchType()
 			<< "2. Snack search\n"
 			<< "3. Abort\n\n"
 			<< "Enter your selection: ";
+
+		cin >> choice;
 	}
 
 	cin.clear();
