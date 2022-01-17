@@ -1,0 +1,3 @@
+Amount of transactions: 4
+Total sales: $42.55
+Average sale amount: $10.64
